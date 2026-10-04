@@ -14,13 +14,21 @@ name: weekly-intel
 #     Variables; the IDs are not secrets):
 #       ANTHROPIC_FEDERATION_RULE_ID    fdrl_...   (rule pinned to this repo's main branch)
 #       ANTHROPIC_ORGANIZATION_ID       the organization UUID
-#       ANTHROPIC_SERVICE_ACCOUNT_ID    svac_...
-#       ANTHROPIC_WORKSPACE_ID          wrkspc_... (only if the rule spans several workspaces)
+#       ANTHROPIC_SERVICE_ACCOUNT_ID    svac_...   (the ID, not the account's name)
+#       ANTHROPIC_WORKSPACE_ID          wrkspc_...
 #     created in the Claude Console: Settings → Workload identity → Connect
-#     workload → GitHub Actions. Match the rule to
-#     subject_prefix "repo:isohub-space/space-data-centers:ref:refs/heads/main"
-#     with claims.repository_owner "isohub-space" and oauth_scope
-#     workspace:developer — scheduled and manual runs on main carry that sub.
+#     workload → GitHub Actions, with oauth_scope workspace:developer.
+#   * Rule match — must equal the token exactly (check a failed attempt in
+#     the Console's Workload identity → History tab, which shows the claims):
+#       subject_prefix  "repo:isohub-space@288387607/space-data-centers@1404427416:ref:refs/heads/main"
+#                       This organisation's OIDC subject embeds the numeric
+#                       owner and repository IDs; the plain
+#                       "repo:<owner>/<repo>:..." form never matches.
+#       claims          repository = "isohub-space/space-data-centers"
+#                       (optional) repository_id = "1404427416", ref = "refs/heads/main"
+#     Do not add an event_name claim: a claim holds one value, and this job
+#     runs as both "schedule" and "workflow_dispatch". Pull-request runs are
+#     already excluded because their subject ends in ":pull_request".
 #   * the Claude GitHub App installed on this repository (gives the action
 #     a token to push a branch and open the PR)
 #   * Settings → Actions → "Allow GitHub Actions to create and approve pull
