@@ -1,0 +1,273 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Orbital Compute Atlas</title>
+<meta name="description" content="Where is a defensible position in the orbital data-centre market? Live view of the space-data-centers intelligence vault.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a fixed left rail of chapters on wide screens, a top tab strip on phones; one column of
+   panels per chapter, summary first. Data from intel/output/derived/dashboard.json, never typed here. */
+:root{
+  --bg:#f6f5f1; --surface:#fcfcfb; --fg:#15150f; --fg-2:#5a584f; --fg-3:#8a877a; --line:#dedbd0; --line-2:#ebe9e0;
+  --accent:#1c5cab; --accent-ink:#ffffff; --series-1:#2a78d6; --series-2:#eb6834; --series-3:#1baf7a;
+  --seq-1:#cde2fb; --seq-3:#86b6ef; --seq-5:#3987e5; --seq-7:#1c5cab;
+  --good:#0ca30c; --warn:#fab219; --crit:#d03b3b; --mid:#f0efec;
+  --display:"Archivo",system-ui,sans-serif; --body:"Source Sans 3",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --rail:220px; --gap:20px; --r:6px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141412; --surface:#1a1a19; --fg:#f2f1ea; --fg-2:#c3c2b7; --fg-3:#8f8e84; --line:#34332f; --line-2:#262523;
+  --accent:#5598e7; --accent-ink:#0b0b0b; --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70;
+  --seq-1:#184f95; --seq-3:#256abf; --seq-5:#3987e5; --seq-7:#86b6ef; --mid:#383835; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141412; --surface:#1a1a19; --fg:#f2f1ea; --fg-2:#c3c2b7; --fg-3:#8f8e84; --line:#34332f; --line-2:#262523;
+  --accent:#5598e7; --accent-ink:#0b0b0b; --series-1:#3987e5; --series-2:#d95926; --series-3:#199e70;
+  --seq-1:#184f95; --seq-3:#256abf; --seq-5:#3987e5; --seq-7:#86b6ef; --mid:#383835; color-scheme:dark }
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);font-variant-numeric:tabular-nums}
+a{color:var(--accent)} a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.app{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);min-height:100%}
+.rail{min-width:0;position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:100vh;padding:28px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:18px;background:var(--bg)}
+.brand{font:700 20px/1.1 var(--display);font-stretch:85%;letter-spacing:-.01em}
+.brand small{display:block;font:600 11px/1.4 var(--body);color:var(--fg-3);letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+nav{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:100%} nav button{all:unset;cursor:pointer;padding:8px 10px;border-radius:var(--r);color:var(--fg-2);font:600 14px/1.3 var(--body)}
+nav button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:inset 3px 0 0 var(--accent)} nav button:hover{color:var(--fg)}
+.meta{margin-top:auto;font:12px/1.5 var(--body);color:var(--fg-3)} .meta b{color:var(--fg-2);font-weight:600}
+main{padding:28px clamp(16px,3vw,40px) 64px;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+h1{font:700 clamp(26px,3.2vw,38px)/1.05 var(--display);font-stretch:80%;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h2{font:700 20px/1.2 var(--display);font-stretch:90%;margin:0;text-wrap:balance} h3{font:600 15px/1.3 var(--body);margin:0;color:var(--fg-2)}
+.lede{color:var(--fg-2);max-width:68ch;margin:6px 0 0}
+.eyebrow{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.tile{padding:14px 16px;border:1px solid var(--line-2);border-radius:var(--r);display:flex;flex-direction:column;gap:4px}
+.tile .n{font:700 30px/1 var(--display);font-stretch:85%;letter-spacing:-.02em} .tile .l{font-size:13px;color:var(--fg-2)} .tile .s{font:12px/1.4 var(--body);color:var(--fg-3)}
+table{border-collapse:collapse;width:100%;font-size:14px} .tbl{overflow-x:auto;min-width:0}
+th{text-align:left;font:600 11px/1.3 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--fg)} td:first-child{font-weight:600} tr:last-child td{border-bottom:0}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--body);padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--fg-2);white-space:nowrap}
+.chip i{width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--fg-3)}
+.chip.good i{background:var(--good)} .chip.warn i{background:var(--warn)}
+svg{display:block;max-width:100%;height:auto} .ax{fill:var(--fg-3);font:11px var(--mono)} .lab{fill:var(--fg);font:600 12px var(--body)} .lab2{fill:var(--fg-2);font:12px var(--body)} .grid-l{stroke:var(--line-2)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controls input,.controls select{font:14px var(--body);padding:7px 10px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--fg);min-width:0}
+.controls input{flex:1 1 200px}
+.src{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:10px 0;border-bottom:1px solid var(--line-2);font-size:14px} .src:last-child{border-bottom:0}
+.src .d{font:12px var(--mono);color:var(--fg-3);padding-top:3px} .src .t a{color:var(--fg);text-decoration:none;font-weight:600} .src .t a:hover{text-decoration:underline}
+.src .p{color:var(--fg-2);font-size:13px} .src .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.open li{margin:4px 0} .open ul{margin:0;padding-left:18px}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font:12px/1.4 var(--body);padding:6px 8px;border-radius:4px;max-width:260px;z-index:5;opacity:0;transition:opacity .1s}
+.tip b{display:block;font-weight:700} .tip[data-on]{opacity:1}
+.status{font-size:13px;color:var(--fg-3)}
+.hidden-tab{display:none}
+@media (max-width:820px){ .app{grid-template-columns:1fr} .rail{position:sticky;top:env(safe-area-inset-top,0px);height:auto;border-right:0;border-bottom:1px solid var(--line);padding:14px 16px;gap:10px;z-index:2}
+  nav{flex-direction:row;overflow-x:auto;gap:4px;scrollbar-width:none} nav button{white-space:nowrap;padding:6px 10px} nav button[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--accent)} .meta{display:none} main{padding:18px 16px 48px} }
+@media (prefers-reduced-motion:reduce){ .tip{transition:none} }
+</style>
+
+<div class="app">
+  <aside class="rail">
+    <div class="brand">Orbital Compute Atlas<small>space-data-centers · live from the vault</small></div>
+    <nav id="nav" role="tablist" aria-label="Chapters"></nav>
+    <div class="meta" id="meta">Loading the derived data…</div>
+  </aside>
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">The question</div>
+      <h1>Where is a defensible position in the orbital data-centre market?</h1>
+      <p class="lede">Answered for a fictitious European entrant from a vault of sources, each figure labelled reported, primary or derived. The charts below are drawn from the vault's own tables; nothing here is typed in by hand.</p>
+    </section>
+    <div id="tabs"></div>
+    <p class="status" id="status"></p>
+  </main>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(() => {
+"use strict";
+const REPO = "isohub-space/space-data-centers";
+const CANDIDATES = [
+  "../intel/output/derived/dashboard.json",
+  `https://raw.githubusercontent.com/${REPO}/main/intel/output/derived/dashboard.json`,
+  `https://raw.githubusercontent.com/${REPO}/intel/initial-vault/intel/output/derived/dashboard.json`,
+];
+const $ = (s, el = document) => el.querySelector(s);
+const SVG_TAGS = new Set(["svg","g","rect","circle","line","text","path"]);
+const el = (tag, attrs = {}, ...kids) => { const n = SVG_TAGS.has(tag) ? document.createElementNS("http://www.w3.org/2000/svg", tag) : document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") n.setAttribute("class", v); else if (k === "html") n.innerHTML = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v); } for (const kid of kids.flat()) if (kid != null) n.append(kid.nodeType ? kid : document.createTextNode(String(kid))); return n; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const md = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*([^*]+)\*/g, "<em>$1</em>").replace(/\$([^$]+)\$/g, "<span class=\"math\">$1</span>");
+const num = s => { const m = String(s).replace(/,/g, "").match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : NaN; };
+const range = s => { const t = String(s).replace(/,/g, "").replace(/~|≈|≲|≥|<|>/g, ""); const m = t.match(/(\d+(?:\.\d+)?)\s*[–-]\s*(\d+(?:\.\d+)?)/); if (m) return [parseFloat(m[1]), parseFloat(m[2])]; const n = num(t); return isNaN(n) ? null : [n, n]; };
+const tip = $("#tip");
+const showTip = (e, html) => { tip.innerHTML = html; tip.dataset.on = "1"; const x = Math.min(e.clientX + 12, window.innerWidth - 280), y = e.clientY + 14; tip.style.transform = `translate(${x}px,${y}px)`; };
+const hideTip = () => { delete tip.dataset.on; };
+const hoverable = (node, html) => { node.addEventListener("pointermove", e => showTip(e, html)); node.addEventListener("pointerleave", hideTip); node.style.cursor = "default"; return node; };
+
+async function load() {
+  for (const url of CANDIDATES) { try { const r = await fetch(url, { cache: "no-store" }); if (r.ok) return { data: await r.json(), url }; } catch (_) {} }
+  throw new Error("The derived data could not be fetched from the repository.");
+}
+
+const table = (D, note, sectionStart) => D.tables.find(t => t.note === note && t.section.startsWith(sectionStart));
+const plainTable = t => { if (!t) return el("p", { class: "status" }, "Table not found in the vault."); const cols = t.columns; return el("div", { class: "tbl" }, el("table", {}, el("thead", {}, el("tr", {}, cols.map(c => el("th", { html: md(c) })))), el("tbody", {}, t.rows.map(r => el("tr", {}, cols.map(c => el("td", { html: md(r[c]) }))))))); };
+const panel = (title, ...kids) => el("section", { class: "panel" }, title ? el("h2", {}, title) : null, ...kids);
+
+/* ---------- charts (plain SVG, one scale each) ---------- */
+function rangeStrip(rows, { label, value, status, unit, min, max, log = false, note }) {
+  const W = 720, H = 44 + rows.length * 30, L = 210, R = 24;
+  const sc = log ? v => L + (Math.log10(v) - Math.log10(min)) / (Math.log10(max) - Math.log10(min)) * (W - L - R) : v => L + (v - min) / (max - min) * (W - L - R);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": note });
+  const ticks = log ? [1, 2, 5, 10, 20, 50, 100].filter(v => v >= min && v <= max) : Array.from({ length: 6 }, (_, i) => min + (max - min) * i / 5);
+  for (const v of ticks) { svg.append(el("line", { x1: sc(v), x2: sc(v), y1: 20, y2: H - 22, class: "grid-l", stroke: "currentColor", "stroke-width": 1 })); svg.append(el("text", { x: sc(v), y: H - 6, class: "ax", "text-anchor": "middle" }, log ? v : v.toFixed(v < 10 ? 1 : 0))); }
+  svg.append(el("text", { x: W - R, y: 12, class: "ax", "text-anchor": "end" }, unit));
+  rows.forEach((r, i) => {
+    const rg = range(r[value]); if (!rg) return; const y = 34 + i * 30; const paper = /paper|filing|model|design/i.test(r[status] || "");
+    const g = el("g", {});
+    const name = (r[label] || "").replace(/\(.*$/, "").trim(); g.append(el("text", { x: L - 10, y: y + 4, class: "lab", "text-anchor": "end" }, name.length > 24 ? name.slice(0, 23) + "…" : name));
+    const x1 = sc(rg[0]), x2 = sc(rg[1]);
+    if (x2 - x1 > 2) g.append(el("rect", { x: x1, y: y - 6, width: x2 - x1, height: 12, rx: 4, fill: paper ? "var(--seq-3)" : "var(--series-1)", opacity: .9 }));
+    g.append(el("circle", { cx: x1, cy: y, r: 6, fill: paper ? "var(--seq-3)" : "var(--series-1)", stroke: "var(--surface)", "stroke-width": 2 }));
+    if (x2 - x1 > 2) g.append(el("circle", { cx: x2, cy: y, r: 6, fill: paper ? "var(--seq-3)" : "var(--series-1)", stroke: "var(--surface)", "stroke-width": 2 }));
+    g.append(el("text", { x: Math.max(x2, x1) + 10, y: y + 4, class: "lab2" }, r[value].replace(/\*\*/g, "")));
+    hoverable(g, `<b>${esc(r[label])}</b>${esc(r[value])} ${esc(unit)}<br>${esc(r[status] || "")}`);
+    svg.append(g);
+  });
+  const legend = el("div", { class: "controls" }, el("span", { class: "chip" }, el("i", { style: "background:var(--series-1)" }), "flown or filed"), el("span", { class: "chip" }, el("i", { style: "background:var(--seq-3)" }), "paper design"));
+  return el("div", {}, svg, legend);
+}
+
+function gapBars(rows) {
+  // rows from "Cadence reality vs. the model": '' | Assumed | Demonstrated | Gap
+  const keys = Object.keys(rows[0] || {}); const [k0, kA, kD, kG] = keys;
+  const use = rows.filter(r => !isNaN(num(r[kA])) && !isNaN(num(r[kD])));
+  const W = 720, rowH = 64, H = 20 + use.length * rowH, L = 150, R = 190;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Assumed versus demonstrated launch capacity, log scale" });
+  use.forEach((r, i) => {
+    const a = num(r[kA]), d = num(r[kD]); const max = Math.max(a, d) * 1.15; const sc = v => L + Math.log10(1 + v) / Math.log10(1 + max) * (W - L - R);
+    const y = 18 + i * rowH;
+    svg.append(el("text", { x: L - 10, y: y + 14, class: "lab", "text-anchor": "end" }, r[k0]));
+    const bar = (v, yy, fill, text) => { const g = el("g", {}); g.append(el("rect", { x: L, y: yy, width: Math.max(2, sc(v) - L), height: 14, rx: 4, fill })); g.append(el("text", { x: sc(v) + 8, y: yy + 11, class: "lab2" }, text)); return g; };
+    svg.append(hoverable(bar(a, y, "var(--seq-3)", "assumed " + r[kA].replace(/\*\*/g, "")), `<b>${esc(r[k0])}</b>assumed: ${esc(r[kA])}`));
+    svg.append(hoverable(bar(d, y + 18, "var(--series-2)", "demonstrated " + r[kD].replace(/\*\*/g, "")), `<b>${esc(r[k0])}</b>demonstrated: ${esc(r[kD])}`));
+    svg.append(el("text", { x: W - 4, y: y + 22, class: "ax", "text-anchor": "end" }, r[kG].replace(/\*\*/g, "")));
+    svg.append(el("line", { x1: L, x2: W - R, y1: y + 46, y2: y + 46, class: "grid-l", stroke: "currentColor" }));
+  });
+  svg.append(el("text", { x: L, y: H - 2, class: "ax" }, "log scale · bar length ∝ log(1+value)"));
+  return el("div", {}, svg, el("div", { class: "controls" }, el("span", { class: "chip" }, el("i", { style: "background:var(--seq-3)" }), "assumed by the $200/kg case"), el("span", { class: "chip" }, el("i", { style: "background:var(--series-2)" }), "demonstrated")));
+}
+
+function parityTimeline(rows) {
+  // 'Source' | 'Space vs terrestrial' | 'Parity when'
+  const now = 2026, Y0 = 2026, Y1 = 2046, W = 720, L = 200, R = 24;
+  const place = s => { const t = s.toLowerCase(); const yrs = (t.match(/20\d\d/g) || []).map(Number); if (yrs.length) return [Math.min(...yrs), Math.max(...yrs)]; const m = t.match(/(\d+)\s*[–-]\s*(\d+)\s*years/) || t.match(/next\s+(\d+)\s*years|(\d+)\+?\s*years/); if (m) { const a = Number(m[1] || m[2]), b = Number(m[2] || m[1]); return [now + Math.min(a, b), now + Math.max(a, b)]; } if (/decade/.test(t)) return [2030, 2035]; return null; };
+  const placed = rows.map(r => ({ r, p: place(r["Parity when"] || "") })); const on = placed.filter(x => x.p), off = placed.filter(x => !x.p);
+  const H = 44 + on.length * 28; const sc = y => L + (y - Y0) / (Y1 - Y0) * (W - L - R);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "When each source expects cost parity" });
+  for (let y = Y0; y <= Y1; y += 4) { svg.append(el("line", { x1: sc(y), x2: sc(y), y1: 16, y2: H - 22, class: "grid-l", stroke: "currentColor" })); svg.append(el("text", { x: sc(y), y: H - 6, class: "ax", "text-anchor": "middle" }, y)); }
+  on.forEach(({ r, p }, i) => { const y = 30 + i * 28; const g = el("g", {});
+    g.append(el("text", { x: L - 10, y: y + 4, class: "lab", "text-anchor": "end" }, r.Source.replace(/\(.*$/, "").slice(0, 26)));
+    const x1 = sc(Math.max(Y0, p[0])), x2 = sc(Math.min(Y1, p[1]));
+    if (x2 - x1 > 2) g.append(el("rect", { x: x1, y: y - 5, width: x2 - x1, height: 10, rx: 4, fill: "var(--series-1)", opacity: .85 }));
+    g.append(el("circle", { cx: x1, cy: y, r: 6, fill: "var(--series-1)", stroke: "var(--surface)", "stroke-width": 2 }));
+    g.append(el("text", { x: Math.max(x1, x2) + 10, y: y + 4, class: "lab2" }, (r["Parity when"] || "").replace(/\*\*/g, "").slice(0, 44)));
+    hoverable(g, `<b>${esc(r.Source)}</b>${esc(r["Space vs terrestrial"])}<br>${esc(r["Parity when"])}`); svg.append(g); });
+  return el("div", {}, svg, off.length ? el("p", { class: "status" }, "No date given: " + off.map(x => x.r.Source.replace(/\(.*$/, "")).join(" · ")) : null);
+}
+
+function bars(obj, { label, max = 10, unit = "" }) {
+  const entries = Object.entries(obj).slice(0, max); const top = Math.max(...entries.map(e => e[1]));
+  const W = 360, rowH = 24, H = entries.length * rowH + 8, L = 150;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": label });
+  entries.forEach(([k, v], i) => { const y = 4 + i * rowH; const w = (v / top) * (W - L - 40); const g = el("g", {});
+    g.append(el("text", { x: L - 8, y: y + 13, class: "lab2", "text-anchor": "end" }, k.replace(/^(market|space|research|economics)\//, "")));
+    g.append(el("rect", { x: L, y: y + 3, width: Math.max(2, w), height: 12, rx: 4, fill: "var(--series-1)" }));
+    g.append(el("text", { x: L + w + 6, y: y + 13, class: "lab2" }, v + unit)); hoverable(g, `<b>${esc(k)}</b>${v}${esc(unit)}`); svg.append(g); });
+  return svg;
+}
+
+function monthColumns(obj) {
+  const entries = Object.entries(obj).filter(([k]) => /^\d{4}-\d{2}$/.test(k)); const top = Math.max(...entries.map(e => e[1]));
+  const W = 720, H = 150, L = 30, B = 26, cw = (W - L - 10) / entries.length;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Captured sources by publication month" });
+  entries.forEach(([k, v], i) => { const h = (v / top) * (H - B - 20); const x = L + i * cw; const g = el("g", {});
+    g.append(el("rect", { x: x + 2, y: H - B - h, width: Math.max(2, cw - 4), height: h, rx: 4, fill: k >= "2026-01" ? "var(--series-1)" : "var(--seq-3)" }));
+    if (i % Math.ceil(entries.length / 12) === 0) g.append(el("text", { x: x + cw / 2, y: H - 8, class: "ax", "text-anchor": "middle" }, k)); hoverable(g, `<b>${k}</b>${v} source${v === 1 ? "" : "s"}`); svg.append(g); });
+  return svg;
+}
+
+/* ---------- chapters ---------- */
+function chapters(D) {
+  const specific = table(D, "orbital-compute-physical-constraints", "1 ·"), radiator = table(D, "orbital-compute-physical-constraints", "2 ·"), radiation = table(D, "orbital-compute-physical-constraints", "3 ·");
+  const cadence = table(D, "orbital-compute-launch-economics", "2 ·"), closure = table(D, "orbital-compute-launch-economics", "Cost-closure"), sizing = table(D, "orbital-compute-launch-economics", "6 ·"), walk = table(D, "orbital-compute-launch-economics", "5 ·"), wright = table(D, "orbital-compute-launch-economics", "1 ·");
+  const tierA = table(D, "orbital-data-center-landscape", "A ·"), tierB = table(D, "orbital-data-center-landscape", "B ·"), prog = table(D, "orbital-data-center-landscape", "C ·"), fund = table(D, "orbital-data-center-landscape", "Funding");
+  const bott = table(D, "eo-edge-compute-value-chain", "1 ·"), pays = table(D, "eo-edge-compute-value-chain", "3 ·"), saves = table(D, "eo-edge-compute-value-chain", "4 ·"), comp = table(D, "eo-edge-compute-value-chain", "7 ·");
+  const sources = D.sources.slice().sort((a, b) => b.date.localeCompare(a.date));
+  const checked = sources.filter(s => s.primary_checked).length;
+  const wikiLink = id => `https://github.com/${REPO}/blob/main/intel/wiki/${id}.md`;
+
+  return [
+    { id: "gap", name: "The gap", build: () => [
+      el("div", { class: "tiles" },
+        el("div", { class: "tile" }, el("div", { class: "n" }, D.counts.sources), el("div", { class: "l" }, "sources captured"), el("div", { class: "s" }, `${checked} checked against a primary`)),
+        el("div", { class: "tile" }, el("div", { class: "n" }, specific ? specific.rows.length : "–"), el("div", { class: "l" }, "specific-mass designs compared"), el("div", { class: "s" }, "kg per kW delivered to compute")),
+        el("div", { class: "tile" }, el("div", { class: "n" }, closure ? closure.rows.length : "–"), el("div", { class: "l" }, "parity estimates"), el("div", { class: "s" }, "from 2–3 years to the 2040s")),
+        el("div", { class: "tile" }, el("div", { class: "n" }, D.open_items.length), el("div", { class: "l" }, "open items"), el("div", { class: "s" }, "unanswered in the vault"))),
+      panel("Assumed vs demonstrated launch capacity", el("p", { class: "lede" }, "Every $200/kg business case assumes the left bar. The right bar is what has flown."), cadence ? gapBars(cadence.rows) : null, el("a", { href: wikiLink("orbital-compute-launch-economics") }, "Source note: launch economics →")),
+      el("div", { style: "display:flex;flex-direction:column;gap:var(--gap)" },
+        panel("Specific mass, kg/kW", el("p", { class: "lede" }, "The optimist/sceptic divide is this one number. The radiator is the swing term."), specific ? rangeStrip(specific.rows, { label: "Design", value: specific.columns[1], status: "Status", unit: "kg/kW", min: 1, max: 100, log: true, note: "Specific mass by design, log scale" }) : null),
+        panel("When sources expect cost parity", parityTimeline(closure ? closure.rows : []))),
+    ]},
+    { id: "landscape", name: "Landscape", build: () => [
+      panel("Tier A · GW-scale AI compute, the 2030s bet", plainTable(tierA)),
+      panel("Tier B · kW-class edge and space-native processing, the tier with revenue", plainTable(tierB)),
+      el("div", { class: "grid" }, panel("Programmes (ESA / EU / US)", plainTable(prog)), panel("Funding benchmarks", plainTable(fund))),
+      el("a", { href: wikiLink("orbital-data-center-landscape") }, "Full landscape note →"),
+    ]},
+    { id: "economics", name: "Economics", build: () => [
+      el("div", { class: "grid" }, panel("Cost closure, 2026", plainTable(closure)), panel("Doublings of cumulative mass to reach $200/kg", plainTable(wright))),
+      el("div", { class: "grid" }, panel("One startup's own assumptions, 2024 → 2026", plainTable(walk)), panel("Market sizing is not comparable across vendors", plainTable(sizing))),
+      el("a", { href: wikiLink("orbital-compute-launch-economics") }, "Full economics note →"),
+    ]},
+    { id: "physics", name: "Physics", build: () => [
+      el("div", { class: "grid" },
+        panel("Radiator area per kW by assumed temperature", radiator ? rangeStrip(radiator.rows, { label: "Source", value: "m²/kW", status: "Assumption", unit: "m²/kW", min: 0.5, max: 12, log: true, note: "Radiator area per kW by source" }) : null, plainTable(radiator)),
+        panel("Radiation: inference vs training", plainTable(radiation))),
+      el("a", { href: wikiLink("orbital-compute-physical-constraints") }, "Full constraints note →"),
+    ]},
+    { id: "eo", name: "EO chain", build: () => [
+      el("div", { class: "grid" }, panel("The bottleneck, per satellite", plainTable(bott)), panel("Who pays for latency", plainTable(pays))),
+      panel("What onboard processing actually saves", el("p", { class: "lede" }, "The quoted reduction spans 21% to 10⁵× because sources measure different things. Sending a decision is not the same as sending the picture."), plainTable(saves)),
+      panel("Competitors in this exact segment", plainTable(comp)),
+      el("a", { href: wikiLink("eo-edge-compute-value-chain") }, "Full value-chain note →"),
+    ]},
+    { id: "sources", name: "Sources", build: () => {
+      const list = el("div", {}); const q = el("input", { id: "q", type: "search", placeholder: "Search title, publisher, tag…", "aria-label": "Search sources" });
+      const sel = el("select", { id: "theme", "aria-label": "Theme" }, el("option", { value: "" }, "All themes"), Object.keys(D.counts.by_theme).map(t => el("option", { value: t }, t)));
+      const render = () => { const needle = q.value.trim().toLowerCase(), th = sel.value; list.replaceChildren(...sources.filter(s => (!th || s.tags.includes(th)) && (!needle || (s.title + " " + s.publisher + " " + s.tags.join(" ")).toLowerCase().includes(needle))).map(s =>
+        el("div", { class: "src" }, el("div", { class: "d" }, s.date), el("div", {}, el("div", { class: "t" }, el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title)), el("div", { class: "p" }, s.publisher, " · ", el("a", { href: `https://github.com/${REPO}/blob/main/intel/raw/${s.id}.md` }, "capture")),
+          el("div", { class: "tags" }, el("span", { class: "chip " + (s.primary_checked ? "good" : "warn") }, el("i"), s.primary_checked ? "primary checked" : "press-attributed"), s.tags.filter(t => t !== "sdc").slice(0, 4).map(t => el("span", { class: "chip" }, t))))))); };
+      q.addEventListener("input", render); sel.addEventListener("change", render); render();
+      return [
+        el("div", { class: "grid" }, panel("Sources by theme", bars(D.counts.by_theme, { label: "Sources by theme", max: 13 })), panel("By publication month", monthColumns(D.counts.by_month), el("div", { class: "controls" }, el("span", { class: "chip" }, el("i", { style: "background:var(--series-1)" }), "2026"), el("span", { class: "chip" }, el("i", { style: "background:var(--seq-3)" }), "earlier")))),
+        panel("All captures", el("div", { class: "controls" }, q, sel), list),
+      ]; }},
+    { id: "open", name: "Open items", build: () => [
+      panel("Unanswered in the vault", el("div", { class: "open" }, D.wiki.map(w => w.open_items.length ? el("div", {}, el("h3", {}, el("a", { href: wikiLink(w.id) }, w.title)), el("ul", {}, w.open_items.map(i => el("li", { html: md(i) })))) : null))),
+    ]},
+  ];
+}
+
+function mount(D, url) {
+  const nav = $("#nav"), tabs = $("#tabs"); const chs = chapters(D);
+  chs.forEach(c => { c.pane = el("div", { id: "pane-" + c.id, role: "tabpanel", class: "hidden-tab", style: "display:flex;flex-direction:column;gap:var(--gap)" }); tabs.append(c.pane); });
+  const select = id => { for (const c of chs) { const on = c.id === id; c.btn.setAttribute("aria-selected", on); c.pane.classList.toggle("hidden-tab", !on); if (on && !c.built) { c.pane.append(...c.build().filter(Boolean)); c.built = true; } } try { history.replaceState(null, "", "#" + id); localStorage.setItem("oca-tab", id); } catch (_) {} };
+  chs.forEach(c => { c.btn = el("button", { role: "tab", onclick: () => select(c.id) }, c.name); nav.append(c.btn); });
+  let start = (location.hash || "").slice(1); try { start = start || localStorage.getItem("oca-tab") || ""; } catch (_) {} select(chs.some(c => c.id === start) ? start : "gap");
+  $("#meta").innerHTML = `<b>${D.counts.sources}</b> sources · <b>${D.wiki.length}</b> wiki notes<br>generated ${esc(D.generated.slice(0, 16).replace("T", " "))} UTC<br><a href="https://github.com/${REPO}">github.com/${REPO}</a>`;
+  $("#status").textContent = url.startsWith("http") ? "Data fetched live from the repository." : "Data read from the repository checkout.";
+}
+
+load().then(({ data, url }) => mount(data, url)).catch(err => { $("#status").textContent = err.message + " Open the repository to read the notes directly."; $("#meta").textContent = "Data unavailable."; });
+})();
+</script>

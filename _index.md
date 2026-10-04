@@ -9,6 +9,7 @@ tags: [sdc, index]
 | [[scenario/_index\|scenario/]] | The fictitious entrant and its positioning question |
 | [[intel/_index\|intel/]] | Space-industry intelligence — `raw → wiki → output` |
 | [[templates/_index\|templates/]] | Note templates |
+| [[dashboard/_index\|dashboard/]] | Orbital Compute Atlas — single-file page drawing the derived data |
 | `scripts/` | Gate (`validate_notes.py`, `check_public_safe.py`) and derived data (`build_dashboard.py`) |
 | `.github/workflows/` | `validate.yml` on every push; `weekly-intel.yml` Monday sweep → PR |
 
