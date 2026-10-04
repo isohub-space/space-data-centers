@@ -5,8 +5,22 @@ name: weekly-intel
 # wiki notes it affects, regenerates the derived dashboard data, and opens a
 # pull request. A human merges. Nothing lands on main unreviewed.
 #
+# Authentication: Workload Identity Federation, no API key secret. The job
+# requests a GitHub OIDC token (permissions: id-token: write) and the action
+# exchanges it for a short-lived Anthropic token under a federation rule.
+#
 # Requirements (repository settings):
-#   * secret ANTHROPIC_API_KEY
+#   * Repository variables (Settings → Secrets and variables → Actions →
+#     Variables; the IDs are not secrets):
+#       ANTHROPIC_FEDERATION_RULE_ID    fdrl_...   (rule pinned to this repo's main branch)
+#       ANTHROPIC_ORGANIZATION_ID       the organization UUID
+#       ANTHROPIC_SERVICE_ACCOUNT_ID    svac_...
+#       ANTHROPIC_WORKSPACE_ID          wrkspc_... (only if the rule spans several workspaces)
+#     created in the Claude Console: Settings → Workload identity → Connect
+#     workload → GitHub Actions. Match the rule to
+#     subject_prefix "repo:isohub-space/space-data-centers:ref:refs/heads/main"
+#     with claims.repository_owner "isohub-space" and oauth_scope
+#     workspace:developer — scheduled and manual runs on main carry that sub.
 #   * the Claude GitHub App installed on this repository (gives the action
 #     a token to push a branch and open the PR)
 #   * Settings → Actions → "Allow GitHub Actions to create and approve pull
@@ -47,7 +61,10 @@ jobs:
       - name: Run the weekly intel sweep
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_federation_rule_id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+          anthropic_organization_id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+          anthropic_service_account_id: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+          anthropic_workspace_id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: >-
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3 scripts/*),Bash(git *),WebSearch,WebFetch"

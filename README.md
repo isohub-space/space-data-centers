@@ -12,6 +12,7 @@ market?**
 - `intel/output/derived/dashboard.json` is regenerated from the notes by
   `scripts/build_dashboard.py`; `dashboard/index.html` (the Orbital Compute Atlas) draws it.
 - Maintained by `.github/workflows/weekly-intel.yml` (Claude Code sweeps the week's sources
-  and opens a PR); gated by `.github/workflows/validate.yml`.
+  and opens a PR, authenticating with Workload Identity Federation, no API key secret);
+  gated by `.github/workflows/validate.yml`.
 
 Agent rules: [`CLAUDE.md`](CLAUDE.md).
