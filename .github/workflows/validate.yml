@@ -1,0 +1,41 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Public-safety check (tracked files)
+        run: python3 scripts/check_public_safe.py
+
+      - name: Public-safety check (commit messages in this push / PR)
+        run: |
+          BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            BASE="$(git rev-list --max-parents=0 HEAD | tail -1)"
+          fi
+          git log --format='%B' "$BASE..HEAD" | python3 scripts/check_public_safe.py --stdin
+
+      - name: Note schema and links
+        run: python3 scripts/validate_notes.py
+
+      - name: Derived dashboard data is current
+        run: |
+          python3 scripts/build_dashboard.py
+          # ignore the timestamp line when comparing
+          git diff --ignore-matching-lines='"generated"' --exit-code -- intel/output/derived/dashboard.json \
+            || { echo "::error::intel/output/derived/dashboard.json is stale — run scripts/build_dashboard.py"; exit 1; }
