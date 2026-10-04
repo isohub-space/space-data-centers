@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T10:51:09+00:00",
+ "generated": "2026-10-04T13:23:55+00:00",
  "counts": {
   "sources": 113,
   "by_theme": {
@@ -2490,6 +2490,679 @@
   {
    "note": "orbital-data-center-landscape",
    "item": "Aviation Week \"$250M rounds\" — second company is Muon Space (bus maker), a category stretch"
+  }
+ ],
+ "tables": [
+  {
+   "note": "eo-edge-compute-value-chain",
+   "section": "1 · The bottleneck is real, and it is per satellite",
+   "columns": [
+    "Satellite",
+    "Downlink",
+    "Per pass",
+    "Source"
+   ],
+   "rows": [
+    {
+     "Satellite": "Planet Dove",
+     "Downlink": "160 Mbps",
+     "Per pass": "~12 GB",
+     "Source": "2025-05-01-arxiv-fool-downlink-bottleneck-satellite-computing"
+    },
+    {
+     "Satellite": "WorldView-3",
+     "Downlink": "1,200 Mbps",
+     "Per pass": "90 GB",
+     "Source": "same"
+    },
+    {
+     "Satellite": "Sentinel-3",
+     "Downlink": "560 Mbps",
+     "Per pass": "40 GB",
+     "Source": "same"
+    },
+    {
+     "Satellite": "KP Labs Intuition-1 (192-band HSI)",
+     "Downlink": "3–50 Mbps X-band",
+     "Per pass": "—",
+     "Source": "2025-08-24-satnews-kp-labs-intuition-1-leopard-dpu"
+    }
+   ]
+  },
+  {
+   "note": "eo-edge-compute-value-chain",
+   "section": "3 · Who pays for latency",
+   "columns": [
+    "Buyer",
+    "Evidence"
+   ],
+   "rows": [
+    {
+     "Buyer": "Defence / ISR first",
+     "Evidence": "Government = 70–80% of optical-comms revenue (Mynaric); CSET frames onboard compute as survivability/autonomy (2025-06-01-cset-ai-on-the-edge-of-space); Denmark's DALO + Sweden's FMV bought onboard-AI Arctic event reporting (BIFROST, 2025-06-23-spacenews-space-inventor-bifrost-arctic); Satlyt's customers are NASA + SDA; US New Horizon Act $220M pilot"
+    },
+    {
+     "Buyer": "Maritime",
+     "Evidence": "Ubotica's $11M Series A is for maritime intelligence; BIFROST is Arctic maritime"
+    },
+    {
+     "Buyer": "Civil protection",
+     "Evidence": "IRIDE HEO's case is burnt-area mapping (2026-04-08-arxiv-iride-heo-onboard-processing-added-value); Constella's is wildfire"
+    },
+    {
+     "Buyer": "Insurance / commodities / energy",
+     "Evidence": "Little Place Labs 2026 targets (2025-12-31-littleplace-q4-2025-newsletter-orbitfy); Eni is an AI-eXpress tenant"
+    }
+   ]
+  },
+  {
+   "note": "eo-edge-compute-value-chain",
+   "section": "4 · What onboard processing actually saves — a taxonomy",
+   "columns": [
+    "Mode",
+    "Reduction",
+    "Source",
+    "Caveat"
+   ],
+   "rows": [
+    {
+     "Mode": "Send a decision (cloud polygons, alerts)",
+     "Reduction": "99.7–99.99% (Sentinel-2 SCL: 31.46 MB → 0.001–0.098 MB)",
+     "Source": "2026-03-19-arxiv-which-workloads-belong-in-orbit",
+     "Caveat": "the pixels never arrive"
+    },
+    {
+     "Mode": "Send meaning, then pixels (onboard VLM text 485 B vs 50 MB image)",
+     "Reduction": "200× preview, 10⁵× full",
+     "Source": "2026-08-07-arxiv-summarize-first-onboard-vlm",
+     "Caveat": "60–74% VQA accuracy; 29–107 s per image, load-dominated"
+    },
+    {
+     "Mode": "Semantic packets (toy CIFAR-10)",
+     "Reduction": "> 98%",
+     "Source": "2026-05-12-arxiv-communication-efficient-space-data-centers",
+     "Caveat": "not EO"
+    },
+    {
+     "Mode": "Drop cloudy frames (Φ-Sat-1 pattern)",
+     "Reduction": "\"reduced volume\" — no primary number in any of six papers citing it",
+     "Source": "2026-09-11-arxiv-aquacubeai-phisat2",
+     "Caveat": "deletes 5–29% of clear pixels (false positives) on expert labels"
+    },
+    {
+     "Mode": "Deliver the pixels, smarter (clear-weighted learned codec)",
+     "Reduction": "39–48% fewer bytes at equal clear-region quality; deadline-full delivery 38 → 83.5%",
+     "Source": "2026-08-02-arxiv-clear-weighted-bit-allocation",
+     "Caveat": "19.9 ms / 103 mJ per 256² crop on Orin Nano"
+    },
+    {
+     "Mode": "Task-agnostic feature compression (FOOL)",
+     "Reduction": "~100× effective downlink at 15 W",
+     "Source": "2025-05-01-arxiv-fool-downlink-bottleneck-satellite-computing",
+     "Caveat": "downstream tasks must accept features"
+    },
+    {
+     "Mode": "Satlyt, Gemma onboard (commercial, measured)",
+     "Reduction": "> 60%",
+     "Source": "2026-10-01-techcrunch-satlyt-8m-seed",
+     "Caveat": "the one commercial KPI published"
+    }
+   ]
+  },
+  {
+   "note": "eo-edge-compute-value-chain",
+   "section": "7 · Competitors in this exact segment",
+   "columns": [
+    "",
+    "Flying?",
+    "Edge",
+    "Weakness vs the Entrant"
+   ],
+   "rows": [
+    {
+     "": "Satlyt (US)",
+     "Flying?": "yes, 3 missions",
+     "Edge": "software layer, hardware-agnostic, NASA/SDA customers, > 60% measured",
+     "Weakness vs the Entrant": "US-only; no European sovereign anchor"
+    },
+    {
+     "": "Ubotica (IE)",
+     "Flying?": "yes",
+     "Edge": "Φsat-1 heritage, > 30 EO models, $11M",
+     "Weakness vs the Entrant": "maritime focus; Myriad-class compute"
+    },
+    {
+     "": "Axiom + Kepler",
+     "Flying?": "yes, operational",
+     "Edge": "relay-integrated, SDA optical, Red Hat",
+     "Weakness vs the Entrant": "general PED, not EO-specific"
+    },
+    {
+     "": "Planetek AI-eXpress (IT)",
+     "Flying?": "yes, 3 sats",
+     "Edge": "multi-tenant, InCubed-funded, Eni/IBM tenants",
+     "Weakness vs the Entrant": "FPGA-class compute"
+    },
+    {
+     "": "Edge Aerospace (LU)",
+     "Flying?": "demo",
+     "Edge": "ESA Space Cloud study",
+     "Weakness vs the Entrant": "architecture, not EO service"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-launch-economics",
+   "section": "1 · Launch cost: Wright's law, not a calendar",
+   "columns": [
+    "Starting price $P_0$ ($/kg)",
+    "Doublings $n$",
+    "Cumulative-mass multiplier $2^n$"
+   ],
+   "rows": [
+    {
+     "Starting price $P_0$ ($/kg)": "600",
+     "Doublings $n$": "4.9",
+     "Cumulative-mass multiplier $2^n$": "×30"
+    },
+    {
+     "Starting price $P_0$ ($/kg)": "1,500",
+     "Doublings $n$": "9.0",
+     "Cumulative-mass multiplier $2^n$": "×523"
+    },
+    {
+     "Starting price $P_0$ ($/kg)": "2,500",
+     "Doublings $n$": "11.3",
+     "Cumulative-mass multiplier $2^n$": "×2,555"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-launch-economics",
+   "section": "2 · Cadence reality vs. the model",
+   "columns": [
+    "",
+    "Assumed by the $200/kg case",
+    "Demonstrated (2026-10-04)",
+    "Gap"
+   ],
+   "rows": [
+    {
+     "": "Starship flights/yr",
+     "Assumed by the $200/kg case": "180",
+     "Demonstrated (2026-10-04)": "5 (2025), 3 YTD 2026 → ~4/yr",
+     "Gap": "36–45×"
+    },
+    {
+     "": "Payload per flight",
+     "Assumed by the $200/kg case": "200 t",
+     "Demonstrated (2026-10-04)": "~44 t (F14, 2026-09-28, first orbital deployment)",
+     "Gap": "4.5×"
+    },
+    {
+     "": "Tonnage/yr",
+     "Assumed by the $200/kg case": "~37,000 t",
+     "Demonstrated (2026-10-04)": "~115 t (2026 YTD)",
+     "Gap": "~320×"
+    },
+    {
+     "": "Success rate",
+     "Assumed by the $200/kg case": "—",
+     "Demonstrated (2026-10-04)": "5 of 8 flights nominal 2025–26 (62%)",
+     "Gap": "—"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-launch-economics",
+   "section": "Cost-closure estimates, 2026",
+   "columns": [
+    "Source",
+    "Space vs terrestrial",
+    "Parity when"
+   ],
+   "rows": [
+    {
+     "Source": "BCG (2026-08-27-bcg-space-based-data-centers-cost-outlook)",
+     "Space vs terrestrial": "20-yr TCO $660–750M/MW vs $230–300M/MW = 2.5–3× now; 1.6–1.8× in 5–10 yr",
+     "Parity when": "\"unlikely this decade\"; target $100/kg"
+    },
+    {
+     "Source": "ABI (2026-05-11-abi-research-data-centers-in-space-qa, 2026-06-11-ieee-spectrum-thermodynamics-orbital-data-centers)",
+     "Space vs terrestrial": "up to 78× TCO; ≥ 10× even at $44/kg",
+     "Parity when": "not before 2035"
+    },
+    {
+     "Source": "McCalip calculator (2026-02-11-techcrunch-economics-of-orbital-ai-brutal)",
+     "Space vs terrestrial": "1 GW ≈ $42B ≈ 3× ground",
+     "Parity when": "—"
+    },
+    {
+     "Source": "Turyshev O&M (2026-08-27-arxiv-turyshev-odc-operations-maintenance)",
+     "Space vs terrestrial": "servicing logistics 5.3–9 t/(MW·yr) ≈ 11%/yr of mass → derived +$1,320/kW·yr at $200/kg",
+     "Parity when": "—"
+    },
+    {
+     "Source": "Google's Beals (2026-10-01-npr-google-suncatcher-launch-sceptics)",
+     "Space vs terrestrial": "—",
+     "Parity when": "\"not cheaper in the next five years\""
+    },
+    {
+     "Source": "Morgan Stanley (2026-09-15-kucoin-morgan-stanley-spacex-orbital-compute, low-tier relay)",
+     "Space vs terrestrial": "$1,080/kg (2026) → $836/kg (2028)",
+     "Parity when": "\"orbital primary capacity by 2032\""
+    },
+    {
+     "Source": "Musk (2026-06-10-lightreading-musk-spacex-orbital-ai-plan)",
+     "Space vs terrestrial": "—",
+     "Parity when": "\"2–3 years\"; SpaceX S-1: \"may not achieve commercial viability\" (2026-04-22-tnw-spacex-ipo-orbital-dc-risk-disclosure)"
+    },
+    {
+     "Source": "Bezos (2025-10-03-toms-hardware-bezos-gigawatt-space-data-centers)",
+     "Space vs terrestrial": "—",
+     "Parity when": "\"10+ years, not more than 20\""
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-launch-economics",
+   "section": "5 · Starcloud's walk-back — the cheap-power case is gone",
+   "columns": [
+    "",
+    "2024 white paper",
+    "March 2026 pitch",
+    "Factor"
+   ],
+   "rows": [
+    {
+     "": "Launch",
+     "2024 white paper": "$30/kg",
+     "March 2026 pitch": "$500/kg",
+     "Factor": "17×"
+    },
+    {
+     "": "Energy",
+     "2024 white paper": "$0.002/kWh (\"22× cheaper\")",
+     "March 2026 pitch": "$0.05/kWh (≈ EU wholesale)",
+     "Factor": "25×"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-launch-economics",
+   "section": "6 · Market sizing — figures are not comparable",
+   "columns": [
+    "Source",
+    "2026",
+    "Horizon",
+    "Note"
+   ],
+   "rows": [
+    {
+     "Source": "MarketsandMarkets (2026-08-26-marketsandmarkets-space-based-data-center-28b-2040)",
+     "2026": "$0.11B",
+     "Horizon": "$28.2B (2040)",
+     "Note": "stated 18.3% CAGR; endpoints imply 48.6% — internally inconsistent"
+    },
+    {
+     "Source": "Three other vendors (snippets)",
+     "2026": "$1.44–1.9B",
+     "Horizon": "$3.8–8.4B (2034–35)",
+     "Note": "15× spread on 2026 alone"
+    },
+    {
+     "Source": "BCG",
+     "2026": "—",
+     "Horizon": "10–15% of AI DC market = $240–320B/yr (2040)",
+     "Note": "different definition (share of AI DC)"
+    },
+    {
+     "Source": "ABI",
+     "2026": "> $3B invested to Apr 2026",
+     "Horizon": "18,600 units, 1.5 GW by 2035 → ~80 kW/unit",
+     "Note": "the unit size is the Entrant's class"
+    },
+    {
+     "Source": "BIS (via aggregator, unopened)",
+     "2026": "—",
+     "Horizon": "$1.77B (2029) → $39B (2035)",
+     "Note": "—"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-physical-constraints",
+   "section": "1 · Specific mass — the swing term is the radiator",
+   "columns": [
+    "Design",
+    "$\\alpha$ (kg/kW)",
+    "Status",
+    "Source"
+   ],
+   "rows": [
+    {
+     "Design": "Tether architecture (10 kg node / 2 kW; PV at 1,000 W/kg)",
+     "$\\alpha$ (kg/kW)": "5",
+     "Status": "paper",
+     "Source": "2025-12-09-arxiv-tether-orbital-ai-data-centers"
+    },
+    {
+     "Design": "Integrated solar-compute-radiator panels (ISCR): 148.8 t / 16.4 MW = 112.5 kW/t",
+     "$\\alpha$ (kg/kW)": "8.9",
+     "Status": "paper",
+     "Source": "2026-04-09-arxiv-iscr-integrated-solar-compute-radiator"
+    },
+    {
+     "Design": "SpaceX FCC filing (\"100 kW/t\"); AI1 sat 150 kW peak, 70 m span",
+     "$\\alpha$ (kg/kW)": "~10",
+     "Status": "filing",
+     "Source": "2026-02-02-via-satellite-spacex-xai-fcc-million-satellites"
+    },
+    {
+     "Design": "Google's Starlink-v2-mini proxy (575 kg / 28 kW), no compute radiator",
+     "$\\alpha$ (kg/kW)": "20.5",
+     "Status": "paper",
+     "Source": "2025-11-22-arxiv-google-suncatcher-system-design"
+    },
+    {
+     "Design": "Turyshev (JPL) full node incl. structure, shielding, comms",
+     "$\\alpha$ (kg/kW)": "34–59",
+     "Status": "paper",
+     "Source": "2026-04-29-arxiv-turyshev-odc-economic-viability"
+    },
+    {
+     "Design": "Turyshev with servicing, spares",
+     "$\\alpha$ (kg/kW)": "50–75",
+     "Status": "paper",
+     "Source": "2026-08-27-arxiv-turyshev-odc-operations-maintenance"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-physical-constraints",
+   "section": "2 · Heat rejection",
+   "columns": [
+    "Source",
+    "Assumption",
+    "m²/kW"
+   ],
+   "rows": [
+    {
+     "Source": "van Berkel",
+     "Assumption": "370 K, two-sided ideal (\"GPUs are designed to operate at 370 K\" — Musk)",
+     "m²/kW": "0.95"
+    },
+    {
+     "Source": "This vault, derived",
+     "Assumption": "330 K, ε = 0.9, two-sided, 0 K sink",
+     "m²/kW": "0.83"
+    },
+    {
+     "Source": "IEEE Spectrum / ABI (Cavalier)",
+     "Assumption": "700 W H100: 3 m² @ 20 °C, 1.4 m² @ 60 °C, 1 m² @ 85 °C",
+     "m²/kW": "1.4–4.3"
+    },
+    {
+     "Source": "Turyshev",
+     "Assumption": "2,500 m²/MW IT",
+     "m²/kW": "2.5"
+    },
+    {
+     "Source": "ISCR",
+     "Assumption": "25–35 °C single-sided; radiator 2.4 kg/m² → 7.0 kg/kW, 76% of mass",
+     "m²/kW": "2.9"
+    },
+    {
+     "Source": "Space-CIM",
+     "Assumption": "100 W/m² at 85 °C (starved; its 10–40× CIM-over-GPU result is an artefact)",
+     "m²/kW": "10"
+    }
+   ]
+  },
+  {
+   "note": "orbital-compute-physical-constraints",
+   "section": "3 · Radiation — inference yes, training no, and silent corruption is the failure mode",
+   "columns": [
+    "Workload",
+    "Dose",
+    "Expected silent corruptions"
+   ],
+   "rows": [
+    {
+     "Workload": "One chip, 5-yr life, 1 inf/s",
+     "Dose": "750 rad",
+     "Expected silent corruptions": "≈ 44 → 1 per ~3.6 M inferences (local, retry/vote)"
+    },
+    {
+     "Workload": "Training, 4,096 chips × 3 months",
+     "Dose": "37.5 rad/chip",
+     "Expected silent corruptions": "≈ 2.2/chip → ~9,000 per run, propagated into every weight"
+    }
+   ]
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "section": "A · GW-scale AI compute — the 2030s bet",
+   "columns": [
+    "Player",
+    "Plan",
+    "Funding / scale",
+    "First hardware",
+    "Source"
+   ],
+   "rows": [
+    {
+     "Player": "SpaceX / xAI",
+     "Plan": "AI1 sat 150 kW peak, 70 m span, 600–800 km; FCC: 1M sats, 100 kW/t, 1 Mt/yr",
+     "Funding / scale": "merger Feb 2026; IPO raised $86B (Jun 2026), stock −50% by Jul",
+     "First hardware": "prototypes early 2027; \"1 GW/yr end-2027\"",
+     "Source": "2026-02-02-via-satellite-spacex-xai-fcc-million-satellites, 2026-04-22-tnw-spacex-ipo-orbital-dc-risk-disclosure"
+    },
+    {
+     "Player": "Starcloud (ex-Lumen Orbit)",
+     "Plan": "SC-2 8 kW (2027) → SC-3 200 kW / 3 t on Starship (2028–29); FCC 88,000 sats; next sat mines Bitcoin",
+     "Funding / scale": "$170M A @ $1.1B (Mar 2026) + $250M A-ext @ $2.3B (Aug 2026); Nvidia $25M",
+     "First hardware": "SC-1 flown Nov 2025 (H100, Capella SAR)",
+     "Source": "2026-08-21-techcrunch-starcloud-250m-series-a-extension, 2026-10-04-wikipedia-starcloud"
+    },
+    {
+     "Player": "Cowboy Space (ex-Aetherflux)",
+     "Plan": "1 MW nodes, 20–25 t, ~800 GPUs, all-optical, own rocket; FCC \"Stampede\" 20,000 sats",
+     "Funding / scale": "$50M A (2025) + $275M B @ $2B (May 2026)",
+     "First hardware": "Reason-1 flown Oct 2026 (laser demo); first MW node end-2028",
+     "Source": "2026-05-11-techcrunch-cowboy-space-275m-series-b, 2026-05-18-satnews-cowboy-stampede-fcc-20000"
+    },
+    {
+     "Player": "Blue Origin \"Project Sunrise\"",
+     "Plan": "FCC 51,600 sats, 500–1,800 km SSO; TeraWave backhaul; no per-sat power disclosed (ambition indeterminate ~20×)",
+     "Funding / scale": "corporate",
+     "First hardware": "0 flown; New Glenn pad out > 1 yr",
+     "Source": "2026-03-20-newspaceeconomy-blue-origin-project-sunrise-fcc"
+    },
+    {
+     "Player": "Google Suncatcher",
+     "Plan": "81-sat formation, TPUs, dawn-dusk SSO; R&D \"moonshot\"",
+     "Funding / scale": "corporate; Planet builds",
+     "First hardware": "MVP flown 2026-10-01 (4 Trillium TPUs, ~1 kW, 15-min bursts); 2-sat laser demo 2027",
+     "Source": "2026-10-01-google-blog-suncatcher-prototype-in-orbit, 2025-11-04-planet-build-operate-suncatcher-platform"
+    },
+    {
+     "Player": "Orbital (LA) + Reflex Aerospace (Munich)",
+     "Plan": "up to 100,000 sats × ~250 kW; Reflex exclusive bus",
+     "Funding / scale": "$5M pre-seed; Reflex €59M",
+     "First hardware": "none",
+     "Source": "2026-09-16-exterra-orbital-reflex-aerospace-german-bus"
+    },
+    {
+     "Player": "Thales Alenia ASCEND (EU, Horizon Europe)",
+     "Plan": "10 MW modules, 35,000 m² PV each; 1 GW before 2050; needs 10× cleaner launcher, in-orbit robotic assembly",
+     "Funding / scale": "undisclosed study budget",
+     "First hardware": "PoC architecture 2031",
+     "Source": "2024-06-27-thales-alenia-ascend-feasibility-results"
+    }
+   ]
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "section": "B · kW-class edge and space-native processing — the tier with revenue",
+   "columns": [
+    "Player",
+    "Offer",
+    "Status",
+    "Funding",
+    "Source"
+   ],
+   "rows": [
+    {
+     "Player": "Axiom Space + Kepler",
+     "Offer": "2 ODC nodes on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud",
+     "Status": "operational since 2026-01-11 — the only commercial ODC flying",
+     "Funding": "corporate",
+     "Source": "2025-04-07-axiomspace-odc-nodes-press-release, 2026-01-11-kepler-first-tranche-optical-relay-satellites"
+    },
+    {
+     "Player": "Satlyt",
+     "Offer": "software-only multi-tenant orbital compute; Gemma onboard cut EO downlink > 60%",
+     "Status": "3 missions flown; NASA, SDA customers; Transporter-18 Oct 2026",
+     "Funding": "$8M seed (Oct 2026)",
+     "Source": "2026-10-01-techcrunch-satlyt-8m-seed"
+    },
+    {
+     "Player": "Atomic-6",
+     "Offer": "capacity marketplace + solar/radiator modules",
+     "Status": "$3.5M/month per 100 kW rack — the only public price",
+     "Funding": "—",
+     "Source": "2026-04-13-payload-atomic-6-odc-space-marketplace"
+    },
+    {
+     "Player": "Sophia Space",
+     "Offer": "thermal-integrated TILE racks, \"92% power to compute\"; Nvidia partner",
+     "Status": "flight test late 2027",
+     "Funding": "$10M seed (Feb 2026)",
+     "Source": "2026-02-27-interestingengineering-sophia-space-10m-seed"
+    },
+    {
+     "Player": "Lonestar",
+     "Offer": "sovereign storage / DRaaS, lunar → LEO (StarVault)",
+     "Status": "Freedom on IM-2 (lander tipped); StarVault Oct 2026",
+     "Funding": "$6.6M (Jan 2026)",
+     "Source": "2026-04-15-lonestar-starvault-sovereign-storage-leo"
+    },
+    {
+     "Player": "Edge Aerospace (LU)",
+     "Offer": "orbital DC architecture; \"only SpaceX could do what ODC folks claim\" — positions on downlink relief",
+     "Status": "ESA Space Cloud study (May 2026); demo payload Mar 2026",
+     "Funding": "ESA + LU MoD contracts",
+     "Source": "2026-05-05-payload-esa-edge-aerospace-space-cloud"
+    },
+    {
+     "Player": "Planetek + AIKO (IT)",
+     "Offer": "AI-eXpress multi-tenant onboard AI (PolarFire SoC); tenants Eni, IBM, Ubotica",
+     "Status": "3 sats, last 2025-11-28",
+     "Funding": "ESA InCubed",
+     "Source": "2025-11-28-planetek-ai-express-third-satellite"
+    },
+    {
+     "Player": "Ubotica (IE)",
+     "Offer": "CogniSAT platform; Φsat-1 heritage; \"insight within 5 min\" when a link exists",
+     "Status": "CogniSAT-6 (2024); NASA JPL demo 2025",
+     "Funding": "$11M Series A (Jun 2026), maritime",
+     "Source": "2026-06-23-spacenews-ubotica-11m-series-a"
+    },
+    {
+     "Player": "The Entrant (fictitious)",
+     "Offer": "in-orbit processing for EO time-to-insight",
+     "Status": "scenario",
+     "Funding": "—",
+     "Source": "entrant"
+    }
+   ]
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "section": "C · Enabling layers",
+   "columns": [
+    "Programme",
+    "Money",
+    "Dates",
+    "Angle"
+   ],
+   "rows": [
+    {
+     "Programme": "ESA Space Cloud (Edge Aerospace study)",
+     "Money": "undisclosed",
+     "Dates": "awarded May 2026",
+     "Angle": "orbital DC architecture + commercial roadmap"
+    },
+    {
+     "Programme": "EOCognitiveLab (Φsat evolution + 3CS4EO)",
+     "Money": "not published",
+     "Dates": "info day 2026-09-29",
+     "Angle": "2-sat open federated constellation, onboard compute, open ISL — 2026-09-29-esa-indico-eocognitivelab-info-day"
+    },
+    {
+     "Programme": "InCubed (Φ-lab)",
+     "Money": "€0.3–4M/project, 80% SME co-funding; €130M to date",
+     "Dates": "rolling",
+     "Angle": "funds AI-eXpress, Ubotica — 2026-06-16-innovationnewsnetwork-incubed-7-26m-call"
+    },
+    {
+     "Programme": "ARTES 4.0 \"ASCEND\" (EDGX)",
+     "Money": "undisclosed",
+     "Dates": "2026–28",
+     "Angle": "≥ 100/250 TOPS DPUs"
+    },
+    {
+     "Programme": "HydRON",
+     "Money": "E1 $39M, E3 €18.6M",
+     "Dates": "2024–26 awards",
+     "Angle": "Tbps multi-orbit optical"
+    },
+    {
+     "Programme": "Horizon Europe ASCEND (Thales)",
+     "Money": "undisclosed",
+     "Dates": "1 GW by 2050",
+     "Angle": "GW sovereign cloud"
+    },
+    {
+     "Programme": "US: New Horizon Act / DIU pilot",
+     "Money": "$220M FY27",
+     "Dates": "2026 bill",
+     "Angle": "orbital DC pilot — 2026-06-12-airandspaceforces-new-horizon-act-orbital-dc"
+    },
+    {
+     "Programme": "National: BIFROST (DK/SE)",
+     "Money": "DALO + FMV",
+     "Dates": "launched 2025-06-23",
+     "Angle": "onboard AI Arctic ISR — 2025-06-23-spacenews-space-inventor-bifrost-arctic"
+    }
+   ]
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "section": "Funding benchmarks (opened sources)",
+   "columns": [
+    "Stage",
+    "Examples"
+   ],
+   "rows": [
+    {
+     "Stage": "Seed",
+     "Examples": "Satlyt $8M · Sophia $10M + $3.5M · Lonestar $6.6M"
+    },
+    {
+     "Stage": "Series A",
+     "Examples": "Ubotica $11M · Starcloud $170M (@ $1.1B)"
+    },
+    {
+     "Stage": "Series B/C",
+     "Examples": "Cowboy $275M (@ $2B) · Starcloud $250M ext (@ $2.3B) · Muon $250M (@ $1.5B) · D-Orbit €150M · Open Cosmos €300M"
+    },
+    {
+     "Stage": "Sector",
+     "Examples": "> $3B invested by Apr 2026, > 35 companies (ABI); Morgan Stanley counts 43 in the supply chain"
+    }
+   ]
   }
  ]
 }

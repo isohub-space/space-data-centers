@@ -12,6 +12,8 @@ Contents
   wiki[]         one row per wiki note: title, updated, headline bullets
                  (first bullet list), open items (unchecked boxes)
   open_items[]   every "- [ ]" line across the wiki, with its note
+  tables[]       every markdown table in the wiki: note, section heading,
+                 columns, rows (cells with wikilinks reduced to their label)
 """
 from __future__ import annotations
 
@@ -58,6 +60,39 @@ def bullets(block: str, limit: int = 6) -> list[str]:
     return out[:limit]
 
 
+def clean_cell(cell: str) -> str:
+    cell = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", cell)
+    cell = re.sub(r"\[\[([^\]|#]+)(#[^\]]*)?\]\]", lambda m: m.group(1).split("/")[-1], cell)
+    cell = cell.replace("**", "").replace("\\|", "|")
+    return cell.strip()
+
+
+def tables_in(text: str, note: str) -> list[dict]:
+    out = []
+    heading = ""
+    rows: list[list[str]] = []
+
+    def flush():
+        if len(rows) >= 2 and re.match(r"^\s*:?-{2,}", rows[1][0] or "-"):
+            cols = rows[0]
+            body = [r for r in rows[2:] if any(c for c in r)]
+            out.append({"note": note, "section": heading, "columns": cols,
+                        "rows": [dict(zip(cols, r + [""] * (len(cols) - len(r)))) for r in body]})
+
+    for line in text.splitlines():
+        if line.startswith("#"):
+            flush(); rows = []
+            heading = re.sub(r"^#+\s*", "", line).strip()
+            continue
+        if line.strip().startswith("|"):
+            cells = [clean_cell(c) for c in re.split(r"(?<!\\)\|", line.strip())[1:-1]]
+            rows.append(cells)
+        else:
+            flush(); rows = []
+    flush()
+    return out
+
+
 def main() -> None:
     sources = []
     by_theme: Counter = Counter()
@@ -90,12 +125,14 @@ def main() -> None:
 
     wiki = []
     open_items = []
+    tables = []
     for p in sorted(WIKI.glob("*.md")):
         if p.name == "_index.md":
             continue
         text = p.read_text(errors="ignore")
         d = fm(text)
         title = re.search(r"^# (.+)$", text, re.M)
+        tables.extend(tables_in(text, p.stem))
         items = [ln[6:].strip() for ln in text.splitlines() if ln.startswith("- [ ] ")]
         for it in items:
             open_items.append({"note": p.stem, "item": it})
@@ -120,8 +157,9 @@ def main() -> None:
         "sources": sources,
         "wiki": wiki,
         "open_items": open_items,
+        "tables": tables,
     }, indent=1, ensure_ascii=False) + "\n")
-    print(f"wrote {OUT.relative_to(ROOT)}: {len(sources)} sources, {len(wiki)} wiki notes, {len(open_items)} open items")
+    print(f"wrote {OUT.relative_to(ROOT)}: {len(sources)} sources, {len(wiki)} wiki notes, {len(open_items)} open items, {len(tables)} tables")
 
 
 if __name__ == "__main__":
