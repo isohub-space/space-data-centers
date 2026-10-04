@@ -1,0 +1,93 @@
+name: weekly-intel
+
+# Weekly self-update: Claude Code searches the week's news and literature on
+# orbital data centres, writes one raw capture per new source, updates the
+# wiki notes it affects, regenerates the derived dashboard data, and opens a
+# pull request. A human merges. Nothing lands on main unreviewed.
+#
+# Requirements (repository settings):
+#   * secret ANTHROPIC_API_KEY
+#   * the Claude GitHub App installed on this repository (gives the action
+#     a token to push a branch and open the PR)
+#   * Settings → Actions → "Allow GitHub Actions to create and approve pull
+#     requests" enabled
+# Manual run: Actions → weekly-intel → Run workflow.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: weekly-intel
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compute week label
+        id: week
+        run: echo "label=$(date -u +%G-W%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Run the weekly intel sweep
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: >-
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(python3 scripts/*),Bash(git *),WebSearch,WebFetch"
+            --max-turns 120
+          prompt: |
+            You are the weekly maintainer of this public intelligence vault on orbital
+            data centres. Read CLAUDE.md first and obey it — in particular the
+            fictitious-entrant framing and the public-safety rule. Week: ${{ steps.week.outputs.label }}.
+
+            1. Read intel/_index.md, intel/raw/_index.md and the four wiki notes to know
+               what is already captured. Never re-capture a URL that already has a note.
+            2. Search the past 7–10 days for new primary sources on: orbital / space data
+               centres; in-orbit compute and EO edge processing; launch cadence and
+               price (Starship, New Glenn, Neutron, rideshare lists); optical ISL and
+               relay; funding rounds and FCC/ITU filings of the players in
+               intel/wiki/orbital-data-center-landscape.md; ESA/EU programme news;
+               new arXiv papers on space-based compute, radiation testing of COTS
+               accelerators, satellite thermal, onboard EO inference. Open every source
+               you cite; take no number from memory or from a search snippet without
+               marking it "(snippet, not opened)".
+            3. For each genuinely new source write one capture in intel/raw/ using
+               templates/intel-note.md exactly (filename YYYY-MM-DD-<publisher>-<slug>.md,
+               date = publication date, captured = today). Label every figure as
+               reported, primary or derived; show formulas for derived numbers.
+            4. Where a capture changes a figure or conclusion in a wiki note, edit that
+               note: update the number, cite the capture, and add a dated line to its
+               watch list or open items if a claim is now contradicted. Do not rewrite
+               notes wholesale.
+            5. Regenerate intel/raw/_index.md entries for the new captures (one line each,
+               in the right theme group) and run:
+                 python3 scripts/build_dashboard.py
+                 python3 scripts/validate_notes.py
+                 python3 scripts/check_public_safe.py
+               Fix anything they report. Do not commit if any check fails.
+            6. Commit on a branch named intel/weekly-${{ steps.week.outputs.label }} with a
+               message that lists the captures added and the wiki notes touched, then open
+               a pull request against main titled
+               "intel: weekly sweep ${{ steps.week.outputs.label }}" whose body summarises
+               (a) new sources by theme, (b) figures that changed and why, (c) sources you
+               could not open. If nothing new was found, open no PR and say so in the log.
+
+            Never add a Co-Authored-By trailer or any AI-attribution line to commits or
+            the PR. Never mention any real person. The entrant is fictitious.
