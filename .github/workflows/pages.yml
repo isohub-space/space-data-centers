@@ -1,0 +1,53 @@
+name: pages
+
+# Publishes the Orbital Compute Atlas to GitHub Pages on every push to main.
+# The site root is the dashboard; the derived JSON is copied alongside so the
+# page's relative fetch works. `enablement: true` switches Pages on for the
+# repository the first time this runs (source: GitHub Actions).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Assemble the site
+        run: |
+          python3 scripts/build_dashboard.py
+          mkdir -p _site/intel/output/derived _site/dashboard
+          cp dashboard/index.html _site/index.html
+          cp dashboard/index.html _site/dashboard/index.html
+          cp intel/output/derived/dashboard.json _site/intel/output/derived/dashboard.json
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
