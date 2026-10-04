@@ -8,3 +8,4 @@ tags: [sdc, intel/wiki]
 - [[intel/wiki/orbital-compute-launch-economics]] — $/kg curve vs cadence reality, cost closure, market sizing
 - [[intel/wiki/orbital-compute-physical-constraints]] — mass per kW, radiators, thermal, radiation, environment
 - [[intel/wiki/eo-edge-compute-value-chain]] — EO time-to-insight: bottleneck, latency bar, buyers, savings, competitors
+- [[intel/wiki/indicators]] — dated observations of the key figures (launch price, payload per flight, cadence, valuations, funding); appended each sweep, drawn as time series

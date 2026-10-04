@@ -21,6 +21,9 @@ Karpathy flow: `raw/` (one capture per source) → `wiki/` (one note per idea, p
   satellite, the 13-minute latency bar, who pays, what onboard processing actually saves
   (taxonomy), hardware envelope, competitors, what to build
 
+- [[intel/wiki/indicators]] — dated observations behind the dashboard's trend charts; each
+  sweep appends rows, nothing is overwritten
+
 ## raw/ — captures
 - [[intel/raw/_index]] — 113 sources (2026-10-04 market search), grouped by theme
 
