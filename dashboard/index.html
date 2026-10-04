@@ -29,8 +29,8 @@ a{color:var(--accent)} a:focus-visible,button:focus-visible,input:focus-visible,
 .rail{min-width:0;position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:100vh;padding:28px 18px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:18px;background:var(--bg)}
 .brand{font:700 20px/1.1 var(--display);font-stretch:85%;letter-spacing:-.01em}
 .brand small{display:block;font:600 11px/1.4 var(--body);color:var(--fg-3);letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
-nav{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:100%} nav button{all:unset;cursor:pointer;padding:8px 10px;border-radius:var(--r);color:var(--fg-2);font:600 14px/1.3 var(--body)}
-nav button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:inset 3px 0 0 var(--accent)} nav button:hover{color:var(--fg)}
+nav{display:flex;flex-direction:column;gap:2px;min-width:0;max-width:100%} nav a{display:block;text-decoration:none;cursor:pointer;padding:8px 10px;border-radius:var(--r);color:var(--fg-2);font:600 14px/1.3 var(--body)}
+nav a[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:inset 3px 0 0 var(--accent)} nav a:hover{color:var(--fg)}
 .meta{margin-top:auto;font:12px/1.5 var(--body);color:var(--fg-3)} .meta b{color:var(--fg-2);font-weight:600}
 main{padding:28px clamp(16px,3vw,40px) 64px;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
 h1{font:700 clamp(26px,3.2vw,38px)/1.05 var(--display);font-stretch:80%;letter-spacing:-.02em;margin:0;text-wrap:balance}
@@ -59,9 +59,16 @@ svg{display:block;max-width:100%;height:auto} .ax{fill:var(--fg-3);font:11px var
 .tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font:12px/1.4 var(--body);padding:6px 8px;border-radius:4px;max-width:260px;z-index:5;opacity:0;transition:opacity .1s}
 .tip b{display:block;font-weight:700} .tip[data-on]{opacity:1}
 .status{font-size:13px;color:var(--fg-3)}
-.hidden-tab{display:none}
+[hidden]{display:none!important}
+.pane{display:flex;flex-direction:column;gap:var(--gap);scroll-margin-top:16px}
+.stamp{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.stamp .chip b{color:var(--fg);font-weight:700}
+.minis{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.mini{border:1px solid var(--line-2);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.mini h3{color:var(--fg);font-size:14px} .mini .u{font:12px var(--mono);color:var(--fg-3)}
+.note{font-size:13px;color:var(--fg-3);margin:0}
 @media (max-width:820px){ .app{grid-template-columns:1fr} .rail{position:sticky;top:env(safe-area-inset-top,0px);height:auto;border-right:0;border-bottom:1px solid var(--line);padding:14px 16px;gap:10px;z-index:2}
-  nav{flex-direction:row;overflow-x:auto;gap:4px;scrollbar-width:none} nav button{white-space:nowrap;padding:6px 10px} nav button[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--accent)} .meta{display:none} main{padding:18px 16px 48px} }
+  nav{flex-direction:row;overflow-x:auto;gap:4px;scrollbar-width:none} nav a{white-space:nowrap;padding:6px 10px} nav a[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--accent)} .meta{display:none} main{padding:18px 16px 48px} }
 @media (prefers-reduced-motion:reduce){ .tip{transition:none} }
 </style>
 
@@ -76,6 +83,7 @@ svg{display:block;max-width:100%;height:auto} .ax{fill:var(--fg-3);font:11px var
       <div class="eyebrow">The question</div>
       <h1>Where is a defensible position in the orbital data-centre market?</h1>
       <p class="lede">Answered for a fictitious European entrant from a vault of sources, each figure labelled reported, primary or derived. The charts below are drawn from the vault's own tables; nothing here is typed in by hand.</p>
+      <div class="stamp" id="stamp"></div>
     </section>
     <div id="tabs"></div>
     <p class="status" id="status"></p>
@@ -196,6 +204,59 @@ function monthColumns(obj) {
   return svg;
 }
 
+const human = id => id.replace(/-/g, " ").replace(/^./, c => c.toUpperCase()).replace(/\bsso\b/i, "SSO").replace(/\bodc\b/i, "ODC");
+const fmt = v => Math.abs(v) >= 1000 ? v.toLocaleString("en-US", { maximumFractionDigits: 0 }) : (Math.round(v * 10) / 10).toString();
+
+function sweepColumns(sweeps) {
+  const W = 420, H = 220, L = 40, B = 28, T = 20, n = Math.max(sweeps.length, 1);
+  const top = Math.max(1, ...sweeps.map(s => s.added)); const cw = Math.min(64, (W - L - 10) / n);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Sources added per sweep" });
+  [0, 0.5, 1].forEach(f => { const y = H - B - f * (H - B - T); svg.append(el("line", { x1: L, x2: W - 10, y1: y, y2: y, class: "grid-l", stroke: "currentColor" })); svg.append(el("text", { x: L - 6, y: y + 4, class: "ax", "text-anchor": "end" }, Math.round(top * f))); });
+  sweeps.forEach((s, i) => { const h = (s.added / top) * (H - B - T); const x = L + 8 + i * (cw + 8); const g = el("g", {});
+    g.append(el("rect", { x, y: H - B - h, width: cw, height: Math.max(2, h), rx: 4, fill: "var(--series-1)" }));
+    g.append(el("text", { x: x + cw / 2, y: H - B - h - 6, class: "lab2", "text-anchor": "middle" }, s.added));
+    g.append(el("text", { x: x + cw / 2, y: H - 8, class: "ax", "text-anchor": "middle" }, s.week));
+    hoverable(g, `<b>${esc(s.week)}</b>${s.added} added · ${s.cumulative} total<br>captured ${esc(s.first_captured)}${s.last_captured !== s.first_captured ? " to " + esc(s.last_captured) : ""}`); svg.append(g); });
+  return svg;
+}
+
+function themeHeatmap(sweeps, themes) {
+  const rowH = 24, L = 150, cw = 64, T = 22, W = Math.max(360, L + sweeps.length * (cw + 4) + 10), H = T + themes.length * rowH + 4;
+  const top = Math.max(1, ...sweeps.flatMap(s => Object.values(s.by_theme)));
+  const steps = ["var(--seq-1)", "var(--seq-3)", "var(--seq-5)", "var(--seq-7)"];
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Captures by theme and sweep" });
+  sweeps.forEach((s, j) => svg.append(el("text", { x: L + j * (cw + 4) + cw / 2, y: 14, class: "ax", "text-anchor": "middle" }, s.week)));
+  themes.forEach((t, i) => { const y = T + i * rowH;
+    svg.append(el("text", { x: L - 8, y: y + 15, class: "lab2", "text-anchor": "end" }, t.replace(/^(market|space|research|economics)\//, "")));
+    sweeps.forEach((s, j) => { const v = s.by_theme[t] || 0; const x = L + j * (cw + 4); const g = el("g", {});
+      const k = v === 0 ? -1 : Math.min(3, Math.floor((v / top) * 4 - 1e-9));
+      g.append(el("rect", { x, y: y + 2, width: cw, height: rowH - 4, rx: 3, fill: k < 0 ? "var(--mid)" : steps[k] }));
+      g.append(el("text", { x: x + cw / 2, y: y + 16, class: "lab2", "text-anchor": "middle", fill: k >= 2 ? "var(--surface)" : "var(--fg-2)", style: k >= 2 ? "fill:var(--surface)" : "" }, v || "·"));
+      hoverable(g, `<b>${esc(t)}</b>${esc(s.week)}: ${v} source${v === 1 ? "" : "s"}`); svg.append(g); }); });
+  return el("div", { class: "tbl" }, svg);
+}
+
+function miniSeries(ind) {
+  const pts = ind.points, W = 320, H = 150, L = 46, R = 14, T = 16, B = 24;
+  const x0 = Math.min(...pts.map(p => p.x)), x1 = Math.max(...pts.map(p => p.x));
+  const span = Math.max(x1 - x0, 1); const xa = x0 - span * 0.06, xb = x1 + span * 0.06;
+  const top = Math.max(...pts.map(p => p.value)) * 1.15 || 1;
+  const sx = x => L + (x - xa) / (xb - xa) * (W - L - R), sy = v => H - B - (v / top) * (H - B - T);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": human(ind.id) });
+  [0, 0.5, 1].forEach(f => { const v = top / 1.15 * f; const y = sy(v); svg.append(el("line", { x1: L, x2: W - R, y1: y, y2: y, class: "grid-l", stroke: "currentColor" })); svg.append(el("text", { x: L - 6, y: y + 4, class: "ax", "text-anchor": "end" }, fmt(v))); });
+  const years = []; for (let y = Math.ceil(xa); y <= Math.floor(xb); y++) years.push(y);
+  const stepY = Math.ceil(years.length / 5) || 1;
+  years.filter((_, i) => i % stepY === 0).forEach(y => svg.append(el("text", { x: sx(y), y: H - 6, class: "ax", "text-anchor": "middle" }, y)));
+  if (pts.length > 1) svg.append(el("path", { d: pts.map((p, i) => `${i ? "L" : "M"}${sx(p.x).toFixed(1)},${sy(p.value).toFixed(1)}`).join(" "), fill: "none", stroke: "var(--series-1)", "stroke-width": 2, "stroke-linejoin": "round" }));
+  pts.forEach((p, i) => { const g = el("g", {});
+    g.append(el("circle", { cx: sx(p.x), cy: sy(p.value), r: 10, fill: "transparent" }));
+    g.append(el("circle", { cx: sx(p.x), cy: sy(p.value), r: 4, fill: "var(--series-1)", stroke: "var(--surface)", "stroke-width": 2 }));
+    if (i === pts.length - 1 || i === 0) g.append(el("text", { x: sx(p.x), y: sy(p.value) - 9, class: "lab2", "text-anchor": i === 0 && pts.length > 1 ? "start" : "end" }, fmt(p.value)));
+    hoverable(g, `<b>${esc(p.date)}: ${fmt(p.value)} ${esc(ind.unit)}</b>${esc(p.note)}<br>${esc(p.kind)} · ${esc(p.source)}`); svg.append(g); });
+  const last = pts[pts.length - 1];
+  return el("div", { class: "mini" }, el("h3", {}, human(ind.id)), el("div", { class: "u" }, `${ind.unit} · ${pts.length} observation${pts.length === 1 ? "" : "s"} · latest ${last.date}`), svg);
+}
+
 /* ---------- chapters ---------- */
 function chapters(D) {
   const specific = table(D, "orbital-compute-physical-constraints", "1 ·"), radiator = table(D, "orbital-compute-physical-constraints", "2 ·"), radiation = table(D, "orbital-compute-physical-constraints", "3 ·");
@@ -218,6 +279,23 @@ function chapters(D) {
         panel("Specific mass, kg/kW", el("p", { class: "lede" }, "The optimist/sceptic divide is this one number. The radiator is the swing term."), specific ? rangeStrip(specific.rows, { label: "Design", value: specific.columns[1], status: "Status", unit: "kg/kW", min: 1, max: 100, log: true, note: "Specific mass by design, log scale" }) : null),
         panel("When sources expect cost parity", parityTimeline(closure ? closure.rows : []))),
     ]},
+    { id: "trends", name: "Trends", build: () => {
+      const sw = D.sweeps || [], last = sw[sw.length - 1];
+      const fresh = last ? sources.filter(s => s.sweep === last.week) : [];
+      const themes = Object.keys(D.counts.by_theme);
+      return [
+        el("div", { class: "tiles" },
+          el("div", { class: "tile" }, el("div", { class: "n" }, sw.length), el("div", { class: "l" }, "sweeps recorded"), el("div", { class: "s" }, sw.length ? `${sw[0].week} to ${last.week}` : "none yet")),
+          el("div", { class: "tile" }, el("div", { class: "n" }, last ? "+" + last.added : "–"), el("div", { class: "l" }, "added in the latest sweep"), el("div", { class: "s" }, last ? last.week : "")),
+          el("div", { class: "tile" }, el("div", { class: "n" }, D.counts.sources), el("div", { class: "l" }, "sources in total")),
+          el("div", { class: "tile" }, el("div", { class: "n" }, (D.indicators || []).length), el("div", { class: "l" }, "indicators tracked"), el("div", { class: "s" }, "dated observations"))),
+        panel("Indicators over time", el("p", { class: "note" }, "Each point is a dated observation from a cited source. Sweeps append points; nothing is overwritten."), el("div", { class: "minis" }, (D.indicators || []).map(miniSeries)), el("a", { href: wikiLink("indicators") }, "Indicator observations →")),
+        el("div", { class: "grid" },
+          panel("Sources added per sweep", sw.length < 2 ? el("p", { class: "note" }, `History starts with sweep ${sw.length ? sw[0].week : "–"}. Each Monday sweep adds a column.`) : null, sweepColumns(sw)),
+          panel("Captures by theme and sweep", themeHeatmap(sw, themes))),
+        last ? panel(`Added in sweep ${last.week}`, el("p", { class: "note" }, `${fresh.length} source${fresh.length === 1 ? "" : "s"}, newest publication first.` + (fresh.length > 15 ? " The full list is under Sources, filtered by this sweep." : "")),
+          el("div", {}, fresh.slice(0, 15).map(s => el("div", { class: "src" }, el("div", { class: "d" }, s.date), el("div", {}, el("div", { class: "t" }, el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title)), el("div", { class: "p" }, s.publisher)))))) : null,
+      ]; }},
     { id: "landscape", name: "Landscape", build: () => [
       panel("Tier A · GW-scale AI compute, the 2030s bet", plainTable(tierA)),
       panel("Tier B · kW-class edge and space-native processing, the tier with revenue", plainTable(tierB)),
@@ -244,13 +322,14 @@ function chapters(D) {
     { id: "sources", name: "Sources", build: () => {
       const list = el("div", {}); const q = el("input", { id: "q", type: "search", placeholder: "Search title, publisher, tag…", "aria-label": "Search sources" });
       const sel = el("select", { id: "theme", "aria-label": "Theme" }, el("option", { value: "" }, "All themes"), Object.keys(D.counts.by_theme).map(t => el("option", { value: t }, t)));
-      const render = () => { const needle = q.value.trim().toLowerCase(), th = sel.value; list.replaceChildren(...sources.filter(s => (!th || s.tags.includes(th)) && (!needle || (s.title + " " + s.publisher + " " + s.tags.join(" ")).toLowerCase().includes(needle))).map(s =>
+      const swSel = el("select", { id: "sweep", "aria-label": "Sweep" }, el("option", { value: "" }, "All sweeps"), (D.sweeps || []).slice().reverse().map(w => el("option", { value: w.week }, `Sweep ${w.week} (+${w.added})`)));
+      const render = () => { const needle = q.value.trim().toLowerCase(), th = sel.value, wk = swSel.value; list.replaceChildren(...sources.filter(s => (!wk || s.sweep === wk) && (!th || s.tags.includes(th)) && (!needle || (s.title + " " + s.publisher + " " + s.tags.join(" ")).toLowerCase().includes(needle))).map(s =>
         el("div", { class: "src" }, el("div", { class: "d" }, s.date), el("div", {}, el("div", { class: "t" }, el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title)), el("div", { class: "p" }, s.publisher, " · ", el("a", { href: `https://github.com/${REPO}/blob/main/intel/raw/${s.id}.md` }, "capture")),
           el("div", { class: "tags" }, el("span", { class: "chip " + (s.primary_checked ? "good" : "warn") }, el("i"), s.primary_checked ? "primary checked" : "press-attributed"), s.tags.filter(t => t !== "sdc").slice(0, 4).map(t => el("span", { class: "chip" }, t))))))); };
-      q.addEventListener("input", render); sel.addEventListener("change", render); render();
+      q.addEventListener("input", render); sel.addEventListener("change", render); swSel.addEventListener("change", render); render();
       return [
         el("div", { class: "grid" }, panel("Sources by theme", bars(D.counts.by_theme, { label: "Sources by theme", max: 13 })), panel("By publication month", monthColumns(D.counts.by_month), el("div", { class: "controls" }, el("span", { class: "chip" }, el("i", { style: "background:var(--series-1)" }), "2026"), el("span", { class: "chip" }, el("i", { style: "background:var(--seq-3)" }), "earlier")))),
-        panel("All captures", el("div", { class: "controls" }, q, sel), list),
+        panel("All captures", el("div", { class: "controls" }, q, sel, swSel), list),
       ]; }},
     { id: "open", name: "Open items", build: () => [
       panel("Unanswered in the vault", el("div", { class: "open" }, D.wiki.map(w => w.open_items.length ? el("div", {}, el("h3", {}, el("a", { href: wikiLink(w.id) }, w.title)), el("ul", {}, w.open_items.map(i => el("li", { html: md(i) })))) : null))),
@@ -260,11 +339,24 @@ function chapters(D) {
 
 function mount(D, url) {
   const nav = $("#nav"), tabs = $("#tabs"); const chs = chapters(D);
-  chs.forEach(c => { c.pane = el("div", { id: "pane-" + c.id, role: "tabpanel", class: "hidden-tab", style: "display:flex;flex-direction:column;gap:var(--gap)" }); tabs.append(c.pane); });
-  const select = id => { for (const c of chs) { const on = c.id === id; c.btn.setAttribute("aria-selected", on); c.pane.classList.toggle("hidden-tab", !on); if (on && !c.built) { c.pane.append(...c.build().filter(Boolean)); c.built = true; } } try { history.replaceState(null, "", "#" + id); localStorage.setItem("oca-tab", id); } catch (_) {} };
-  chs.forEach(c => { c.btn = el("button", { role: "tab", onclick: () => select(c.id) }, c.name); nav.append(c.btn); });
-  let start = (location.hash || "").slice(1); try { start = start || localStorage.getItem("oca-tab") || ""; } catch (_) {} select(chs.some(c => c.id === start) ? start : "gap");
-  $("#meta").innerHTML = `<b>${D.counts.sources}</b> sources · <b>${D.wiki.length}</b> wiki notes<br>generated ${esc(D.generated.slice(0, 16).replace("T", " "))} UTC<br><a href="https://github.com/${REPO}">github.com/${REPO}</a>`;
+  chs.forEach(c => { c.pane = el("div", { id: "pane-" + c.id, role: "tabpanel", class: "pane" }); c.pane.hidden = true; tabs.append(c.pane); });
+  chs.forEach(c => { c.btn = el("a", { href: "#" + c.id, role: "tab", "aria-controls": "pane-" + c.id }, c.name); nav.append(c.btn); });
+  const valid = id => chs.some(c => c.id === id);
+  const select = (id, scroll) => {
+    for (const c of chs) { const on = c.id === id; c.btn.setAttribute("aria-selected", on); c.pane.hidden = !on; if (on && !c.built) { c.pane.append(...c.build().filter(Boolean)); c.built = true; } }
+    try { localStorage.setItem("oca-tab", id); } catch (_) {}
+    if (scroll) { const t = $("#tabs"); const r = t.getBoundingClientRect(); if (r.top < 0 || r.top > window.innerHeight * 0.6) t.scrollIntoView({ block: "start" }); }
+  };
+  window.addEventListener("hashchange", () => { const id = location.hash.slice(1); if (valid(id)) select(id, true); });
+  let start = location.hash.slice(1); if (!valid(start)) { try { start = localStorage.getItem("oca-tab") || ""; } catch (_) { start = ""; } }
+  select(valid(start) ? start : "gap", false);
+  const last = (D.sweeps || [])[(D.sweeps || []).length - 1];
+  $("#stamp").replaceChildren(
+    el("span", { class: "chip" }, el("i", { style: "background:var(--series-1)" }), "Sweep ", el("b", {}, D.latest_sweep || "–")),
+    last ? el("span", { class: "chip" }, `captured ${last.last_captured}`) : null,
+    el("span", { class: "chip" }, el("b", {}, D.counts.sources), " sources", last ? ` · +${last.added} this sweep` : ""),
+    el("a", { class: "chip", href: "#trends" }, "See trends →"));
+  $("#meta").innerHTML = `<b>${D.counts.sources}</b> sources · <b>${D.wiki.length}</b> wiki notes<br>sweep <b>${esc(D.latest_sweep || "–")}</b><br>generated ${esc(D.generated.slice(0, 16).replace("T", " "))} UTC<br><a href="https://github.com/${REPO}">github.com/${REPO}</a>`;
   $("#status").textContent = url.startsWith("http") ? "Data fetched live from the repository." : "Data read from the repository checkout.";
 }
 

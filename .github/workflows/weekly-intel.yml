@@ -100,7 +100,10 @@ jobs:
             4. Where a capture changes a figure or conclusion in a wiki note, edit that
                note: update the number, cite the capture, and add a dated line to its
                watch list or open items if a claim is now contradicted. Do not rewrite
-               notes wholesale.
+               notes wholesale. When a source gives a new dated value for an
+               indicator in intel/wiki/indicators.md, append one row to its
+               Observations table (never edit or delete existing rows); add a new
+               indicator only if it bears on the positioning question.
             5. Regenerate intel/raw/_index.md entries for the new captures (one line each,
                in the right theme group) and run:
                  python3 scripts/build_dashboard.py

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T13:23:55+00:00",
+ "generated": "2026-10-04T17:19:21+00:00",
  "counts": {
   "sources": 113,
   "by_theme": {
@@ -98,7 +98,9 @@
    "relevance": [
     "Microsoft (with Thales Alenia, Loft, HPE) **already prototyped EO change-detection on orbit in",
     "Container-portable (Azure/Red Hat Device Edge) is the expected integration surface; the Entrant's node"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2022-10-01-ntt-rd-space-integrated-computing-network",
@@ -122,7 +124,9 @@
    "relevance": [
     "The one **telco-led** ODC programme defines \"space data center\" as **optical relay + in-orbit",
     "Japan's compute-satellite leg slipped from 2025/26 to undefined: the EO-processing node slot is"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2023-06-28-ramonspace-26m-series-b-space-computing",
@@ -143,7 +147,9 @@
    "relevance": [
     "Ramon.Space is the **rad-hard alternative** to the Nvidia COTS path: proven on 50 missions but",
     "Could be the right choice for a **sovereign/defence** customer who refuses COTS; worth keeping as"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2023-07-26-ieee-dlr-jpl-space-edge-computing-teleoperations",
@@ -163,7 +169,9 @@
    "relevance": [
     "Shows that **DLR (Bremen, Ulm) and ESOC (Darmstadt)** have been publishing on space edge computing since 2023, and that **OPS-SAT** is the ESA sandbox they use. The German/ESOC network is a credible origin story for a European orbital-compute entrant.",
     "The **Gaia-X/Dataspaces** angle is a European-specific hook: an orbital node as a sovereign data-space participant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2023-12-12-thales-alenia-space-ascend-10mw-modules",
@@ -183,7 +191,9 @@
    "relevance": [
     "Establishes the **power-class vocabulary**: ASCEND = 10 MW modules; EO edge = tens of watts. The Entrant's \"in-orbit data centre for EO time-to-insight\" sits at the small end and should not borrow ASCEND's gigawatt rhetoric.",
     "The 10%-of-terrestrial-energy ambition is the European policy hook (Green Deal); a startup can cite it, but the credible near-term value is latency and downlink relief, not carbon."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-03-12-ubotica-cognisat-6-interview",
@@ -204,7 +214,9 @@
    "relevance": [
     "Ubotica is the **most direct European competitor** to the Entrant's \"EO time-to-insight\" service: Myriad-based edge AI, own satellite, maritime vertical, VC-funded ($4 M seed → $11 M Series A).",
     "Its pivot from chips to a **vertical maritime-intelligence product** is the lesson: the market pays for a domain answer (vessel detections), not for compute."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-04-22-satnews-d-orbit-skyserve-storm-edge-computing",
@@ -224,7 +236,9 @@
    "relevance": [
     "D-Orbit is the **closest European analogue to \"an orbital compute host you can rent\"**: it already sells hosted compute slots on a carrier it flies several times a year (16 missions by Sep 2024, 7 planned for 2025). The Entrant would either ride on ION as a customer or compete with it as a host.",
     "SkyServe (India) shows the **software-only entry**: no own satellite, deploy models on someone else's compute. That is the low-capex path a small team can take before owning hardware."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-06-27-thales-alenia-ascend-feasibility-results",
@@ -244,7 +258,9 @@
    "relevance": [
     "ASCEND is the European sovereign narrative the Entrant can attach to: \"net-zero + data sovereignty\" is the EU framing, and the ESA Space Cloud follow-on (Edge Aerospace study, 2026) shows ESA still funding the question rather than the answer.",
     "The 10× cleaner launcher precondition means Europe's own path is gated on Ariane successors — a reason for the Entrant to be launcher-agnostic and small."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-07-11-un-spider-esa-phisat-2-onboard-ai-apps",
@@ -265,7 +281,9 @@
     "Φsat-1/-2 are the **reference ESA proof that onboard AI filtering works** (cloud masking, vessel detection, compression) — any the Entrant pitch to ESA/Φ-lab will be measured against them.",
     "The hardware lineage (Myriad 2 → Ubotica CogniSAT, KP Labs Leopard) defines the incumbent European supplier set.",
     "ESA is now moving to **EOCognitiveLab** (multi-satellite, ISL, onboard processing) — see 2026-09-29-esa-indico-eocognitivelab-info-day; that is the procurement the Entrant should track."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-07-16-arxiv-rednet-application-aware-radiation",
@@ -287,7 +305,9 @@
     "Establishes **application-aware tolerance** (layer-sensitivity, early exit, periodic weight reload) as the",
     "Tsinghua's released radiation emulator is a free tool to qualify the Entrant's models before any beam time.",
     "Chaohu-1 (Spacety) flying a Jetson Xavier NX is a 2022 Chinese precedent for GPU-class EO edge compute."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-09-01-starcloud-whitepaper-why-train-ai-in-space",
@@ -309,7 +329,9 @@
    "relevance": [
     "The paper never addresses **what workload** justifies orbit beyond cheap power; EO \"process",
     "Thermal rule of thumb to reuse: radiator area ≈ **≤0.5× solar area** at ~20 °C coolant; \"1 kg"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-09-27-europeanspaceflight-d-orbit-series-c-150m",
@@ -329,7 +351,9 @@
    "relevance": [
     "The largest European venture round explicitly naming **space cloud computing** as a use of funds; D-Orbit is the capitalised incumbent in exactly the Entrant's segment.",
     "**EIC Fund participation** signals that EU public venture money is already backing orbital compute in Italy — a precedent for a Danish/German/Nordic applicant to the EIC Accelerator."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2024-10-08-esa-artes-edgx-ascend-dpu-family",
@@ -350,7 +374,9 @@
    "relevance": [
     "The processor the Entrant would want in 2027 **is being ESA-funded in Belgium right now**; there is no need to build silicon — buy Morus/Sterna (or Unibap/KP Labs for flight-proven) and compete on software, orchestration and relay integration.",
     "ESA ARTES (telecom side) is funding compute for \"satellite cloud\" in parallel with EOP's EOCognitiveLab — two ESA directorates, two funding doors for the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-03-05-arxiv-linux-under-radiation-cots-socs",
@@ -371,7 +397,9 @@
     "The payload OS and **storage path** (eMMC/SD) are as much a reliability item as the accelerator; pick 14 nm-",
     "Supports the BUPT finding that thermal binds before radiation at ~500 km *for well-chosen hardware* — but",
     "Same Luxembourg/IFJ PAN team as 2026-09-04-arxiv-tensil-proton-irradiation; one European"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-03-20-satellogic-pushing-intelligence-to-the-edge",
@@ -391,7 +419,9 @@
    "relevance": [
     "A vertically integrated operator (Satellogic) is doing in-orbit insight on its own fleet; the Entrant's addressable market is the **operators who cannot** (small/national/institutional fleets) — or the cross-fleet layer no single operator can build.",
     "\"Days to minutes\" is the standard claim across Satellogic, Ubotica, Little Place Labs, Planet; **nobody publishes a measured orbit-average latency**. A credible measured number would differentiate the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-04-02-payload-aetherflux-50m-series-a",
@@ -411,7 +441,9 @@
    "primary_checked": false,
    "relevance": [
     "Baseline for the pivot: within **~12 months** Aetherflux went from power-beaming to \"AI compute"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-04-07-axiomspace-odc-nodes-press-release",
@@ -434,7 +466,9 @@
     "Axiom/Kepler is the **closest live competitor/partner** for in-orbit EO processing: SDA-compatible",
     "Red Hat Device Edge/MicroShift on-orbit is a de-facto software baseline — the Entrant's stack should",
     "Launch slip of only ~1 month vs plan is unusually good for this sector; Axiom is executing."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-04-21-informationweek-lonestar-lunar-data-centers",
@@ -456,7 +490,9 @@
    "relevance": [
     "Lonestar is the **sovereign-storage** end of the spectrum (RISC-V, rad-tolerant, no GPU): shows",
     "Not a competitor for EO edge inference; potentially a **co-tenant** (storage + processing on"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-05-01-arxiv-fool-downlink-bottleneck-satellite-computing",
@@ -475,7 +511,9 @@
    "relevance": [
     "Gives **citable, per-satellite numbers** for the downlink bottleneck (Mbps, GB/pass, seconds/pass) — exactly what the Entrant's deck lacks if it relies on \"terabytes per day\" hand-waves.",
     "Shows the low-power path: **15 W Jetson-class** compute is enough for 100× effective downlink gain. The compute need not be a data centre; the *coordination and latency* layer is where the Entrant can add value above commodity compression."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-05-05-techspot-schmidt-relativity-space-data-centers",
@@ -494,7 +532,9 @@
    "relevance": [
     "Schmidt's bet is on *owning a launcher* as the moat — consistent with Edge Aerospace's view that only vertical integration (SpaceX) can do GW compute. The Entrant's moat must therefore be data/insight, not infrastructure.",
     "A third billionaire-backed launcher aiming at orbital compute (after SpaceX, Blue Origin) raises the chance of cheaper rideshare in the 2030s but changes nothing before Terran R flies."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-06-01-cset-ai-on-the-edge-of-space",
@@ -514,7 +554,9 @@
    "relevance": [
     "The **defence rationale for onboard compute is autonomy and survivability, not downlink savings** — a different value proposition from EO time-to-insight, but it is why governments (70–80% of optical-comms revenue per SatNews) will pay for compute in orbit. European MoDs (DALO's BIFROST, EDF-backed Edge Aerospace) follow the same logic.",
     "\"Uplink retrained models\" = the **software-update business model** for an orbital compute node; the Entrant's product should be designed as a re-programmable hosted platform, not a fixed-function processor."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-06-23-spacenews-space-inventor-bifrost-arctic",
@@ -536,7 +578,9 @@
    "relevance": [
     "**The Danish state has already bought onboard-AI event reporting for the Arctic** — the first domestic reference customer and use case for a Danish orbital-compute startup is defined and funded (DALO/FMV).",
     "The Danish supply chain is also defined: **Space Inventor** (bus), **Terma** (defence prime), **Gatehouse** (comms), **DTU** — the Entrant would slot in as the processing/insight layer or federate with BIFROST-class assets."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-06-25-noerr-eu-space-act-proposal",
@@ -555,7 +599,9 @@
    "relevance": [
     "An orbital-compute service that **hosts third-party data** would fall under the Act's cybersecurity and \"space-based data services\" scope — compliance design (encryption, access control, incident reporting) becomes a product requirement, and also a **sovereignty selling point** vs US hosts.",
     "Uniform constellation authorisation and SME provisions lower the regulatory cost of a small European constellation — mildly positive for a Danish/German startup."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-08-08-arxiv-dirty-bits-leo-carbon",
@@ -576,7 +622,9 @@
    "relevance": [
     "A \"green orbital compute\" narrative is **contestable**: the honest line is that embodied launch/re-entry",
     "Expect EU/ESA sustainability scrutiny (re-entry aerosols, NOₓ) to reach licensing; design for"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-08-24-satnews-kp-labs-intuition-1-leopard-dpu",
@@ -596,7 +644,9 @@
    "relevance": [
     "KP Labs is the **Polish incumbent for ESA onboard AI** (Φsat-2 cloud detection app, OPS-SAT VOLT, Leopard) with public-funded heritage; a competitor for ESA work and a likely subcontractor.",
     "Intuition-1 is the clearest **European quantified case** of why onboard processing exists: a 3–50 Mbps link against a 192-band sensor."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-09-17-cutter-on-orbit-data-centers-mapping-leaders",
@@ -614,7 +664,9 @@
    "relevance": [
     "Independent analyst framing already treats **EO edge nodes (Φsat-2, ReOrbit) and relay-hosted compute (Kepler/Axiom) as the same \"on-orbit data centre\" category** — the Entrant's \"in-orbit data centre for EO\" is a recognised sub-segment, not a stretch.",
     "Only two European names (ReOrbit, Kepler-via-ESA) appear in a global leaders map — the **European slot is thinly occupied**."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-10-03-toms-hardware-bezos-gigawatt-space-data-centers",
@@ -632,7 +684,9 @@
    "relevance": [
     "Bezos explicitly talks about **training clusters**, which no technical analysis supports (radiation SDC, ISL bandwidth) — a tell that the founder narrative is ahead of the engineering.",
     "Blue Origin's own launcher (New Glenn) is grounded after the May 2026 pad explosion (see New Glenn note); Bezos's timeline has no near-term launch supply behind it."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-10-27-via-satellite-tesat-scot80-lockheed-62-in-orbit",
@@ -651,7 +705,9 @@
    "relevance": [
     "Optical DTE at 10 Gbps **weakens the \"downlink bottleneck\" argument** for onboard processing on big satellites — but it is weather-dependent and needs optical ground stations, so the latency argument (insight in minutes, independent of a pass) survives.",
     "Tesat's SCOT20 on a Greek CubeSat (Planetek Hellas) shows OCTs are reaching the **small-sat class a startup would actually fly**."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-10-30-prnewswire-iceye-tactical-access",
@@ -672,7 +728,9 @@
    "relevance": [
     "The best-funded European EO operator with defence customers has chosen **ground-edge, not orbit-edge**, for latency. The Entrant's pitch must articulate why orbit beats a $-cheap ground station: pass gaps, relay-based delivery, autonomy/tip-and-cue, sovereignty of processing *in* the asset.",
     "\"Sovereign in-country processing\" is already a sold feature — the Entrant's sovereignty angle must be sharper (processing never leaves the European asset / relay)."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-04-google-research-suncatcher-system-design",
@@ -691,7 +749,9 @@
    "relevance": [
     "Google's radiation result is the single most reusable datum for the Entrant: a COTS 2024-generation AI accelerator survives 5 years in LEO at the component level. It de-risks the \"can we fly a modern inference chip?\" question for EO edge processing.",
     "The 8× solar productivity number is for dawn-dusk SSO — the same orbit most EO constellations fly. The Entrant's power budget argument can cite it."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-04-planet-build-operate-suncatcher-platform",
@@ -710,7 +770,9 @@
    "relevance": [
     "Planet is positioning its bus as a **hosted-compute platform** for a hyperscaler. For the Entrant this is both a validation (EO buses can host serious compute) and a competitive signal (the incumbent EO operator may bundle in-orbit processing before a startup can).",
     "The Owl-class bus is the reference hardware class for \"refrigerator-sized, ~1 kW, 4 accelerators\" — a useful sizing anchor for the Entrant's own payload envelope."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-05-investing-unibap-q3-2025-earnings",
@@ -730,7 +792,9 @@
    "relevance": [
     "Shows the **unit economics of hardware-only edge compute**: ~30 flight units a year, €6 M revenue, still burning cash. A startup selling boxes will not reach escape velocity; the value has to be in the service/latency layer.",
     "Unibap is the obvious **off-the-shelf processor** for a first the Entrant demo (rad-tolerant, Linux, flown on ION, JAXA, BIFROST, Loft) and the obvious partner/acquirer for a software-centric the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-19-espi-data-centres-in-space-report",
@@ -750,7 +814,9 @@
    "relevance": [
     "Europe's own policy institute frames the opportunity as **2028–2034 moonshot funding** — i.e. a decade of public money for demos; the Entrant should be ESA/Horizon-fundable rather than purely commercial in its first phase.",
     "ESPI's sovereignty framing matches BCG's \"sovereign AI workloads\" use case; a European EO-processing operator is the natural first beneficiary."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-22-arxiv-google-suncatcher-system-design",
@@ -774,7 +840,9 @@
     "The hyperscaler paper leaves *exactly* the subsystems a small EO-edge operator must get right — thermal,",
     "Google's own pilot uses **radio** downlink and bursts the TPU on a Planet bus; the near-term product",
     "The 1 µrad / 5 km / 10 cm ISL design point is the number to compare against any ISL vendor the Entrant talks to."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-11-28-planetek-ai-express-third-satellite",
@@ -797,7 +865,9 @@
    "relevance": [
     "**Direct Italian precedent for the Entrant's concept**, already in orbit with ESA money, an oil major (Eni) and IBM as tenants. The Entrant's differentiation must be scale/latency (relay-connected, multi-satellite) or geography (Nordic/German sovereign), not the idea itself.",
     "Shows the **ESA InCubed route** works for this exact product class — and that Italy (Planetek, AIKO, D-Orbit, IngeniArs, ASI/IRIDE) is the most crowded European cluster."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-12-09-arxiv-tether-orbital-ai-data-centers",
@@ -821,7 +891,9 @@
     "Another independent architecture study concluding **inference-only, single-node compute, ~2 kW",
     "The ~0.02 Tb/s per 2 MW downlink estimate (10 bit/s per W of inference) is a useful order-of-magnitude for",
     "Warns against very high SSO altitudes: 1,600 km buys zero eclipse at the price of ~7× dose."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-12-18-arxiv-when-to-compute-in-space",
@@ -842,7 +914,9 @@
    "relevance": [
     "Provides a ready-made, citable **decision framework** the Entrant can populate with real numbers to show customers",
     "Cornell (Falco) is working the orbital-compute placement/security problem; potential academic ally."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2025-12-31-littleplace-q4-2025-newsletter-orbitfy",
@@ -862,7 +936,9 @@
    "relevance": [
     "Little Place Labs (Houston, with a European team/ESA ties) is the **software-only \"onboard insight\" competitor** — no satellites, hosts on partners' payloads, funded by US defence SBIR-type money. This is the lean model the Entrant could copy in Europe via ESA/EDF funding.",
     "The verticals they list for 2026 (**insurance, commodities, renewables**) are the non-defence \"who pays for latency\" candidates worth validating for the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-01-11-kepler-first-tranche-optical-relay-satellites",
@@ -883,7 +959,9 @@
     "Kepler is the **most concrete in-orbit \"data centre\" actually flying**: relay + GPUs + storage. For the Entrant it is either the backbone to buy latency from (sub-second LEO connectivity) or the competitor that bundles compute with its relay.",
     "The Axiom/Kepler pairing shows the likely industry structure: **relay operator provides the pipe and hosts compute nodes**; application players (EO insight) sit on top. The Entrant fits the top layer.",
     "Canadian-owned but ESA-funded (HydRON) — Kepler is \"European enough\" for ESA procurement, which narrows the sovereign-relay gap the Entrant might otherwise claim."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-02-via-satellite-spacex-xai-fcc-million-satellites",
@@ -902,7 +980,9 @@
    "relevance": [
     "SpaceX's design point (100 kW, ~1 t, laser-linked to Starlink) is a general-compute node; the Entrant's EO-edge node is sensor-adjacent and 10–100× smaller. They do not compete for the same customer in this decade.",
     "The \"Starlink as backhaul\" architecture is relevant: the Entrant's downlink bottleneck could be solved by buying Starlink laser terminals (Starcloud already did — see Starcloud note)."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-05-eu-space-observer-what-is-iris2",
@@ -922,7 +1002,9 @@
    "relevance": [
     "IRIS² will **not** be the Entrant's relay in this decade; the sovereign-relay story for EO edge compute in Europe runs through **HydRON/Kepler/Tesat**, not IRIS².",
     "The **SME quota** and the EuroQCI/secure-channel framing are the hooks if the Entrant wants to be on the IRIS² supplier list later (secure processing node on a sovereign network)."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-11-techcrunch-economics-of-orbital-ai-brutal",
@@ -941,7 +1023,9 @@
    "relevance": [
     "Amazon's CEO publicly rejecting near-term orbital compute means one of the three hyperscalers is **not** coming for the small-payload market; the field is Google (research), SpaceX (Starlink-adjacent), and startups.",
     "The 100 Gbps ISL ceiling matters for the Entrant: on-orbit processing value is largest precisely where you *avoid* moving raw data at all."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-12-satnews-70000-satellites-data-trap",
@@ -960,7 +1044,9 @@
    "relevance": [
     "Independent industry voices (relay vendor, ground-software vendor, analytics vendor) now use the Entrant's exact vocabulary — **\"Time-to-Insight\"** — which validates the positioning but also means it is no longer differentiating on its own.",
     "Government at 70–80% of optical-comms revenue says the **first paying customer for latency is defence**, in Europe as in the US."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-18-phys-org-conversation-megaconstellation-catastrophe",
@@ -979,7 +1065,9 @@
    "relevance": [
     "Licensing regimes are moving toward cumulative-impact assessment; an operator that adds compute to existing EO buses adds **zero** new objects and can say so in every regulatory filing.",
     "Astronomy and Indigenous-sky objections are reputational risks for the megaconstellation players, not for the Entrant — but the Entrant must avoid being lumped in by using \"orbital data centre\" language loosely."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-21-introl-orbital-data-center-race-2026-aggregator",
@@ -1000,7 +1088,9 @@
    "relevance": [
     "The **85–95% downlink reduction** range is the headline KPI the Entrant should measure and publish for",
     "Sceptic anchors to pre-empt in a pitch: McCalip's **3×/W**, ESPI's Starship critique, Gartner's"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-27-interestingengineering-sophia-space-10m-seed",
@@ -1022,7 +1112,9 @@
     "Sophia is the **thermal-architecture** play: passive radiator-integrated tiles. If TILE works,",
     "Explicitly lists **EO processing, maritime awareness, disaster response** — same verticals as",
     "KDDI's involvement shows Asian telcos are seeding this; European telcos (Orange was in ASCEND)"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-02-27-newspaceeconomy-rideshare-pricing-2026",
@@ -1040,7 +1132,9 @@
    "relevance": [
     "The Entrant's unit economics should be built on **$7,000/kg SSO rideshare** with annual increases, not on Starship projections; any slide using <$1,000/kg is a 2030s claim.",
     "Twilight (dawn-dusk SSO) is the orbit Google chose for Suncatcher and the one EO constellations use — the Entrant can co-manifest on the same missions as the hyperscaler's prototypes."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-11-mongabay-space-ai-data-centers-dangers",
@@ -1060,7 +1154,9 @@
    "relevance": [
     "Debris and re-entry pollution are arguments against **megaconstellations**, not against a handful of EO-edge payloads on buses that already fly. The Entrant should position as \"compute on satellites that exist anyway\" — no incremental objects in orbit.",
     "EU Space Act debris/light-pollution rules (2028–30) will bite the million-satellite plans first; a small European operator is on the right side of that regulation."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-14-arxiv-kth-fpga-onboard-inference",
@@ -1081,7 +1177,9 @@
     "Benchmarks the **rad-tolerant fallback tier** (Kintex UltraScale XQR-class FPGA): good enough for",
     "The 1:16,384 VAE compression use case is a template for \"send the latent, not the image\" products.",
     "KTH/Podobas group is a Nordic academic resource for FPGA onboard-AI engineering near the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-16-nvidia-space-computing-vera-rubin",
@@ -1100,7 +1198,9 @@
    "relevance": [
     "NVIDIA's own framing — \"intelligence must live wherever data is generated\" and Planet/Kepler as launch partners — is the EO/edge thesis, not the GW data-centre thesis. The Entrant should align with the Jetson/IGX ecosystem that ships today rather than wait for Rubin Space.",
     "Sophia Space (\"passively cooled hosted computing\") is a direct platform competitor/partner for the Entrant's hosting layer."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-17-theregister-nvidia-vera-rubin-space-1",
@@ -1122,7 +1222,9 @@
     "Nvidia has **standardized the stack** for orbital compute (Jetson Orin now → Space-1 2028). An EO",
     "Being on Nvidia's partner slide is now a credibility marker: six names, **zero European**",
     "Space-1 arrives **late 2028** — any the Entrant node before then flies Orin/IGX-class or a COTS"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-19-arxiv-which-workloads-belong-in-orbit",
@@ -1144,7 +1246,9 @@
     "Independent ranking that puts **EO preprocessing/inference in the top tier of orbital workloads and LLM",
     "Reinforces that the Entrant's product is the *semantic artefact* (mask, polygon, alert, DSM) and that the",
     "Phase model gives a sensible staging: single-satellite EO inference now; cross-satellite fusion only"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-20-newspaceeconomy-blue-origin-project-sunrise-fcc",
@@ -1165,7 +1269,9 @@
    "relevance": [
     "Fourth US filer in SSO (SpaceX, Starcloud, Blue Origin, Cowboy) — **SSO slot/debris politics**",
     "TeraWave (6 Tbps MEO optical relay) is a possible future **backhaul** for small EO-compute nodes"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-30-techcrunch-starcloud-170m-series-a",
@@ -1187,7 +1293,9 @@
     "The one hard $/kWh number Starcloud publishes ($0.05) is **roughly European wholesale power",
     "Starcloud-1 doing **Capella SAR analytics** is a direct precedent for the Entrant's workload class",
     "An A6000 lost at launch on a 60 kg bus is a reminder that COTS GPU ruggedization, not"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-03-31-oodaloop-aetherflux-series-b-2bn-valuation",
@@ -1206,7 +1314,9 @@
    "primary_checked": false,
    "relevance": [
     "Illustrates how fast \"first commercial node\" dates slip even for a $2B company: **Q1 2027 →"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-07-spacenews-eo-operators-images-within-minutes",
@@ -1226,7 +1336,9 @@
     "The incumbents' **\"minutes\" benchmark is now public and measured (13 min)** — the Entrant's latency claim needs a measured number, not \"days to minutes\".",
     "Confirms the paying driver: **defence and crisis ISR**.",
     "Action: obtain the full article (subscription) before promoting any latency-requirement claim from it."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-08-arxiv-iride-heo-onboard-processing-added-value",
@@ -1247,7 +1359,9 @@
    "relevance": [
     "A **national European EO programme (IRIDE) has written onboard product generation into its service segment** — institutional demand for in-orbit processing exists at ASI; CNES (Loft/Magellium constellation, Inria \"frugal onboard AI\") and DLR (ASCEND, OPS-SAT heritage) are moving the same way per search summaries (not opened).",
     "The burnt-area use case (civil protection) is a **non-defence buyer of latency** the Entrant can cite alongside maritime."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-08-ep-thinktank-ai-data-centres-in-space",
@@ -1267,7 +1381,9 @@
    "relevance": [
     "GDPR \"third-country transfer\" ambiguity for data processed in orbit is a **European compliance moat** the Entrant can design for (EU-flagged spacecraft, EU ground segment) — a real differentiator versus US operators.",
     "The EU Space Act timeline (2028–2030) means the Entrant's first-generation payloads fly under national law; licensing strategy should pick the member state deliberately."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-09-arxiv-iscr-integrated-solar-compute-radiator",
@@ -1290,7 +1406,9 @@
     "Demonstrates the design lever the Entrant can actually pull at small scale: **run silicon cold** (vapour-chamber",
     "1 kW/panel modularity with copper links is a credible unit for a small EO-inference satellite; the",
     "Treat 112 kW/t as an *aspiration* in any pitch — it is a paper design with no hardware."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-13-payload-atomic-6-odc-space-marketplace",
@@ -1311,7 +1429,9 @@
    "relevance": [
     "Gives a **defensible ceiling for what sovereign/defence buyers may pay** for orbital capacity",
     "Atomic-6's Light Wing (200 W/kg) and Hot Wing are **buyable power/thermal modules** for a small"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-14-via-satellite-rocket-lab-closes-mynaric",
@@ -1331,7 +1451,9 @@
    "relevance": [
     "The **optical downlink/ISL enabler in Europe is now foreign-owned** (Mynaric → Rocket Lab US) or incumbent-owned (Tesat → Airbus). A European sovereign-latency pitch must either source from Tesat or accept a US-owned Munich supplier.",
     "Mynaric's story is the cautionary tale for **hardware-heavy space-comms startups in Europe**: >$300 M in, production hell, equity zeroed. The Entrant should be asset-light on terminals and buy, not build."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-15-lonestar-starvault-sovereign-storage-leo",
@@ -1353,7 +1475,9 @@
    "relevance": [
     "Precedent for **\"sovereign\" as the first paid orbital data service**, delivered as a hosted",
     "Sidus (US) is the host; a European EO node would want a European host (Reflex, OHB, Open Cosmos)"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-17-via-satellite-esa-hydron-element-3-kepler",
@@ -1374,7 +1498,9 @@
    "relevance": [
     "HydRON is where a **European EO edge-compute node would plug into a sovereign optical backbone**; an entrant with ground-segment heritage should be visible to ESA's ScyLight/HydRON team as a *user* of the network (demonstration payloads, use cases).",
     "Terminal supplier base for Europe = **Tesat, Mbryonics, Astrolight** (plus Rocket Lab-owned Mynaric). That is the shortlist for any the Entrant downlink/ISL design."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-22-space-compass-jaxa-optical-relay-fund",
@@ -1398,7 +1524,9 @@
    "relevance": [
     "Japan's state answer to \"time-to-insight for EO\" is **faster downlink** (GEO optical relay), not",
     "A European equivalent (ESA HydRON / EDRS successors) is the public-funding channel to watch;"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-22-tnw-spacex-ipo-orbital-dc-risk-disclosure",
@@ -1417,7 +1545,9 @@
    "relevance": [
     "The legally-binding version of SpaceX's view (the S-1) says \"may not achieve commercial viability.\" the Entrant's pitch should quote the filing, not the keynote.",
     "The anchor compute customers (Anthropic, Google) are terrestrial xAI/Colossus capacity, not orbital — SpaceX's orbital compute revenue today is **zero**."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-04-29-arxiv-turyshev-odc-economic-viability",
@@ -1441,7 +1571,9 @@
     "**The clearest academic endorsement of the Entrant's regime:** C1 \"space-native processing that reduces",
     "Gives a defensible investor narrative: the Entrant is not betting on $200/kg; it is monetising Γ (bits saved per",
     "The Π_life result (27–58 % penalty for 10–20 %/yr hazard) means reliability engineering is worth as much as"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-01-arxiv-spacemoe",
@@ -1461,7 +1593,9 @@
    "relevance": [
     "Negative example: distributing a model across a sparse constellation turns light-speed latency into the",
     "Useful catalogue of rad-tolerant compute options with memory/TOPS (RAD5545, SBC-2A72, SpaceCloud iX10"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-05-payload-esa-edge-aerospace-space-cloud",
@@ -1481,7 +1615,9 @@
    "relevance": [
     "**Direct European competitor/peer**: a 2024-founded Luxembourg startup already flying processing demos on Transporter and holding five ESA contracts. The Entrant is behind on ESA track record; partnering or differentiating (EO-specific insight vs generic processing) is urgent.",
     "ESA is still at \"does it make sense\" — two years after ASCEND said yes — which means the European institutional market will fund studies and demos through ~2028, not procurement. Position the Entrant's EO time-to-insight as a demo ESA can buy now."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-06-anthropic-spacex-compute-deal-orbital-gigawatts",
@@ -1502,7 +1638,9 @@
    "relevance": [
     "First **hyperscale-model lab** to put \"orbital GW\" in a contract-adjacent announcement. It",
     "Nothing here touches EO or edge processing; it is a **power play**. The Entrant should cite it as market"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-10-ieee-spectrum-orbital-inc-inference",
@@ -1521,7 +1659,9 @@
    "relevance": [
     "Another general-compute entrant with 2027–28 prototypes; none target EO-adjacent insight. The Entrant's differentiation remains the sensor-to-insight loop, not watts.",
     "\"Feasibility depends on applications\" is the sceptics' own door for the Entrant: applications where the data originates in orbit."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-11-abi-research-data-centers-in-space-qa",
@@ -1541,7 +1681,9 @@
    "relevance": [
     "ABI's near-term list — EO/SAR, ISR, kW-scale CaaS — is exactly the Entrant's offering; the analyst consensus places the Entrant's segment as the only one that exists before 2030.",
     "The 3–5 year value window and no-upgrade constraint favour the Entrant's software-defined, fast-refresh approach over monolithic hardware."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-11-techcrunch-cowboy-space-275m-series-b",
@@ -1564,7 +1706,9 @@
     "Second well-funded player (after Starcloud) to say **launch, not capital or chips, is the",
     "Cowboy's **laser power/data beaming** heritage (Reason-1/-2, see Transporter-18 note) could become",
     "SAIC in the cap table signals the **US defence demand** pull; European sovereignty is the"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-12-arxiv-communication-efficient-space-data-centers",
@@ -1587,7 +1731,9 @@
     "Frames the whole sector's bottleneck as **bits across the space–ground interface**, which is exactly where",
     "The uplink table is a handy reference for how little command/weight-update bandwidth a small operator",
     "Semantic-communication vocabulary (task-oriented packets, shared knowledge base) is a useful way to"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-14-arxiv-mit-dense-satellite-clusters",
@@ -1607,7 +1753,9 @@
    "relevance": [
     "Not directly applicable (the Entrant is single-satellite / small-constellation inference), but the **rigidly",
     "The switch-satellite overhead (≥ 1/3 of nodes) is a quantitative reason small operators should avoid"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-05-18-satnews-cowboy-stampede-fcc-20000",
@@ -1628,7 +1776,9 @@
    "relevance": [
     "Three US filings (SpaceX 1M, Starcloud 88k, Blue Origin 51.6k, Cowboy 20k) all stake out",
     "All-optical downlink is becoming the ODC default; a small node that still relies on X-band"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-04-arxiv-space-cim",
@@ -1648,7 +1798,9 @@
    "relevance": [
     "Real lesson for a small payload: **the HBM–GPU hotspot, not average power, triggers throttling under",
     "Non-volatile CIM (RRAM/MRAM) is worth watching for EO inference: low static power, no DRAM refresh, and"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-08-arxiv-constella",
@@ -1670,7 +1822,9 @@
     "Directly models the Entrant's value proposition: **time-to-insight for EO via on-board inference + ISL",
     "The result \"split late, forward small\" is an argument for full on-board inference (mask/alert output)",
     "TU Wien's DSG (Nastic, Dustdar) is an active European academic group on exactly the Entrant's problem — a"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-09-jll-data-centers-in-space",
@@ -1690,7 +1844,9 @@
    "relevance": [
     "The 10-year grid-connection queue in Amsterdam is a European terrestrial pain point the Entrant can cite — but the honest reading is that orbit solves EO latency, not Europe's grid.",
     "JLL's \"functional specialization\" framing is the sober version of the thesis; the Entrant fits the \"data already in orbit\" specialisation rather than batch AI."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-10-lightreading-musk-spacex-orbital-ai-plan",
@@ -1713,7 +1869,9 @@
     "SpaceX sets the **public cost narrative**; every investor meeting will ask why a small node",
     "If SpaceX's radiator figure (1,400 W/m²) is real it changes small-node thermal design; if it",
     "600–800 km SSO shells with thousands of 70 m sats = **conjunction risk** for any EO node in"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-11-ieee-spectrum-thermodynamics-orbital-data-centers",
@@ -1732,7 +1890,9 @@
    "relevance": [
     "For a ~1 kW EO-processing payload, 500 W/m² → **~2 m²** of radiator; at ISS-class 215 W/m² → **~4.7 m²**. Both fit a smallsat; the thermal tax that kills GW data centres is survivable at the Entrant scale.",
     "The 40% five-year emissivity degradation is a design-life argument: plan radiator margin or a shorter refresh cycle."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-12-airandspaceforces-new-horizon-act-orbital-dc",
@@ -1751,7 +1911,9 @@
    "relevance": [
     "US defence is formally creating a buyer for \"commercial on-orbit data processing\" — ISR latency is the stated motive. This is the demand signal ABI's 2026–2029 forecast (defence/ISR first) rests on.",
     "The Entrant is European; the direct analogue is ESA Space Cloud / national defence (see Edge Aerospace note). The US bill is a template to lobby for in the EDF/EU Space Act context."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-16-innovationnewsnetwork-incubed-7-26m-call",
@@ -1771,7 +1933,9 @@
    "relevance": [
     "**Concrete funding path**: InCubed via the Danish (or German) ESA subscription, €0.3–4 M, 18 months, 80% co-funded — sized exactly for a first the Entrant in-orbit demo on a hosted payload.",
     "The portfolio shows ESA Φ-lab will fund **several competing** onboard-AI vendors; being Danish/Nordic (no InCubed onboard-AI project yet from DK) is a geographic-return advantage."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-23-arxiv-hot-ai-cold-space-thermal-crosstalk",
@@ -1791,7 +1955,9 @@
    "relevance": [
     "Mostly a cluster problem the Entrant avoids; but the general rule applies to any multi-payload satellite:",
     "Lifespan-first scheduling (keep peak die temperature down to extend MTTF) is the right objective for a"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-06-23-spacenews-ubotica-11m-series-a",
@@ -1811,7 +1977,9 @@
    "relevance": [
     "Sets the **European funding benchmark** for an EO edge-AI company with flight heritage: ~$11 M Series A in 2026. An the Entrant seed/Series A should be sized and narrated relative to this.",
     "Confirms **maritime** as the vertical European investors are willing to fund for time-to-insight."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-07-01-ieee-spectrum-orbital-data-center-hype",
@@ -1830,7 +1998,9 @@
    "relevance": [
     "The manufacturing and launch-cadence ceiling means GW-scale orbital compute cannot arrive before the 2030s; the Entrant's \"compute where the sensor is\" pitch is not competing with that supply.",
     "The Starcloud radiator anecdote is a concrete warning: size radiators for sustained, not peak, load."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-07-15-arxiv-van-berkel-cost-network-limits",
@@ -1853,7 +2023,9 @@
     "Strongest independent argument that **orbital training is off the table this decade** and orbital",
     "\"One satellite ≈ one rack\" framing is useful: the Entrant's unit of sale is a satellite's worth of inference,",
     "The externality section (radio-astronomy leakage, re-entry aerosols) is a regulatory risk for any"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-02-arxiv-clear-weighted-bit-allocation",
@@ -1874,7 +2046,9 @@
     "**Direct warning:** the canonical \"AI cloud filter on board\" story (Φ-Sat-1) destroys 5–29 % of clear",
     "The TU Wien/PKU/BUPT group (Furutanpey, Dustdar, Zhang, Xu) is the leading academic team on EO downlink",
     "Gives measured Jetson-class encoder energy/latency numbers for payload sizing."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-07-arxiv-summarize-first-onboard-vlm",
@@ -1896,7 +2070,9 @@
     "Working demonstration of the **\"send meaning, then pixels on demand\"** product that a GPU-class orbital",
     "Quantifies the realistic small-VLM envelope on Jetson-class hardware (1.6–3.5 GB, 15–20 tok/s, 60–74 % VQA)",
     "TelePIX (Korean EO analytics company) is a commercial competitor/partner moving onto the same ground."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-20-viasatellite-muon-space-250m-series-c",
@@ -1917,7 +2093,9 @@
    "relevance": [
     "Muon is the **bus supplier most likely to offer a compute-ready EO platform off the shelf**",
     "The round shows investors funding **manufacturing capacity for EO constellations**, not GW AI —"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-21-arxiv-bupt-ai-infrastructure-in-space",
@@ -1940,7 +2118,9 @@
     "**The most grounded published evidence that the binding constraints for small-sat edge AI are thermal",
     "Every in-orbit AI service needs delivery/update/rollback sized to kbps uplinks; SateLight is a reference",
     "\"Time-to-insight\" claims must account for payload power-cycling: a 2 B VLM that trips thermal shutdown"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-21-techcrunch-starcloud-250m-series-a-extension",
@@ -1962,7 +2142,9 @@
     "Even the best-funded ODC startup names **launch availability 2028–2029**, not capital, as its",
     "The near-term Starcloud-2 product is **8 kW inference nodes for government customers** — this",
     "Nvidia's $25M is a signal that COTS-GPU-in-orbit is now the vendor-backed default; rad-hard"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-26-marketsandmarkets-space-based-data-center-28b-2040",
@@ -1980,7 +2162,9 @@
    "relevance": [
     "The only segment that exists in 2026 is **≤100 kW** payloads doing \"processing & analytics\" with government/defence as the fastest-growing buyer — i.e. The Entrant's addressable market as the analysts define it.",
     "Treat all vendor TAM numbers as marketing; cite BCG or ABI for investor decks, and this only with the inconsistency noted."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-27-arxiv-turyshev-odc-operations-maintenance",
@@ -2002,7 +2186,9 @@
     "Shows the hyperscale ODC path requires an orbital-servicing industry that does not exist; a small",
     "The 3–5 yr compute refresh assumption applies to the Entrant too: design the payload for **≤ 4-yr useful life** and",
     "The stage-gate list (node hazard ≤ 1–3 %/yr, defined fault domains, signed-update rollback ≤ one 5–10 %"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-08-27-bcg-space-based-data-centers-cost-outlook",
@@ -2022,7 +2208,9 @@
    "relevance": [
     "BCG names \"processing of space-generated data\" as one of only three use cases that clear the economics — this is the Entrant's category, endorsed by a top-tier consultancy.",
     "The 1.6–1.8× realistic premium means orbital compute wins only where the data is already in orbit or where latency/sovereignty is worth the premium; EO time-to-insight is the cleanest case."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-04-arxiv-tensil-proton-irradiation",
@@ -2042,7 +2230,9 @@
    "relevance": [
     "**Persistent silent corruption is the failure mode that matters for an inference service**: the system",
     "Luxembourg SnT + IFJ PAN is a European proton-test pipeline (EURO-LABS/RADNEXT funded) that the Entrant could use"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-10-resiliencemedia-orbital-reflex-ai-data-centres",
@@ -2062,7 +2252,9 @@
    "relevance": [
     "Confirms the **US-vision / German-hardware pattern**: US startups raise on the narrative, European firms supply the bus. The Entrant could be the *European* narrative owner for the EO-insight niche rather than the bus supplier.",
     "Reflex (Berlin) and Mynaric/Rocket Lab (Munich) make Germany the natural hardware hinterland for a Danish/German the Entrant."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-11-arxiv-aquacubeai-phisat2",
@@ -2083,7 +2275,9 @@
     "Shows what ESA's **flagship onboard-AI platform actually runs**: a Myriad 2 at ~100 inferences/s on 20×20",
     "Water-quality alerts for European coastal regulators (CMEMS users) is a concrete, latency-sensitive EO",
     "ESA Φ-lab (Meoni, Longépé) is the European gatekeeper for onboard-AI credibility; this paper is a map of"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-14-europeanspaceflight-open-cosmos-300m",
@@ -2103,7 +2297,9 @@
    "relevance": [
     "Open Cosmos is simultaneously the **best partner** (it manufactures the satellites the Entrant's software would fly on, and it already hosts third-party AI) and the **biggest risk** (DataCosmos could become the \"insight layer\" itself).",
     "A shared-constellation model (OpenConstellation) is the natural **host for a federated the Entrant compute node** — and it is where ESA's EOCognitiveLab \"federation\" language will likely land."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-15-arxiv-oisl-pointing-jitter-channel-model",
@@ -2122,7 +2318,9 @@
    "relevance": [
     "Pointing stability, not laser power, decides whether the Entrant can use a Tbps-class ISL to a neighbour or a",
     "ESA co-authorship (Stijn Mast) and the ESA OISL-terminal grant make this the European reference model to"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-15-kucoin-morgan-stanley-spacex-orbital-compute",
@@ -2142,7 +2340,9 @@
    "relevance": [
     "The most bullish institutional voice still frames the investable near-term as **orbital edge-AI on imagery and sensor data** — the Entrant's segment, named by the sell side.",
     "Any the Entrant fundraising narrative should cite MS's \"edge-AI first\" and avoid the 2032 capacity claim, which rests on a Starship cadence that has not materialised (3 flights in 2026 to date)."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-16-exterra-orbital-reflex-aerospace-german-bus",
@@ -2163,7 +2363,9 @@
    "relevance": [
     "**A German bus maker is now the exclusive platform for a US ODC startup** — Reflex has the",
     "Shows European *hardware* is in the chain while European *operators* are absent; the operator"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-28-itif-policy-considerations-orbital-data-centers",
@@ -2181,7 +2383,9 @@
    "relevance": [
     "A US think tank now lists **EO/remote sensing/space-native processing** as the orbital-compute use case — the same conclusion as BCG, ABI, Turyshev and Morgan Stanley. The Entrant's category is the consensus near-term market.",
     "NOAA Part 960 licensing applies to any US-linked EO processing; a European the Entrant avoids it but must map the EU/national equivalent (see EP Think Tank note)."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-28-wikipedia-starship-launch-list-cadence",
@@ -2198,7 +2402,9 @@
    "relevance": [
     "Every orbital-compute business case that depends on $200/kg is a bet on 200 t × 180/yr; demonstrated reality is 44 t × 4/yr. The Entrant's plan must close at Falcon 9 rideshare prices.",
     "Block 3 is the vehicle class that will eventually carry 100-kW-class compute sats; its first operational flight was six days ago. The clock on the sceptics' cadence argument started on 2026-09-28."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-29-arxiv-cnes-raw-imagery-onboard-ai",
@@ -2218,7 +2424,9 @@
    "relevance": [
     "Supports the design choice of **inferring directly on minimally processed data** on board (as ESA's raw",
     "CNES / IRT Saint-Exupéry are the French institutional centre of gravity for onboard-AI image-quality"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-29-esa-indico-eocognitivelab-info-day",
@@ -2240,7 +2448,9 @@
     "This is the **single most relevant ESA procurement** for the Entrant: an *open, federated* constellation with open ISL interfaces explicitly invites third-party assets to join. A Danish startup can position as a **federated compute node / service provider** rather than bidding to build the two core satellites (which Open Cosmos, OHB, Thales, etc. will chase).",
     "ESA's language (\"cognitive cloud computing in space\") is the institutional label for the Entrant's concept — align terminology in any ESA proposal.",
     "Denmark's ESA subscription and the Info Day date (just past) mean the ITT is imminent — timing matters."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-09-29-gizmodo-starship-orbital-hard-part",
@@ -2257,7 +2467,9 @@
    "relevance": [
     "Starship is real but at a test cadence; rideshare on Falcon 9 ($7,000/kg) remains the Entrant's price reality for the planning horizon.",
     "The Starlink V3 deployment is the first evidence of the 200-t-class bus that SpaceX's orbital-compute plan depends on; watch Flights 15–16 for the ship-catch, which is the gate to the price curve."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-01-google-blog-suncatcher-prototype-in-orbit",
@@ -2275,7 +2487,9 @@
    "relevance": [
     "The hyperscaler's own framing is \"moonshot\", \"long-term\", \"research\" — not a product. The near-term commercial space-compute market is not Google-vs-the Entrant; it is EO/edge inference on small buses, which is exactly the Entrant's lane.",
     "Planet (an EO company) is the bus supplier and operator — the clearest signal yet that EO operators see on-orbit compute as adjacent to their core business. Watch Planet for a \"compute as a service on our bus\" product."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-01-npr-google-suncatcher-launch-sceptics",
@@ -2294,7 +2508,9 @@
    "relevance": [
     "Google's own lead puts cost parity **beyond 5 years**; the orbital-compute \"race\" is a 2030s story. The Entrant's window is the next 5 years with workloads that are valuable *because* they are in orbit (EO time-to-insight), not because they are cheaper.",
     "A 1 kW-class bus running inference in 15-minute bursts is close to the Entrant's operating regime — Google is effectively publishing the Entrant's thermal problem."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-01-payload-transporter-18-odc-building-blocks",
@@ -2318,7 +2534,9 @@
     "Oct 2026 is the month the **1 kW class** got real: Google (4 TPUs), Satlyt (software on",
     "Google's 15-min thermal duty cycle shows **radiator design is the differentiator** for small",
     "Star Catcher's beamed-power demo (customers Starcloud, Aethero) hints at a future where small"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-01-techcrunch-google-suncatcher-1800-starship-launches",
@@ -2336,7 +2554,9 @@
    "relevance": [
     "The Entrant's segment (EO time-to-insight, kW-class) does not need Starship at 180/yr; its value is latency and bytes not downlinked, not $/kW.",
     "Radiation evidence favours inference workloads — the Entrant's class."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-01-techcrunch-satlyt-8m-seed",
@@ -2358,7 +2578,9 @@
     "**Direct competitor on the software layer**: Satlyt sells exactly \"process EO data where it is,",
     "Seed size ($8M) shows the software-only slice is **venture-fundable at seed** without launch",
     "Multi-tenant hosting on TakeMe2Space / Momentus is the go-to-market template: fly on others'"
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-04-wikipedia-new-glenn-neutron-status",
@@ -2375,7 +2597,9 @@
    "relevance": [
     "There is **one** operating heavy-lift provider; Bezos's orbital-DC timeline has no launcher behind it in 2026. The Entrant's launch risk is SpaceX manifest risk, which argues for small, rideshare-compatible payloads.",
     "Neutron's $3,846/kg at 13 t shows mid-lift does not solve $/kg; only Starship-class reuse does, and it is at 4 flights/yr."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   },
   {
    "id": "2026-10-04-wikipedia-starcloud",
@@ -2394,7 +2618,9 @@
    "relevance": [
     "Starcloud is the venture-market comparable: a $2.3B valuation for \"GPU in orbit\" shows investor appetite, but its roadmap (Bitcoin, 88k sats, Crusoe) is general compute, leaving EO-specific insight uncontested.",
     "Starcloud buying **Starlink laser terminals** is the model for the Entrant's backhaul: do not build downlink, buy it."
-   ]
+   ],
+   "captured": "2026-10-04",
+   "sweep": "2026-W40"
   }
  ],
  "wiki": [
@@ -2408,6 +2634,17 @@
     "Φ-Sat-1 primary downlink-saving figure (Giuffrida 2022, TGRS — not opened)",
     "Measured orbit-average latency for *any* in-orbit processing service",
     "Kepler ODC node compute hardware (unverified)"
+   ]
+  },
+  {
+   "id": "indicators",
+   "title": "Indicators — dated observations",
+   "updated": "2026-10-04",
+   "lede": "The handful of numbers that move the positioning question, kept as **dated observations** so the dashboard can draw them over time. One row per observation; rows are **appended, never edited** (a corrected value is a new row with a note). The weekly sweep adds a row whenever a new source gives a new value for an indicator.",
+   "open_items": [
+    "Starship flights and payload per flight — append a row per flight",
+    "Rideshare price list for 2027",
+    "Next priced round of any orbital-compute startup (valuation, cumulative funding)"
    ]
   },
   {
@@ -2458,6 +2695,18 @@
   {
    "note": "eo-edge-compute-value-chain",
    "item": "Kepler ODC node compute hardware (unverified)"
+  },
+  {
+   "note": "indicators",
+   "item": "Starship flights and payload per flight — append a row per flight"
+  },
+  {
+   "note": "indicators",
+   "item": "Rideshare price list for 2027"
+  },
+  {
+   "note": "indicators",
+   "item": "Next priced round of any orbital-compute startup (valuation, cumulative funding)"
   },
   {
    "note": "orbital-compute-launch-economics",
@@ -2648,6 +2897,183 @@
      "Flying?": "demo",
      "Edge": "ESA Space Cloud study",
      "Weakness vs the Entrant": "architecture, not EO service"
+    }
+   ]
+  },
+  {
+   "note": "indicators",
+   "section": "Observations",
+   "columns": [
+    "Indicator",
+    "Unit",
+    "Date",
+    "Value",
+    "Kind",
+    "Note",
+    "Source"
+   ],
+   "rows": [
+    {
+     "Indicator": "rideshare-price-sso",
+     "Unit": "USD/kg",
+     "Date": "2019",
+     "Value": "5000",
+     "Kind": "reported",
+     "Note": "approx.; 150 kg minimum at launch of programme",
+     "Source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "Indicator": "rideshare-price-sso",
+     "Unit": "USD/kg",
+     "Date": "2022-10",
+     "Value": "5500",
+     "Kind": "reported",
+     "Note": "$275k per 50 kg",
+     "Source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "Indicator": "rideshare-price-sso",
+     "Unit": "USD/kg",
+     "Date": "2024",
+     "Value": "6000",
+     "Kind": "reported",
+     "Note": "$300k per 50 kg (2024 to early 2025)",
+     "Source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "Indicator": "rideshare-price-sso",
+     "Unit": "USD/kg",
+     "Date": "2025",
+     "Value": "6500",
+     "Kind": "reported",
+     "Note": "$325k per 50 kg (mid/late 2025)",
+     "Source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "Indicator": "rideshare-price-sso",
+     "Unit": "USD/kg",
+     "Date": "2026",
+     "Value": "7000",
+     "Kind": "reported",
+     "Note": "$350k per 50 kg from Transporter-16",
+     "Source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2025-01-16",
+     "Value": "20",
+     "Kind": "reported",
+     "Note": "F7, simulators, ship lost",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2025-03-06",
+     "Value": "8",
+     "Kind": "reported",
+     "Note": "F8, simulators, ship lost",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2025-05-27",
+     "Value": "16",
+     "Kind": "reported",
+     "Note": "F9, simulators, booster and ship lost",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2025-08-26",
+     "Value": "16",
+     "Kind": "reported",
+     "Note": "F10, simulators",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2025-10-13",
+     "Value": "16",
+     "Kind": "reported",
+     "Note": "F11, simulators",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2026-05-22",
+     "Value": "37.5",
+     "Kind": "reported",
+     "Note": "F12, first Block 3",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2026-07-24",
+     "Value": "34",
+     "Kind": "reported",
+     "Note": "F13, 20 Starlink V3",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-payload-per-flight",
+     "Unit": "t",
+     "Date": "2026-09-28",
+     "Value": "44",
+     "Kind": "reported",
+     "Note": "F14, first orbital deployment",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-flights-per-year",
+     "Unit": "flights",
+     "Date": "2025",
+     "Value": "5",
+     "Kind": "derived",
+     "Note": "count of 2025 flights in the launch list",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "starship-flights-per-year",
+     "Unit": "flights",
+     "Date": "2026",
+     "Value": "3",
+     "Kind": "derived",
+     "Note": "year to date as of 2026-09-28",
+     "Source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "Indicator": "odc-startup-valuation-max",
+     "Unit": "USD bn",
+     "Date": "2026-03-30",
+     "Value": "1.1",
+     "Kind": "reported",
+     "Note": "highest post-money among ODC startups (Starcloud Series A)",
+     "Source": "2026-03-30-techcrunch-starcloud-170m-series-a"
+    },
+    {
+     "Indicator": "odc-startup-valuation-max",
+     "Unit": "USD bn",
+     "Date": "2026-08-21",
+     "Value": "2.3",
+     "Kind": "reported",
+     "Note": "Starcloud Series A extension",
+     "Source": "2026-08-21-techcrunch-starcloud-250m-series-a-extension"
+    },
+    {
+     "Indicator": "odc-sector-funding-cumulative",
+     "Unit": "USD bn",
+     "Date": "2026-04",
+     "Value": "3",
+     "Kind": "reported",
+     "Note": "lower bound (\">$3B\"), ABI",
+     "Source": "2026-05-11-abi-research-data-centers-in-space-qa"
     }
    ]
   },
@@ -3161,6 +3587,207 @@
     {
      "Stage": "Sector",
      "Examples": "> $3B invested by Apr 2026, > 35 companies (ABI); Morgan Stanley counts 43 in the supply chain"
+    }
+   ]
+  }
+ ],
+ "sweeps": [
+  {
+   "week": "2026-W40",
+   "added": 113,
+   "by_theme": {
+    "economics/cost-model": 7,
+    "market/esa": 7,
+    "market/europe": 25,
+    "market/incumbents": 11,
+    "market/sceptics": 13,
+    "market/sizing": 6,
+    "market/startups": 25,
+    "research/paper": 25,
+    "space/eo-edge": 28,
+    "space/launch": 22,
+    "space/optical-isl": 12,
+    "space/radiation": 7,
+    "space/thermal": 14
+   },
+   "first_captured": "2026-10-04",
+   "last_captured": "2026-10-04",
+   "cumulative": 113
+  }
+ ],
+ "latest_sweep": "2026-W40",
+ "indicators": [
+  {
+   "id": "odc-sector-funding-cumulative",
+   "unit": "USD bn",
+   "points": [
+    {
+     "date": "2026-04",
+     "x": 2026.2917,
+     "value": 3.0,
+     "kind": "reported",
+     "note": "lower bound (\">$3B\"), ABI",
+     "source": "2026-05-11-abi-research-data-centers-in-space-qa"
+    }
+   ]
+  },
+  {
+   "id": "odc-startup-valuation-max",
+   "unit": "USD bn",
+   "points": [
+    {
+     "date": "2026-03-30",
+     "x": 2026.2411,
+     "value": 1.1,
+     "kind": "reported",
+     "note": "highest post-money among ODC startups (Starcloud Series A)",
+     "source": "2026-03-30-techcrunch-starcloud-170m-series-a"
+    },
+    {
+     "date": "2026-08-21",
+     "x": 2026.6356,
+     "value": 2.3,
+     "kind": "reported",
+     "note": "Starcloud Series A extension",
+     "source": "2026-08-21-techcrunch-starcloud-250m-series-a-extension"
+    }
+   ]
+  },
+  {
+   "id": "rideshare-price-sso",
+   "unit": "USD/kg",
+   "points": [
+    {
+     "date": "2019",
+     "x": 2019.5,
+     "value": 5000.0,
+     "kind": "reported",
+     "note": "approx.; 150 kg minimum at launch of programme",
+     "source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "date": "2022-10",
+     "x": 2022.7917,
+     "value": 5500.0,
+     "kind": "reported",
+     "note": "$275k per 50 kg",
+     "source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "date": "2024",
+     "x": 2024.5,
+     "value": 6000.0,
+     "kind": "reported",
+     "note": "$300k per 50 kg (2024 to early 2025)",
+     "source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "date": "2025",
+     "x": 2025.5,
+     "value": 6500.0,
+     "kind": "reported",
+     "note": "$325k per 50 kg (mid/late 2025)",
+     "source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    },
+    {
+     "date": "2026",
+     "x": 2026.5,
+     "value": 7000.0,
+     "kind": "reported",
+     "note": "$350k per 50 kg from Transporter-16",
+     "source": "2026-02-27-newspaceeconomy-rideshare-pricing-2026"
+    }
+   ]
+  },
+  {
+   "id": "starship-flights-per-year",
+   "unit": "flights",
+   "points": [
+    {
+     "date": "2025",
+     "x": 2025.5,
+     "value": 5.0,
+     "kind": "derived",
+     "note": "count of 2025 flights in the launch list",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2026",
+     "x": 2026.5,
+     "value": 3.0,
+     "kind": "derived",
+     "note": "year to date as of 2026-09-28",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    }
+   ]
+  },
+  {
+   "id": "starship-payload-per-flight",
+   "unit": "t",
+   "points": [
+    {
+     "date": "2025-01-16",
+     "x": 2025.0411,
+     "value": 20.0,
+     "kind": "reported",
+     "note": "F7, simulators, ship lost",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2025-03-06",
+     "x": 2025.1753,
+     "value": 8.0,
+     "kind": "reported",
+     "note": "F8, simulators, ship lost",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2025-05-27",
+     "x": 2025.4,
+     "value": 16.0,
+     "kind": "reported",
+     "note": "F9, simulators, booster and ship lost",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2025-08-26",
+     "x": 2025.6493,
+     "value": 16.0,
+     "kind": "reported",
+     "note": "F10, simulators",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2025-10-13",
+     "x": 2025.7808,
+     "value": 16.0,
+     "kind": "reported",
+     "note": "F11, simulators",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2026-05-22",
+     "x": 2026.3863,
+     "value": 37.5,
+     "kind": "reported",
+     "note": "F12, first Block 3",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2026-07-24",
+     "x": 2026.5589,
+     "value": 34.0,
+     "kind": "reported",
+     "note": "F13, 20 Starlink V3",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
+    },
+    {
+     "date": "2026-09-28",
+     "x": 2026.7397,
+     "value": 44.0,
+     "kind": "reported",
+     "note": "F14, first orbital deployment",
+     "source": "2026-09-28-wikipedia-starship-launch-list-cadence"
     }
    ]
   }

@@ -31,8 +31,11 @@ jobs:
         run: |
           python3 scripts/build_dashboard.py
           mkdir -p _site/intel/output/derived _site/dashboard
-          cp dashboard/index.html _site/index.html
-          cp dashboard/index.html _site/dashboard/index.html
+          # dashboard/index.html is a page fragment (the Claude artifact wraps it in
+          # a document); give the Pages copy a real document so it renders in
+          # standards mode.
+          { printf '<!doctype html>\n<html lang="en">\n'; cat dashboard/index.html; printf '\n</html>\n'; } > _site/index.html
+          cp _site/index.html _site/dashboard/index.html
           cp intel/output/derived/dashboard.json _site/intel/output/derived/dashboard.json
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
