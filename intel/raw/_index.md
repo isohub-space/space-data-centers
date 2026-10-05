@@ -4,7 +4,7 @@ tags: [sdc, intel/raw]
 ---
 # intel/raw/ — captures
 
-113 sources, one note per source, captured 2026-10-04 (market search) unless dated otherwise. Grouped by primary theme; a note appears once. Raw is *capture*, not reference — cite the wiki.
+117 sources, one note per source, captured 2026-10-04 (market search) unless dated otherwise; 4 added 2026-10-05 (weekly sweep 2026-W41). Grouped by primary theme; a note appears once. Raw is *capture*, not reference — cite the wiki.
 
 ## Startups & funding
 
@@ -31,6 +31,7 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-08-20-viasatellite-muon-space-250m-series-c|2026-08-20]] · Via Satellite — Via Satellite — Muon Space raises $250M Series C (the "other" $250M ODC round of Aug 2026)
 - [[intel/raw/2026-08-21-techcrunch-starcloud-250m-series-a-extension|2026-08-21]] · TechCrunch — TechCrunch — Starcloud raises $250M for orbital data centers "as launch options dry up"
 - [[intel/raw/2026-09-16-exterra-orbital-reflex-aerospace-german-bus|2026-09-16]] · Exterra / The Journal of Space Commerce — Journal of Space Commerce — Space data center startup Orbital taps German firm Reflex Aerospace to build its satellites
+- [[intel/raw/2026-10-01-businesswire-cowboy-reason-1-power-beaming|2026-10-01]] · Business Wire (Cowboy Space press release) — Cowboy Space — Reason-1 launched on Transporter-18 to demonstrate laser power beaming (optics/thermal for its orbital DCs)
 - [[intel/raw/2026-10-01-payload-transporter-18-odc-building-blocks|2026-10-01]] · Payload — Payload — Transporter-18 tests the building blocks of orbital data centers
 - [[intel/raw/2026-10-01-techcrunch-satlyt-8m-seed|2026-10-01]] · TechCrunch — TechCrunch — Satlyt raises $8M seed to run AI on satellites ("Android of orbital computing")
 
@@ -47,6 +48,7 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-09-15-kucoin-morgan-stanley-spacex-orbital-compute|2026-09-15]] · KuCoin News flash (reporting a Morgan Stanley equity research note) — secondary, low-tier — Morgan Stanley (via KuCoin flash) — SpaceX AI-compute valuation; Starship Q4 2026 is the key
 - [[intel/raw/2026-10-01-google-blog-suncatcher-prototype-in-orbit|2026-10-01]] · Google (The Keyword blog) — Google — "Project Suncatcher prototype satellite is in orbit"
 - [[intel/raw/2026-10-01-npr-google-suncatcher-launch-sceptics|2026-10-01]] · NPR (syndicated via KPBS) — NPR — "Google launches Project Suncatcher, a step towards AI data centers in space"
+- [[intel/raw/2026-10-02-theregister-google-suncatcher-joule-paper|2026-10-02]] · The Register — The Register — Google launches first datacenter satellite; Joule paper: 370,000 t ≈ 1,800 Starship launches
 
 ## Launch economics
 
@@ -123,6 +125,7 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-08-21-arxiv-bupt-ai-infrastructure-in-space|2026-08-21]] · arXiv — AI Infrastructure in Space: How Far Can We Go?
 - [[intel/raw/2026-09-11-arxiv-aquacubeai-phisat2|2026-09-11]] · arXiv — AquaCubeAI — Powered Monitoring of Turbidity on-board Φsat-2
 - [[intel/raw/2026-09-29-arxiv-cnes-raw-imagery-onboard-ai|2026-09-29]] · arXiv (OBPDC 2026) — Raw Imagery Impacting Your AI: Should You Care?
+- [[intel/raw/2026-10-02-globenewswire-satellogic-merlin-first-launch|2026-10-02]] · GlobeNewswire (Satellogic press release) — Satellogic — first Merlin launched: onboard-AI alerts within 30 min, ISL cueing of 50 cm follow-up
 
 ## Optical ISL & relay
 
@@ -150,4 +153,5 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2025-09-17-cutter-on-orbit-data-centers-mapping-leaders|2025-09-17]] · Cutter Consortium — On-orbit data centers: mapping the leaders in space-based AI computing (Cutter, Sep 2025)
 - [[intel/raw/2026-06-12-airandspaceforces-new-horizon-act-orbital-dc|2026-06-12]] · Air & Space Forces Magazine — Air & Space Forces — "Senators Want Pentagon to Tap in to Commercial On-Orbit Data Centers"
 - [[intel/raw/2026-09-28-itif-policy-considerations-orbital-data-centers|2026-09-28]] · ITIF (Information Technology and Innovation Foundation) — ITIF — "Policy Considerations for Orbital Data Centers"
+- [[intel/raw/2026-10-01-wilmerhale-orbital-data-centers-legal-reality|2026-10-01]] · WilmerHale (law-firm client alert) — WilmerHale — "The Legal Reality of Orbital Data Centers": four FCC data-centre filings under review, OSC certification pilot
 - [[intel/raw/2026-10-04-wikipedia-starcloud|2026-10-04]] · Wikipedia — "Starcloud" (living page) — Wikipedia — Starcloud (orbital data-centre startup) — facts as of Oct 2026

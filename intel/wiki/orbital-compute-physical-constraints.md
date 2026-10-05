@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, space/thermal, space/radiation, space/debris]
-updated: 2026-10-04
+updated: 2026-10-05
 sources: literature lane + sceptics lane, 2026-10-04 — see [[intel/raw/_index]]
 ---
 # Orbital compute — physical constraints
@@ -129,6 +129,12 @@ servicing logistics at 5.3–9 t/(MW·yr). CMU's Lucia: complexity "amplified by
 - EU Space Act (proposed 2025-06-25, effective ~2028–30) brings data-service providers in
   scope and mandates debris plans ([[intel/raw/2025-06-25-noerr-eu-space-act-proposal]],
   [[intel/raw/2026-04-08-ep-thinktank-ai-data-centres-in-space]]).
+- US: four data-centre constellations (1,239,600 satellites in total) are under FCC review;
+  the FCC's July 2026 Space Modernization Order found large-constellation standards
+  "premature"; the Office of Space Commerce certification pilot (opened 2026-08-20) names
+  orbital data centres. GDPR still reaches EU-subject data processed in orbit; the US CLOUD Act
+  reaches data a US provider holds wherever it is
+  ([[intel/raw/2026-10-01-wilmerhale-orbital-data-centers-legal-reality]]).
 
 ## 7 · What this means for the Entrant
 
