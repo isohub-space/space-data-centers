@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, space/launch, economics/cost-model, market/sizing]
-updated: 2026-10-04
+updated: 2026-10-12
 sources: 113 raw captures, 2026-10-04 market search — see [[intel/raw/_index]]
 ---
 # Orbital compute — launch economics and the cost gap
@@ -61,7 +61,9 @@ New Glenn pad out > 1 yr after the May 2026 static-fire explosion; Neutron NET Q
 **Small-payload prices are rising, not falling:** Transporter SSO rideshare $5,000/kg (2019)
 → **$7,000/kg (2026)**, +40% in 7 years
 ([[intel/raw/2026-02-27-newspaceeconomy-rideshare-pricing-2026]]). A kW-class operator buys
-at this price, not at Google's curve.
+at this price, not at Google's curve. Access is also scarce: Open Cosmos has > 50 satellites
+built and stored awaiting launch slots, and missed an ITU deployment milestone as a result
+([[intel/raw/2026-10-06-satnews-open-cosmos-itu-extension]]).
 
 ## 3 · Launched power price — and why the comparisons disagree
 

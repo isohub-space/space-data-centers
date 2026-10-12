@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/eo-edge, space/optical-isl, market/europe, market/defence]
-updated: 2026-10-04
+updated: 2026-10-12
 sources: Europe + literature lanes, 2026-10-04 — see [[intel/raw/_index]]
 ---
 # EO edge compute — the time-to-insight value chain
@@ -92,6 +92,10 @@ sellable data.
   Sterna ≥ 100 TOPS (Q2 2026), Morus ≥ 250 TOPS (2027), ESA-funded.
 - **Image quality.** Infer on raw (skip onboard restoration) is fine; doubling GSD 100 → 200
   cm costs 4–8 AP50 points ([[intel/raw/2026-09-29-arxiv-cnes-raw-imagery-onboard-ai]]).
+- **Sim-to-real.** A Φsat-2 marine-anomaly pipeline trained on simulated imagery did not transfer
+  to real in-orbit data and had to be retrained on real Level-1 imagery (no metric in the abstract —
+  [[intel/raw/2026-10-08-arxiv-phisat2-marine-anomaly-detection]]). The scarce input is real imagery
+  from the target sensor, plus the uplink to ship retrained weights.
 
 ## 6 · Economics of the kW-class node
 
@@ -112,7 +116,7 @@ sellable data.
 |---|---|---|---|
 | **Satlyt** (US) | yes, 3 missions | software layer, hardware-agnostic, NASA/SDA customers, > 60% measured | US-only; no European sovereign anchor |
 | **Ubotica** (IE) | yes | Φsat-1 heritage, > 30 EO models, $11M | maritime focus; Myriad-class compute |
-| **Axiom + Kepler** | yes, operational | relay-integrated, SDA optical, Red Hat | general PED, not EO-specific |
+| **Axiom + Kepler** | yes, operational | relay-integrated, SDA optical, Red Hat; node-to-node link and post-quantum crypto pitch (Oct 2026, [[intel/raw/2026-10-06-axiomspace-arc-orbital-compute-pqc-update]]) | general PED and secure sovereign processing, not EO-specific; no workload metrics published |
 | **Planetek AI-eXpress** (IT) | yes, 3 sats | multi-tenant, InCubed-funded, Eni/IBM tenants | FPGA-class compute |
 | **Edge Aerospace** (LU) | demo | ESA Space Cloud study | architecture, not EO service |
 

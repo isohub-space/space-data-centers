@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, space/thermal, space/radiation, space/debris]
-updated: 2026-10-04
+updated: 2026-10-12
 sources: literature lane + sceptics lane, 2026-10-04 — see [[intel/raw/_index]]
 ---
 # Orbital compute — physical constraints
@@ -129,6 +129,10 @@ servicing logistics at 5.3–9 t/(MW·yr). CMU's Lucia: complexity "amplified by
 - EU Space Act (proposed 2025-06-25, effective ~2028–30) brings data-service providers in
   scope and mandates debris plans ([[intel/raw/2025-06-25-noerr-eu-space-act-proposal]],
   [[intel/raw/2026-04-08-ep-thinktank-ai-data-centres-in-space]]).
+- US: the FCC has accepted four ODC applications (1,000,000 + 88,000 + 51,600 + 100,000 =
+  1,239,600 satellites, derived — matches the 1.23 M above); an environmental petition for a
+  programmatic EIS was filed 2026-07-08 and an FCC NEPA determination issued 2026-09-30, outcome
+  not yet checked ([[intel/raw/2026-10-01-wilmerhale-legal-reality-orbital-data-centers]]).
 
 ## 7 · What this means for the Entrant
 
