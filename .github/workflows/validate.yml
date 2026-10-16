@@ -3,6 +3,8 @@ name: validate
 on:
   push:
   pull_request:
+  # dispatched by weekly-intel on its branch (GITHUB_TOKEN pushes trigger nothing)
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,6 +27,10 @@ jobs:
       - name: Public-safety check (commit messages in this push / PR)
         run: |
           BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$BASE" ]; then
+            # workflow_dispatch: check what the branch adds over main
+            BASE="$(git merge-base origin/main HEAD 2>/dev/null || true)"
+          fi
           if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
             BASE="$(git rev-list --max-parents=0 HEAD | tail -1)"
           fi

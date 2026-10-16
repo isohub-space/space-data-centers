@@ -2,8 +2,15 @@ name: weekly-intel
 
 # Weekly self-update: Claude Code searches the week's news and literature on
 # orbital data centres, writes one raw capture per new source, updates the
-# wiki notes it affects, regenerates the derived dashboard data, and opens a
-# pull request. A human merges. Nothing lands on main unreviewed.
+# wiki notes it affects, regenerates the derived dashboard data, and pushes a
+# branch. A later step opens the pull request and dispatches the validate gate
+# on it. A human merges. Nothing lands on main unreviewed.
+#
+# Why the PR and the gate are separate steps: Claude has no tool that opens a
+# pull request, and pushes or PRs made with GITHUB_TOKEN do not trigger other
+# workflows, so validate would never run on the sweep's PR by itself.
+# workflow_dispatch is exempt from that rule; dispatching validate on the
+# branch puts the required check on the PR's head commit.
 #
 # Authentication: Workload Identity Federation, no API key secret. The job
 # requests a GitHub OIDC token (permissions: id-token: write) and the action
@@ -29,10 +36,9 @@ name: weekly-intel
 #     Do not add an event_name claim: a claim holds one value, and this job
 #     runs as both "schedule" and "workflow_dispatch". Pull-request runs are
 #     already excluded because their subject ends in ":pull_request".
-#   * the Claude GitHub App installed on this repository (gives the action
-#     a token to push a branch and open the PR)
-#   * Settings → Actions → "Allow GitHub Actions to create and approve pull
-#     requests" enabled
+#   * Settings → Actions → General → Workflow permissions → "Allow GitHub
+#     Actions to create and approve pull requests" enabled (the PR is opened
+#     with GITHUB_TOKEN)
 # Manual run: Actions → weekly-intel → Run workflow.
 
 on:
@@ -43,6 +49,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write     # dispatch validate.yml on the sweep branch
   id-token: write
 
 concurrency:
@@ -84,6 +91,10 @@ jobs:
 
             1. Read intel/_index.md, intel/raw/_index.md and the four wiki notes to know
                what is already captured. Never re-capture a URL that already has a note.
+               Earlier sweeps may still be unmerged: list them with
+                 git branch -r --list 'origin/intel/weekly-*'
+               and treat every URL captured there as already captured too, e.g.
+                 git grep -h '^url:' origin/intel/weekly-<label> -- intel/raw
             2. Search the past 7–10 days for new primary sources on: orbital / space data
                centres; in-orbit compute and EO edge processing; launch cadence and
                price (Starship, New Glenn, Neutron, rideshare lists); optical ISL and
@@ -111,11 +122,35 @@ jobs:
                  python3 scripts/check_public_safe.py
                Fix anything they report. Do not commit if any check fails.
             6. Commit on a branch named intel/weekly-${{ steps.week.outputs.label }} with a
-               message that lists the captures added and the wiki notes touched, then open
-               a pull request against main titled
-               "intel: weekly sweep ${{ steps.week.outputs.label }}" whose body summarises
-               (a) new sources by theme, (b) figures that changed and why, (c) sources you
-               could not open. If nothing new was found, open no PR and say so in the log.
+               message that lists the captures added and the wiki notes touched, and push
+               it: git push -u origin intel/weekly-${{ steps.week.outputs.label }}
+               Then write the pull request body to .sweep/pr-body.txt (git-ignored; do not
+               commit it), summarising (a) new sources by theme, (b) figures that changed
+               and why, (c) sources you could not open. You cannot open the pull request
+               yourself; the next workflow step does it from that file. If nothing new was
+               found, push nothing and say so in the log.
 
             Never add a Co-Authored-By trailer or any AI-attribution line to commits or
             the PR. Never mention any real person. The entrant is fictitious.
+
+      - name: Open the pull request and run the gate on it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: intel/weekly-${{ steps.week.outputs.label }}
+          TITLE: "intel: weekly sweep ${{ steps.week.outputs.label }}"
+        run: |
+          if ! git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
+            echo "No sweep branch pushed; nothing new this week."
+            exit 0
+          fi
+          BODY=.sweep/pr-body.txt
+          if [ ! -s "$BODY" ]; then
+            mkdir -p .sweep
+            echo "Weekly sweep $BRANCH. The sweep wrote no summary; see the commit message." > "$BODY"
+          fi
+          # the PR body is public too
+          python3 scripts/check_public_safe.py --stdin < "$BODY"
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --base main --head "$BRANCH" --title "$TITLE" --body-file "$BODY"
+          fi
+          gh workflow run validate.yml --ref "$BRANCH"

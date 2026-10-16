@@ -11,8 +11,9 @@ market?**
   `intel/raw/` (one note per source).
 - `intel/output/derived/dashboard.json` is regenerated from the notes by
   `scripts/build_dashboard.py`; `dashboard/index.html` (the Orbital Compute Atlas) draws it.
-- Maintained by `.github/workflows/weekly-intel.yml` (Claude Code sweeps the week's sources
-  and opens a PR, authenticating with Workload Identity Federation, no API key secret);
-  gated by `.github/workflows/validate.yml`.
+- Maintained by `.github/workflows/weekly-intel.yml`: Claude Code sweeps the week's sources
+  and pushes a branch, then a workflow step opens the PR and dispatches the gate on it.
+  Authentication is Workload Identity Federation, no API key secret. Gated by
+  `.github/workflows/validate.yml`.
 
 Agent rules: [`CLAUDE.md`](CLAUDE.md).
