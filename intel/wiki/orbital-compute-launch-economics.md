@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, space/launch, economics/cost-model, market/sizing]
-updated: 2026-10-04
+updated: 2026-10-12
 sources: 113 raw captures, 2026-10-04 market search — see [[intel/raw/_index]]
 ---
 # Orbital compute — launch economics and the cost gap
@@ -39,7 +39,11 @@ accumulates. (TechCrunch's "20% a year" is a mis-paraphrase —
 Google's own primary ([[intel/raw/2025-11-22-arxiv-google-suncatcher-system-design]],
 [[intel/raw/2025-11-04-google-research-suncatcher-system-design]]): < $200/kg by ~2035 at
 ~180 Starship flights/yr; with 70% fewer launches still ≈ $300/kg; Starship-4 bottom-up
-cost ≲ $60/kg at 10× reuse. Press: 370,000 t ≈ **1,800 launches / 180 per yr at 200 t**.
+cost ≲ $60/kg at 10× reuse. Press: 370,000 t ≈ **1,800 launches / 180 per yr at 200 t**;
+The Register attributes the same 370,000 t / ~1,800 launches to the peer-reviewed *Joule*
+version but cites **100×** component reuse
+([[intel/raw/2026-10-02-theregister-google-suncatcher-joule-paper]]) — derived 370,000 / 1,800
+≈ 206 t per launch, consistent with 200 t.
 
 ## 2 · Cadence reality vs. the model
 
@@ -61,7 +65,9 @@ New Glenn pad out > 1 yr after the May 2026 static-fire explosion; Neutron NET Q
 **Small-payload prices are rising, not falling:** Transporter SSO rideshare $5,000/kg (2019)
 → **$7,000/kg (2026)**, +40% in 7 years
 ([[intel/raw/2026-02-27-newspaceeconomy-rideshare-pricing-2026]]). A kW-class operator buys
-at this price, not at Google's curve.
+at this price, not at Google's curve. Access is also scarce: Open Cosmos has > 50 satellites
+built and stored awaiting launch slots, and missed an ITU deployment milestone as a result
+([[intel/raw/2026-10-06-satnews-open-cosmos-itu-extension]]).
 
 ## 3 · Launched power price — and why the comparisons disagree
 
@@ -150,6 +156,8 @@ definition.
 
 ## Watch list
 - [ ] *Joule* publication of the Google paper (cell.com returned 403) — confirm 370,000 t
+  — 2026-10-05: The Register reports 370,000 t / ~1,800 launches from the Joule version but
+  100× reuse vs the preprint's 10×; cell.com still 403, so the figure stays *reported*
 - [ ] Starship flights per year and tonnage — the leading indicator for the whole sector
 - [ ] Transporter price list 2027 (rising or flat?)
 - [ ] McKinsey "case for data centers in space" (503 on fetch) — $500/kg threshold unverified

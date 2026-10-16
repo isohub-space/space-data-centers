@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, indicators, timeseries]
-updated: 2026-10-04
+updated: 2026-10-05
 ---
 # Indicators — dated observations
 
@@ -17,7 +17,10 @@ Columns: `Indicator` is a stable id (lowercase, hyphens); `Date` is `YYYY`, `YYY
 Why these: launch price and cadence decide whether any orbital-compute plan closes
 ([[intel/wiki/orbital-compute-launch-economics]]); payload per flight is the other half of
 the $/kg curve; valuations and cumulative funding show how much capital the GW-scale thesis
-is absorbing ([[intel/wiki/orbital-data-center-landscape]]).
+is absorbing ([[intel/wiki/orbital-data-center-landscape]]). Published EO insight latency
+(added 2026-10-05) is the bar the Entrant's time-to-insight claim has to beat
+([[intel/wiki/eo-edge-compute-value-chain]]); the Note says whether a value is measured or a
+target.
 
 ## Observations
 
@@ -41,8 +44,11 @@ is absorbing ([[intel/wiki/orbital-data-center-landscape]]).
 | odc-startup-valuation-max | USD bn | 2026-03-30 | 1.1 | reported | highest post-money among ODC startups (Starcloud Series A) | [[intel/raw/2026-03-30-techcrunch-starcloud-170m-series-a]] |
 | odc-startup-valuation-max | USD bn | 2026-08-21 | 2.3 | reported | Starcloud Series A extension | [[intel/raw/2026-08-21-techcrunch-starcloud-250m-series-a-extension]] |
 | odc-sector-funding-cumulative | USD bn | 2026-04 | 3 | reported | lower bound (">$3B"), ABI | [[intel/raw/2026-05-11-abi-research-data-centers-in-space-qa]] |
+| eo-insight-latency-published | min | 2026-01 | 13 | reported | Vantor WorldView Legion, tasking → portal, ground-processed, measured once | [[intel/raw/2026-04-07-spacenews-eo-operators-images-within-minutes]] |
+| eo-insight-latency-published | min | 2026-10-01 | 30 | reported | Satellogic Merlin onboard-AI alert, design target before commissioning (untasked detection) | [[intel/raw/2026-10-02-globenewswire-satellogic-merlin-first-launch]] |
 
 ## Watch list
 - [ ] Starship flights and payload per flight — append a row per flight
 - [ ] Rideshare price list for 2027
 - [ ] Next priced round of any orbital-compute startup (valuation, cumulative funding)
+- [ ] Measured EO insight latency (Satellogic Merlin after commissioning; any onboard service)

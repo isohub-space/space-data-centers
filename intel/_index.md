@@ -25,7 +25,7 @@ Karpathy flow: `raw/` (one capture per source) → `wiki/` (one note per idea, p
   sweep appends rows, nothing is overwritten
 
 ## raw/ — captures
-- [[intel/raw/_index]] — 113 sources (2026-10-04 market search), grouped by theme
+- [[intel/raw/_index]] — 121 sources (2026-10-04 market search + 2026-W41 and 2026-W42 sweeps), grouped by theme
 
 ## output/
 - *(none yet)*

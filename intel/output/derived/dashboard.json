@@ -1,20 +1,20 @@
 {
- "generated": "2026-10-04T17:19:21+00:00",
+ "generated": "2026-10-16T16:37:59+00:00",
  "counts": {
-  "sources": 113,
+  "sources": 121,
   "by_theme": {
-   "space/eo-edge": 28,
-   "market/startups": 25,
-   "market/europe": 25,
+   "space/eo-edge": 29,
+   "market/startups": 26,
+   "market/europe": 26,
    "research/paper": 25,
-   "space/launch": 22,
+   "space/launch": 23,
+   "space/optical-isl": 16,
    "space/thermal": 14,
+   "market/incumbents": 13,
    "market/sceptics": 13,
-   "space/optical-isl": 12,
-   "market/incumbents": 11,
+   "economics/cost-model": 8,
    "market/esa": 7,
    "space/radiation": 7,
-   "economics/cost-model": 7,
    "market/sizing": 6
   },
   "by_publisher": {
@@ -27,6 +27,8 @@
    "European Spaceflight": 2,
    "SpaceNews": 2,
    "New Space Economy": 2,
+   "The Register": 2,
+   "Satnews": 2,
    "Microsoft Azure blog": 1,
    "NTT R&D (technical overview)": 1,
    "Ramon.Space (press release)": 1,
@@ -40,9 +42,7 @@
    "arXiv (v1 2025-03-05; v4 2026-05-20)": 1,
    "Satellogic (company blog)": 1,
    "Axiom Space (press release) + Axiom ODC product page": 1,
-   "InformationWeek": 1,
-   "arXiv (TU Wien et al.)": 1,
-   "TechSpot": 1
+   "InformationWeek": 1
   },
   "by_month": {
    "2022-04": 1,
@@ -74,7 +74,7 @@
    "2026-07": 2,
    "2026-08": 8,
    "2026-09": 12,
-   "2026-10": 7
+   "2026-10": 15
   }
  },
  "sources": [
@@ -2472,6 +2472,30 @@
    "sweep": "2026-W40"
   },
   {
+   "id": "2026-10-01-businesswire-cowboy-reason-1-power-beaming",
+   "date": "2026-10-01",
+   "publisher": "Business Wire (Cowboy Space Corporation press release, syndicated via FinancialContent; same text on Yahoo Finance)",
+   "title": "Cowboy Space — Reason-1 launched to demonstrate laser power beaming from orbit (Transporter-18)",
+   "url": "https://www.financialcontent.com/article/bizwire-2026-10-1-cowboy-space-launches-reason-1-to-demonstrate-first-laser-power-beaming-from-orbit-to-earth",
+   "tags": [
+    "sdc",
+    "market/startups",
+    "company/cowboy-space",
+    "space/orbital-compute",
+    "space/optical-isl",
+    "market/defence"
+   ],
+   "primary": "The release is the company's own statement (primary for what Cowboy claims). No technical paper or filing for Reason-1 opened; beaming numbers below come from a search snippet, not the release.",
+   "primary_checked": false,
+   "relevance": [
+    "Cowboy's first flight is **power beaming and optics, not compute**; its MW node remains end-2028.",
+    "DoD operational-energy money behind a GW-thesis company confirms **defence is the first payer**",
+    "Reason-2's optical downlink (2027) is a capability the Entrant would buy, not build."
+   ],
+   "captured": "2026-10-05",
+   "sweep": "2026-W41"
+  },
+  {
    "id": "2026-10-01-google-blog-suncatcher-prototype-in-orbit",
    "date": "2026-10-01",
    "publisher": "Google (The Keyword blog)",
@@ -2490,6 +2514,29 @@
    ],
    "captured": "2026-10-04",
    "sweep": "2026-W40"
+  },
+  {
+   "id": "2026-10-01-mediasat-china-space-idc-computing-constellation",
+   "date": "2026-10-01",
+   "publisher": "Mediasat (English edition) — relays ITHome and China in Space",
+   "title": "Mediasat — China plans to laser-link 1,000+ satellites into an orbital supercomputer (Space.IDC)",
+   "url": "https://mediasat.info/en/2026/10/01/china-plans-to-laser-link-1000-satellites-into-an-orbital-supercomputer/",
+   "tags": [
+    "sdc",
+    "market/competitors",
+    "market/china",
+    "space/orbital-compute",
+    "company/star-vision"
+   ],
+   "primary": "not opened (ITHome report of the 2026-09-25 Hangzhou unveiling; China in Space)",
+   "primary_checked": true,
+   "relevance": [
+    "**The vault had no Chinese tier-A/B entry.** China now has two orbital-compute programmes: one flying",
+    "Space.IDC's first flight (Q4 2027) is on the same clock as Starcloud-2 and SpaceX's first AI1 prototypes;",
+    "State-bank credit (not venture equity) is a different capital model from the US tier — a comparison point"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
   },
   {
    "id": "2026-10-01-npr-google-suncatcher-launch-sceptics",
@@ -2583,6 +2630,75 @@
    "sweep": "2026-W40"
   },
   {
+   "id": "2026-10-01-wilmerhale-orbital-data-centers-legal-reality",
+   "date": "2026-10-01",
+   "publisher": "WilmerHale (law-firm client alert)",
+   "title": "WilmerHale — \"Not Just Science Fiction: The Legal Reality of Orbital Data Centers\"",
+   "url": "https://www.wilmerhale.com/en/insights/client-alerts/20261001-not-just-science-fiction-the-legal-reality-of-orbital-data-centers",
+   "tags": [
+    "sdc",
+    "policy/regulation",
+    "policy/fcc",
+    "space/orbital-compute",
+    "space/debris"
+   ],
+   "primary": "Cites FCC DA 26-113 (SpaceX acceptance), FCC 26-47 / SB Docket 25-306 (Space Modernization Order) and the Federal Register notice of the OSC Mission Authorization Pilot (2026-08-20); none of the underlying documents opened this sweep.",
+   "primary_checked": true,
+   "relevance": [
+    "The US has opened a **named authorisation path for orbital data centres** (OSC certification,",
+    "**GDPR + CLOUD Act** make data sovereignty a live selling point: a European operator under EU",
+    "The FCC declining to set large-constellation standards leaves the GW-scale filings in limbo;"
+   ],
+   "captured": "2026-10-05",
+   "sweep": "2026-W41"
+  },
+  {
+   "id": "2026-10-02-globenewswire-satellogic-merlin-first-launch",
+   "date": "2026-10-02",
+   "publisher": "GlobeNewswire (Satellogic Inc. press release)",
+   "title": "Satellogic — first Merlin satellite launched: onboard AI alerts within 30 minutes, ISL cueing",
+   "url": "https://www.globenewswire.com/news-release/2026/10/02/3373776/0/en/satellogic-announces-successful-launch-of-first-merlin-satellite.html",
+   "tags": [
+    "sdc",
+    "space/eo-edge",
+    "space/optical-isl",
+    "company/satellogic",
+    "market/competitors",
+    "market/defence"
+   ],
+   "primary": "Company release (primary for Satellogic's claims). The March 2026 Merlin introduction (globenewswire 2026-03-18) was seen only as a search result, not opened.",
+   "primary_checked": true,
+   "relevance": [
+    "**This is the Entrant's chain, built vertically by an EO operator**: collection → onboard AI →",
+    "The latency bar now has two public reference points: 13 min (tasked, ground-processed) and",
+    "Defence/\"theater\" framing confirms the first buyer again."
+   ],
+   "captured": "2026-10-05",
+   "sweep": "2026-W41"
+  },
+  {
+   "id": "2026-10-02-theregister-google-suncatcher-joule-paper",
+   "date": "2026-10-02",
+   "publisher": "The Register",
+   "title": "The Register — Google launches first datacenter satellite, and research that finds orbiting bit barns can work",
+   "url": "https://theregister.com/systems/2026/10/02/google-launches-first-datacenter-satellite-and-research-that-finds-orbiting-bit-barns-can-work/5300721",
+   "tags": [
+    "sdc",
+    "market/incumbents",
+    "company/google",
+    "space/launch",
+    "economics/cost-model"
+   ],
+   "primary": "Joule paper 'Toward a future space-based, highly scalable AI infrastructure system design' (cell.com/joule/fulltext/S2542-4351(26)00362-4) — HTTP 403 again on 2026-10-05, not read. arXiv preprint 2511.19468 is in the vault.",
+   "primary_checked": false,
+   "relevance": [
+    "Second independent outlet now reports 370,000 t / ~1,800 launches from the peer-reviewed",
+    "Nothing here moves the kW-class EO case; it reinforces that the $200/kg world is a 2035+"
+   ],
+   "captured": "2026-10-05",
+   "sweep": "2026-W41"
+  },
+  {
    "id": "2026-10-04-wikipedia-new-glenn-neutron-status",
    "date": "2026-10-04",
    "publisher": "Wikipedia — \"New Glenn\" and \"Rocket Lab Neutron\" (living pages)",
@@ -2621,36 +2737,108 @@
    ],
    "captured": "2026-10-04",
    "sweep": "2026-W40"
+  },
+  {
+   "id": "2026-10-06-axiomspace-arc-orbital-compute-pqc-update",
+   "date": "2026-10-06",
+   "publisher": "Axiom Space (press release)",
+   "title": "Axiom Space — \"Axiom Space, Kepler ready orbital computing for quantum era\" (ARC platform update)",
+   "url": "https://www.axiomspace.com/release/axiom-space-kepler-ready-orbital-computing-for-quantum-era",
+   "tags": [
+    "sdc",
+    "market/incumbents",
+    "company/axiom-space",
+    "company/kepler",
+    "edge/odc-nodes",
+    "space/optical-isl",
+    "security/pqc"
+   ],
+   "primary": "this release is the operator's own statement (primary for operational status; no independent telemetry)",
+   "primary_checked": true,
+   "relevance": [
+    "The only flying commercial ODC is moving its pitch from \"compute in orbit\" to **sovereign + post-quantum",
+    "PQC is becoming table stakes for government buyers on a 2030–31 clock; an Entrant selling to defence buyers",
+    "Still no published workload metrics from the incumbent → the Entrant's \"publish measured orbit-average"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
+  },
+  {
+   "id": "2026-10-06-satnews-open-cosmos-itu-extension",
+   "date": "2026-10-06",
+   "publisher": "Satnews",
+   "title": "Satnews — Open Cosmos seeks one-year ITU regulatory extension after missing constellation deployment milestones",
+   "url": "https://satnews.com/2026/10/06/open-cosmos-seeks-one-year-itu-regulatory-extension-after-missing-constellation-deployment-milestones/",
+   "tags": [
+    "sdc",
+    "market/europe",
+    "company/open-cosmos",
+    "policy/itu",
+    "space/optical-isl"
+   ],
+   "primary": "not opened (ITU Radio Regulations Board submission; RRB meets November 2026)",
+   "primary_checked": true,
+   "relevance": [
+    "Europe's best-funded small-sat builder (€300M, Sep 2026 —",
+    "For the Entrant: **secure the launch slot before the bus**; hosted payloads on an operator who already holds",
+    "Open Cosmos's pivot toward a 576-sat Ka-band/secure-transport constellation makes it a potential **relay /"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
+  },
+  {
+   "id": "2026-10-08-arxiv-phisat2-marine-anomaly-detection",
+   "date": "2026-10-08",
+   "publisher": "arXiv (cs.AI, cs.CV; submitted via CCSD/HAL proxy)",
+   "title": "arXiv — Onboard Marine Anomaly Detection on Φsat-2: From Simulation-Based Development to In-Orbit Demonstration",
+   "url": "https://arxiv.org/abs/2610.11735",
+   "tags": [
+    "sdc",
+    "literature/arxiv",
+    "edge/eo",
+    "programme/esa-phisat",
+    "use-case/maritime"
+   ],
+   "primary": "this preprint (abstract opened; PDF fetched but not machine-readable in this sweep)",
+   "primary_checked": false,
+   "relevance": [
+    "**Sim-to-real is the hidden cost of onboard EO models.** A pipeline trained on simulated Φsat-2 imagery",
+    "Maritime anomaly detection is the same buyer as Ubotica's maritime platform and the BIFROST Arctic case —",
+    "Practical: budget a post-launch retraining cycle (and the uplink to ship new weights — see the uplink"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
   }
  ],
  "wiki": [
   {
    "id": "eo-edge-compute-value-chain",
    "title": "EO edge compute — the time-to-insight value chain",
-   "updated": "2026-10-04",
+   "updated": "2026-10-12",
    "lede": "The Entrant's hypothesis ([[scenario/entrant]]): the end-to-end Earth-observation chain with processing *inside* it — collection → optical links → in-orbit compute → insight delivery — measured by **time-to-insight**. This note is what the evidence says about that chain: where the bottleneck is, who pays, what works, and the bar an in-orbit service has to beat.",
    "open_items": [
     "EUMETSAT's position on onboard processing (nothing found)",
     "Φ-Sat-1 primary downlink-saving figure (Giuffrida 2022, TGRS — not opened)",
-    "Measured orbit-average latency for *any* in-orbit processing service",
+    "Measured orbit-average latency for *any* in-orbit processing service — 2026-10-05:",
     "Kepler ODC node compute hardware (unverified)"
    ]
   },
   {
    "id": "indicators",
    "title": "Indicators — dated observations",
-   "updated": "2026-10-04",
+   "updated": "2026-10-05",
    "lede": "The handful of numbers that move the positioning question, kept as **dated observations** so the dashboard can draw them over time. One row per observation; rows are **appended, never edited** (a corrected value is a new row with a note). The weekly sweep adds a row whenever a new source gives a new value for an indicator.",
    "open_items": [
     "Starship flights and payload per flight — append a row per flight",
     "Rideshare price list for 2027",
-    "Next priced round of any orbital-compute startup (valuation, cumulative funding)"
+    "Next priced round of any orbital-compute startup (valuation, cumulative funding)",
+    "Measured EO insight latency (Satellogic Merlin after commissioning; any onboard service)"
    ]
   },
   {
    "id": "orbital-compute-launch-economics",
    "title": "Orbital compute — launch economics and the cost gap",
-   "updated": "2026-10-04",
+   "updated": "2026-10-12",
    "lede": "**Claim under test:** orbital data centres become cost-competitive with terrestrial ones when launch reaches ~$200/kg. Every optimist case (Google, SpaceX, Starcloud) rests on that number; every sceptic case shows how far away it is. The binding constraint is **launch cadence and tonnage**, not physics — and today's demonstrated reality is two orders of magnitude short.",
    "open_items": [
     "*Joule* publication of the Google paper (cell.com returned 403) — confirm 370,000 t",
@@ -2662,20 +2850,25 @@
   {
    "id": "orbital-compute-physical-constraints",
    "title": "Orbital compute — physical constraints",
-   "updated": "2026-10-04",
+   "updated": "2026-10-12",
    "lede": "What limits a compute satellite before money does: **mass per kilowatt**, **heat rejection**, **radiation**, **obsolescence**, and the **environment** it leaves behind. The economics in [[intel/wiki/orbital-compute-launch-economics]] inherit every number here.",
    "open_items": []
   },
   {
    "id": "orbital-data-center-landscape",
    "title": "Orbital data-centre landscape",
-   "updated": "2026-10-04",
+   "updated": "2026-10-12",
    "lede": "Who is building orbital compute, by **workload class** — because the class, not the logo, decides whether a player is in the Entrant's market. Three tiers: (A) GW-scale AI compute bets, (B) kW-class edge / space-native processing (the only tier with revenue), (C) the enabling layers (relay, bus, chips, programmes). Economics in [[intel/wiki/orbital-compute-launch-economics]]; the EO segment in detail in [[intel/wiki/eo-edge-compute-value-chain]].",
    "open_items": [
     "ODC Orbital Data Center GmbH (Neubiberg, HRB 293209) — registry entry only; product?",
     "Kepler ODC compute hardware (\"40 Jetson Orin\") — third-party snippets only",
     "EUMETSAT position on onboard processing — nothing found",
-    "Aviation Week \"$250M rounds\" — second company is Muon Space (bus maker), a category stretch"
+    "Aviation Week \"$250M rounds\" — second company is Muon Space (bus maker), a category stretch",
+    "2026-10-05: Cowboy's reported 20,000-sat \"Stampede\" FCC filing is not among the four",
+    "2026-10-05: corrected Kepler \"33 planned\" → 33 launched in total; a Kepler release of",
+    "2026-10-12: FCC NEPA determination of 2026-09-30 on ODC filings and the Space Modernization",
+    "2026-10-12: GAO-26-109012 \"Data Centers in Space\" (2026-04-28) — primary not yet captured",
+    "2026-10-12: Chinese programmes (Three-Body, Space.IDC) — primary sources (ITHome, Zhejiang Lab)"
    ]
   }
  ],
@@ -2690,7 +2883,7 @@
   },
   {
    "note": "eo-edge-compute-value-chain",
-   "item": "Measured orbit-average latency for *any* in-orbit processing service"
+   "item": "Measured orbit-average latency for *any* in-orbit processing service — 2026-10-05:"
   },
   {
    "note": "eo-edge-compute-value-chain",
@@ -2707,6 +2900,10 @@
   {
    "note": "indicators",
    "item": "Next priced round of any orbital-compute startup (valuation, cumulative funding)"
+  },
+  {
+   "note": "indicators",
+   "item": "Measured EO insight latency (Satellogic Merlin after commissioning; any onboard service)"
   },
   {
    "note": "orbital-compute-launch-economics",
@@ -2739,6 +2936,26 @@
   {
    "note": "orbital-data-center-landscape",
    "item": "Aviation Week \"$250M rounds\" — second company is Muon Space (bus maker), a category stretch"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-05: Cowboy's reported 20,000-sat \"Stampede\" FCC filing is not among the four"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-05: corrected Kepler \"33 planned\" → 33 launched in total; a Kepler release of"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: FCC NEPA determination of 2026-09-30 on ODC filings and the Space Modernization"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: GAO-26-109012 \"Data Centers in Space\" (2026-04-28) — primary not yet captured"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: Chinese programmes (Three-Body, Space.IDC) — primary sources (ITHome, Zhejiang Lab)"
   }
  ],
  "tables": [
@@ -2881,10 +3098,16 @@
      "Weakness vs the Entrant": "maritime focus; Myriad-class compute"
     },
     {
+     "": "Satellogic Merlin (US/AR)",
+     "Flying?": "launched 2026-10-01, FOC H2 2027",
+     "Edge": "the full chain on its own fleet: onboard AI → ISL cueing → 50 cm follow-up; 30-min alert target; defence \"theater\" framing",
+     "Weakness vs the Entrant": "sells its own data, hosts no third parties; latency unmeasured"
+    },
+    {
      "": "Axiom + Kepler",
      "Flying?": "yes, operational",
-     "Edge": "relay-integrated, SDA optical, Red Hat",
-     "Weakness vs the Entrant": "general PED, not EO-specific"
+     "Edge": "relay-integrated, SDA optical, Red Hat; node-to-node link and post-quantum crypto pitch (Oct 2026, 2026-10-06-axiomspace-arc-orbital-compute-pqc-update)",
+     "Weakness vs the Entrant": "general PED and secure sovereign processing, not EO-specific; no workload metrics published"
     },
     {
      "": "Planetek AI-eXpress (IT)",
@@ -3074,6 +3297,24 @@
      "Kind": "reported",
      "Note": "lower bound (\">$3B\"), ABI",
      "Source": "2026-05-11-abi-research-data-centers-in-space-qa"
+    },
+    {
+     "Indicator": "eo-insight-latency-published",
+     "Unit": "min",
+     "Date": "2026-01",
+     "Value": "13",
+     "Kind": "reported",
+     "Note": "Vantor WorldView Legion, tasking → portal, ground-processed, measured once",
+     "Source": "2026-04-07-spacenews-eo-operators-images-within-minutes"
+    },
+    {
+     "Indicator": "eo-insight-latency-published",
+     "Unit": "min",
+     "Date": "2026-10-01",
+     "Value": "30",
+     "Kind": "reported",
+     "Note": "Satellogic Merlin onboard-AI alert, design target before commissioning (untasked detection)",
+     "Source": "2026-10-02-globenewswire-satellogic-merlin-first-launch"
     }
    ]
   },
@@ -3394,9 +3635,9 @@
     {
      "Player": "Cowboy Space (ex-Aetherflux)",
      "Plan": "1 MW nodes, 20–25 t, ~800 GPUs, all-optical, own rocket; FCC \"Stampede\" 20,000 sats",
-     "Funding / scale": "$50M A (2025) + $275M B @ $2B (May 2026)",
-     "First hardware": "Reason-1 flown Oct 2026 (laser demo); first MW node end-2028",
-     "Source": "2026-05-11-techcrunch-cowboy-space-275m-series-b, 2026-05-18-satnews-cowboy-stampede-fcc-20000"
+     "Funding / scale": "$50M A (2025) + $275M B @ $2B (May 2026); DoD OECIF multi-year support",
+     "First hardware": "Reason-1 launched 2026-10-01 (power-beaming + optics/thermal demo, no compute); Reason-2 optical downlink 2027; first MW node end-2028",
+     "Source": "2026-05-11-techcrunch-cowboy-space-275m-series-b, 2026-05-18-satnews-cowboy-stampede-fcc-20000, 2026-10-01-businesswire-cowboy-reason-1-power-beaming"
     },
     {
      "Player": "Blue Origin \"Project Sunrise\"",
@@ -3420,6 +3661,13 @@
      "Source": "2026-09-16-exterra-orbital-reflex-aerospace-german-bus"
     },
     {
+     "Player": "Space.IDC (CN; STAR.VISION + Dongfang Xinglian)",
+     "Plan": "> 1,080 laser-linked sats (> 360 compute tier, SSO); G1 11.5 kW / G2 48 kW / G3 140 kW; full build 2035",
+     "Funding / scale": "CNY 10B (~$1.49B) state-bank credit, ≥ CNY 1B phase one",
+     "First hardware": "none; first sat Q4 2027",
+     "Source": "2026-10-01-mediasat-china-space-idc-computing-constellation"
+    },
+    {
      "Player": "Thales Alenia ASCEND (EU, Horizon Europe)",
      "Plan": "10 MW modules, 35,000 m² PV each; 1 GW before 2050; needs 10× cleaner launcher, in-orbit robotic assembly",
      "Funding / scale": "undisclosed study budget",
@@ -3441,10 +3689,10 @@
    "rows": [
     {
      "Player": "Axiom Space + Kepler",
-     "Offer": "2 ODC nodes on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud",
-     "Status": "operational since 2026-01-11 — the only commercial ODC flying",
+     "Offer": "2 ODC nodes, now \"ARC 1/2\", on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud; post-quantum crypto pitch (ground demo done, on-orbit next)",
+     "Status": "operational since 2026-01-11 — the only commercial ODC flying; ARC-to-ARC and ARC-to-ground links confirmed 2026-10-06; still no workload metrics",
      "Funding": "corporate",
-     "Source": "2025-04-07-axiomspace-odc-nodes-press-release, 2026-01-11-kepler-first-tranche-optical-relay-satellites"
+     "Source": "2025-04-07-axiomspace-odc-nodes-press-release, 2026-01-11-kepler-first-tranche-optical-relay-satellites, 2026-10-06-axiomspace-arc-orbital-compute-pqc-update"
     },
     {
      "Player": "Satlyt",
@@ -3452,6 +3700,13 @@
      "Status": "3 missions flown; NASA, SDA customers; Transporter-18 Oct 2026",
      "Funding": "$8M seed (Oct 2026)",
      "Source": "2026-10-01-techcrunch-satlyt-8m-seed"
+    },
+    {
+     "Player": "Satellogic Merlin",
+     "Offer": "vertically integrated EO: 1 m, 10-band, 170 km swath; onboard-AI alerts \"within 30 min\"; ISL cues 50 cm follow-up without a ground station",
+     "Status": "Merlin.01 launched 2026-10-01; FOC H2 2027",
+     "Funding": "listed (NASDAQ)",
+     "Source": "2026-10-02-globenewswire-satellogic-merlin-first-launch"
     },
     {
      "Player": "Atomic-6",
@@ -3613,10 +3868,59 @@
    "first_captured": "2026-10-04",
    "last_captured": "2026-10-04",
    "cumulative": 113
+  },
+  {
+   "week": "2026-W41",
+   "added": 4,
+   "by_theme": {
+    "economics/cost-model": 1,
+    "market/incumbents": 1,
+    "market/startups": 1,
+    "space/eo-edge": 1,
+    "space/launch": 1,
+    "space/optical-isl": 2
+   },
+   "first_captured": "2026-10-05",
+   "last_captured": "2026-10-05",
+   "cumulative": 117
+  },
+  {
+   "week": "2026-W42",
+   "added": 4,
+   "by_theme": {
+    "market/europe": 1,
+    "market/incumbents": 1,
+    "space/optical-isl": 2
+   },
+   "first_captured": "2026-10-12",
+   "last_captured": "2026-10-12",
+   "cumulative": 121
   }
  ],
- "latest_sweep": "2026-W40",
+ "latest_sweep": "2026-W42",
  "indicators": [
+  {
+   "id": "eo-insight-latency-published",
+   "unit": "min",
+   "points": [
+    {
+     "date": "2026-01",
+     "x": 2026.0417,
+     "value": 13.0,
+     "kind": "reported",
+     "note": "Vantor WorldView Legion, tasking → portal, ground-processed, measured once",
+     "source": "2026-04-07-spacenews-eo-operators-images-within-minutes"
+    },
+    {
+     "date": "2026-10-01",
+     "x": 2026.7479,
+     "value": 30.0,
+     "kind": "reported",
+     "note": "Satellogic Merlin onboard-AI alert, design target before commissioning (untasked detection)",
+     "source": "2026-10-02-globenewswire-satellogic-merlin-first-launch"
+    }
+   ]
+  },
   {
    "id": "odc-sector-funding-cumulative",
    "unit": "USD bn",
