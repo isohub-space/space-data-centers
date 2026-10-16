@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, space/thermal, space/radiation, space/debris]
-updated: 2026-10-05
+updated: 2026-10-12
 sources: literature lane + sceptics lane, 2026-10-04 — see [[intel/raw/_index]]
 ---
 # Orbital compute — physical constraints
@@ -133,7 +133,9 @@ servicing logistics at 5.3–9 t/(MW·yr). CMU's Lucia: complexity "amplified by
   the FCC's July 2026 Space Modernization Order found large-constellation standards
   "premature"; the Office of Space Commerce certification pilot (opened 2026-08-20) names
   orbital data centres. GDPR still reaches EU-subject data processed in orbit; the US CLOUD Act
-  reaches data a US provider holds wherever it is
+  reaches data a US provider holds wherever it is; an environmental petition for a programmatic
+  EIS was filed 2026-07-08 and an FCC NEPA determination issued 2026-09-30, outcome not yet
+  checked
   ([[intel/raw/2026-10-01-wilmerhale-orbital-data-centers-legal-reality]]).
 
 ## 7 · What this means for the Entrant

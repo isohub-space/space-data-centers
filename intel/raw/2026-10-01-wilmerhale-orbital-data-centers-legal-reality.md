@@ -31,6 +31,13 @@ primary: "Cites FCC DA 26-113 (SpaceX acceptance), FCC 26-47 / SB Docket 25-306 
   "possession, custody, or control" wherever located. Outer Space Treaty Arts. VI and VIII
   (state responsibility and jurisdiction) cited.
 
+**Also reported (merged from the W42 sweep's duplicate capture of the same alert, 2026-10-12)**
+- FCC Space Bureau acceptance of the four applications: **DA 26-113 (2026-02-04)**; Space Modernization
+  Order **FCC 26-47**, SB Docket 25-306, released **2026-07-23** *(reported)*.
+- An environmental petition seeking a **programmatic EIS** was filed **2026-07-08**; an **FCC NEPA
+  determination** is dated **2026-09-30** — outcome not stated in the alert *(reported)*.
+- The alert cites **GAO-26-109012 "Data Centers in Space" (2026-04-28)** *(reported; GAO report not opened)*.
+
 ## Primary (what the underlying paper / filing says — where it differs)
 - Not opened. Dates are the alert's; the SpaceX filing is dated 2026-01-30 elsewhere in the vault
   with acceptance a few days later

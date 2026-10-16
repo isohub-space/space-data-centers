@@ -4,7 +4,7 @@ tags: [sdc, intel/raw]
 ---
 # intel/raw/ — captures
 
-117 sources, one note per source, captured 2026-10-04 (market search) unless dated otherwise; 4 added 2026-10-05 (weekly sweep 2026-W41). Grouped by primary theme; a note appears once. Raw is *capture*, not reference — cite the wiki.
+121 sources, one note per source, captured 2026-10-04 (market search) unless dated otherwise; 4 added by the 2026-W41 sweep (captured 2026-10-05) and 4 by the 2026-W42 sweep (captured 2026-10-12). Grouped by primary theme; a note appears once. Raw is *capture*, not reference — cite the wiki.
 
 ## Startups & funding
 
@@ -49,6 +49,8 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-10-01-google-blog-suncatcher-prototype-in-orbit|2026-10-01]] · Google (The Keyword blog) — Google — "Project Suncatcher prototype satellite is in orbit"
 - [[intel/raw/2026-10-01-npr-google-suncatcher-launch-sceptics|2026-10-01]] · NPR (syndicated via KPBS) — NPR — "Google launches Project Suncatcher, a step towards AI data centers in space"
 - [[intel/raw/2026-10-02-theregister-google-suncatcher-joule-paper|2026-10-02]] · The Register — The Register — Google launches first datacenter satellite; Joule paper: 370,000 t ≈ 1,800 Starship launches
+- [[intel/raw/2026-10-01-mediasat-china-space-idc-computing-constellation|2026-10-01]] · Mediasat (relaying ITHome / China in Space) — Mediasat — China's Space.IDC: 1,080+ laser-linked computing satellites, first in orbit Q4 2027
+- [[intel/raw/2026-10-06-axiomspace-arc-orbital-compute-pqc-update|2026-10-06]] · Axiom Space (press release) — Axiom Space — ARC 1 and ARC 2 operating on Kepler's relay network; node-to-node link confirmed; PQC ground demo
 
 ## Launch economics
 
@@ -106,6 +108,7 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-06-23-spacenews-ubotica-11m-series-a|2026-06-23]] · SpaceNews — Ubotica raises $11 M to scale maritime-intelligence platform
 - [[intel/raw/2026-09-10-resiliencemedia-orbital-reflex-ai-data-centres|2026-09-10]] · Resilience Media — Orbital (US) inks deal with Germany's Reflex Aerospace to build AI data centres in space
 - [[intel/raw/2026-09-14-europeanspaceflight-open-cosmos-300m|2026-09-14]] · European Spaceflight — Open Cosmos raises €300 M — the Φsat-2 / CogniSAT-6 builder becomes Europe's best-funded small-sat operator
+- [[intel/raw/2026-10-06-satnews-open-cosmos-itu-extension|2026-10-06]] · Satnews — Open Cosmos seeks one-year ITU extension: 50% milestone missed on 576-sat filings; > 50 satellites built and waiting for launch
 
 ## EO edge processing & value chain
 
@@ -126,6 +129,7 @@ tags: [sdc, intel/raw]
 - [[intel/raw/2026-09-11-arxiv-aquacubeai-phisat2|2026-09-11]] · arXiv — AquaCubeAI — Powered Monitoring of Turbidity on-board Φsat-2
 - [[intel/raw/2026-09-29-arxiv-cnes-raw-imagery-onboard-ai|2026-09-29]] · arXiv (OBPDC 2026) — Raw Imagery Impacting Your AI: Should You Care?
 - [[intel/raw/2026-10-02-globenewswire-satellogic-merlin-first-launch|2026-10-02]] · GlobeNewswire (Satellogic press release) — Satellogic — first Merlin launched: onboard-AI alerts within 30 min, ISL cueing of 50 cm follow-up
+- [[intel/raw/2026-10-08-arxiv-phisat2-marine-anomaly-detection|2026-10-08]] · arXiv — Onboard Marine Anomaly Detection on Φsat-2: From Simulation-Based Development to In-Orbit Demonstration
 
 ## Optical ISL & relay
 

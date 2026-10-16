@@ -1,17 +1,17 @@
 {
- "generated": "2026-10-05T14:53:34+00:00",
+ "generated": "2026-10-16T16:37:59+00:00",
  "counts": {
-  "sources": 117,
+  "sources": 121,
   "by_theme": {
    "space/eo-edge": 29,
    "market/startups": 26,
-   "market/europe": 25,
+   "market/europe": 26,
    "research/paper": 25,
    "space/launch": 23,
+   "space/optical-isl": 16,
    "space/thermal": 14,
-   "space/optical-isl": 14,
+   "market/incumbents": 13,
    "market/sceptics": 13,
-   "market/incumbents": 12,
    "economics/cost-model": 8,
    "market/esa": 7,
    "space/radiation": 7,
@@ -28,6 +28,7 @@
    "SpaceNews": 2,
    "New Space Economy": 2,
    "The Register": 2,
+   "Satnews": 2,
    "Microsoft Azure blog": 1,
    "NTT R&D (technical overview)": 1,
    "Ramon.Space (press release)": 1,
@@ -41,8 +42,7 @@
    "arXiv (v1 2025-03-05; v4 2026-05-20)": 1,
    "Satellogic (company blog)": 1,
    "Axiom Space (press release) + Axiom ODC product page": 1,
-   "InformationWeek": 1,
-   "arXiv (TU Wien et al.)": 1
+   "InformationWeek": 1
   },
   "by_month": {
    "2022-04": 1,
@@ -74,7 +74,7 @@
    "2026-07": 2,
    "2026-08": 8,
    "2026-09": 12,
-   "2026-10": 11
+   "2026-10": 15
   }
  },
  "sources": [
@@ -2516,6 +2516,29 @@
    "sweep": "2026-W40"
   },
   {
+   "id": "2026-10-01-mediasat-china-space-idc-computing-constellation",
+   "date": "2026-10-01",
+   "publisher": "Mediasat (English edition) — relays ITHome and China in Space",
+   "title": "Mediasat — China plans to laser-link 1,000+ satellites into an orbital supercomputer (Space.IDC)",
+   "url": "https://mediasat.info/en/2026/10/01/china-plans-to-laser-link-1000-satellites-into-an-orbital-supercomputer/",
+   "tags": [
+    "sdc",
+    "market/competitors",
+    "market/china",
+    "space/orbital-compute",
+    "company/star-vision"
+   ],
+   "primary": "not opened (ITHome report of the 2026-09-25 Hangzhou unveiling; China in Space)",
+   "primary_checked": true,
+   "relevance": [
+    "**The vault had no Chinese tier-A/B entry.** China now has two orbital-compute programmes: one flying",
+    "Space.IDC's first flight (Q4 2027) is on the same clock as Starcloud-2 and SpaceX's first AI1 prototypes;",
+    "State-bank credit (not venture equity) is a different capital model from the US tier — a comparison point"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
+  },
+  {
    "id": "2026-10-01-npr-google-suncatcher-launch-sceptics",
    "date": "2026-10-01",
    "publisher": "NPR (syndicated via KPBS)",
@@ -2714,13 +2737,84 @@
    ],
    "captured": "2026-10-04",
    "sweep": "2026-W40"
+  },
+  {
+   "id": "2026-10-06-axiomspace-arc-orbital-compute-pqc-update",
+   "date": "2026-10-06",
+   "publisher": "Axiom Space (press release)",
+   "title": "Axiom Space — \"Axiom Space, Kepler ready orbital computing for quantum era\" (ARC platform update)",
+   "url": "https://www.axiomspace.com/release/axiom-space-kepler-ready-orbital-computing-for-quantum-era",
+   "tags": [
+    "sdc",
+    "market/incumbents",
+    "company/axiom-space",
+    "company/kepler",
+    "edge/odc-nodes",
+    "space/optical-isl",
+    "security/pqc"
+   ],
+   "primary": "this release is the operator's own statement (primary for operational status; no independent telemetry)",
+   "primary_checked": true,
+   "relevance": [
+    "The only flying commercial ODC is moving its pitch from \"compute in orbit\" to **sovereign + post-quantum",
+    "PQC is becoming table stakes for government buyers on a 2030–31 clock; an Entrant selling to defence buyers",
+    "Still no published workload metrics from the incumbent → the Entrant's \"publish measured orbit-average"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
+  },
+  {
+   "id": "2026-10-06-satnews-open-cosmos-itu-extension",
+   "date": "2026-10-06",
+   "publisher": "Satnews",
+   "title": "Satnews — Open Cosmos seeks one-year ITU regulatory extension after missing constellation deployment milestones",
+   "url": "https://satnews.com/2026/10/06/open-cosmos-seeks-one-year-itu-regulatory-extension-after-missing-constellation-deployment-milestones/",
+   "tags": [
+    "sdc",
+    "market/europe",
+    "company/open-cosmos",
+    "policy/itu",
+    "space/optical-isl"
+   ],
+   "primary": "not opened (ITU Radio Regulations Board submission; RRB meets November 2026)",
+   "primary_checked": true,
+   "relevance": [
+    "Europe's best-funded small-sat builder (€300M, Sep 2026 —",
+    "For the Entrant: **secure the launch slot before the bus**; hosted payloads on an operator who already holds",
+    "Open Cosmos's pivot toward a 576-sat Ka-band/secure-transport constellation makes it a potential **relay /"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
+  },
+  {
+   "id": "2026-10-08-arxiv-phisat2-marine-anomaly-detection",
+   "date": "2026-10-08",
+   "publisher": "arXiv (cs.AI, cs.CV; submitted via CCSD/HAL proxy)",
+   "title": "arXiv — Onboard Marine Anomaly Detection on Φsat-2: From Simulation-Based Development to In-Orbit Demonstration",
+   "url": "https://arxiv.org/abs/2610.11735",
+   "tags": [
+    "sdc",
+    "literature/arxiv",
+    "edge/eo",
+    "programme/esa-phisat",
+    "use-case/maritime"
+   ],
+   "primary": "this preprint (abstract opened; PDF fetched but not machine-readable in this sweep)",
+   "primary_checked": false,
+   "relevance": [
+    "**Sim-to-real is the hidden cost of onboard EO models.** A pipeline trained on simulated Φsat-2 imagery",
+    "Maritime anomaly detection is the same buyer as Ubotica's maritime platform and the BIFROST Arctic case —",
+    "Practical: budget a post-launch retraining cycle (and the uplink to ship new weights — see the uplink"
+   ],
+   "captured": "2026-10-12",
+   "sweep": "2026-W42"
   }
  ],
  "wiki": [
   {
    "id": "eo-edge-compute-value-chain",
    "title": "EO edge compute — the time-to-insight value chain",
-   "updated": "2026-10-05",
+   "updated": "2026-10-12",
    "lede": "The Entrant's hypothesis ([[scenario/entrant]]): the end-to-end Earth-observation chain with processing *inside* it — collection → optical links → in-orbit compute → insight delivery — measured by **time-to-insight**. This note is what the evidence says about that chain: where the bottleneck is, who pays, what works, and the bar an in-orbit service has to beat.",
    "open_items": [
     "EUMETSAT's position on onboard processing (nothing found)",
@@ -2744,7 +2838,7 @@
   {
    "id": "orbital-compute-launch-economics",
    "title": "Orbital compute — launch economics and the cost gap",
-   "updated": "2026-10-05",
+   "updated": "2026-10-12",
    "lede": "**Claim under test:** orbital data centres become cost-competitive with terrestrial ones when launch reaches ~$200/kg. Every optimist case (Google, SpaceX, Starcloud) rests on that number; every sceptic case shows how far away it is. The binding constraint is **launch cadence and tonnage**, not physics — and today's demonstrated reality is two orders of magnitude short.",
    "open_items": [
     "*Joule* publication of the Google paper (cell.com returned 403) — confirm 370,000 t",
@@ -2756,14 +2850,14 @@
   {
    "id": "orbital-compute-physical-constraints",
    "title": "Orbital compute — physical constraints",
-   "updated": "2026-10-05",
+   "updated": "2026-10-12",
    "lede": "What limits a compute satellite before money does: **mass per kilowatt**, **heat rejection**, **radiation**, **obsolescence**, and the **environment** it leaves behind. The economics in [[intel/wiki/orbital-compute-launch-economics]] inherit every number here.",
    "open_items": []
   },
   {
    "id": "orbital-data-center-landscape",
    "title": "Orbital data-centre landscape",
-   "updated": "2026-10-05",
+   "updated": "2026-10-12",
    "lede": "Who is building orbital compute, by **workload class** — because the class, not the logo, decides whether a player is in the Entrant's market. Three tiers: (A) GW-scale AI compute bets, (B) kW-class edge / space-native processing (the only tier with revenue), (C) the enabling layers (relay, bus, chips, programmes). Economics in [[intel/wiki/orbital-compute-launch-economics]]; the EO segment in detail in [[intel/wiki/eo-edge-compute-value-chain]].",
    "open_items": [
     "ODC Orbital Data Center GmbH (Neubiberg, HRB 293209) — registry entry only; product?",
@@ -2771,7 +2865,10 @@
     "EUMETSAT position on onboard processing — nothing found",
     "Aviation Week \"$250M rounds\" — second company is Muon Space (bus maker), a category stretch",
     "2026-10-05: Cowboy's reported 20,000-sat \"Stampede\" FCC filing is not among the four",
-    "2026-10-05: corrected Kepler \"33 planned\" → 33 launched in total; a Kepler release of"
+    "2026-10-05: corrected Kepler \"33 planned\" → 33 launched in total; a Kepler release of",
+    "2026-10-12: FCC NEPA determination of 2026-09-30 on ODC filings and the Space Modernization",
+    "2026-10-12: GAO-26-109012 \"Data Centers in Space\" (2026-04-28) — primary not yet captured",
+    "2026-10-12: Chinese programmes (Three-Body, Space.IDC) — primary sources (ITHome, Zhejiang Lab)"
    ]
   }
  ],
@@ -2847,6 +2944,18 @@
   {
    "note": "orbital-data-center-landscape",
    "item": "2026-10-05: corrected Kepler \"33 planned\" → 33 launched in total; a Kepler release of"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: FCC NEPA determination of 2026-09-30 on ODC filings and the Space Modernization"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: GAO-26-109012 \"Data Centers in Space\" (2026-04-28) — primary not yet captured"
+  },
+  {
+   "note": "orbital-data-center-landscape",
+   "item": "2026-10-12: Chinese programmes (Three-Body, Space.IDC) — primary sources (ITHome, Zhejiang Lab)"
   }
  ],
  "tables": [
@@ -2997,8 +3106,8 @@
     {
      "": "Axiom + Kepler",
      "Flying?": "yes, operational",
-     "Edge": "relay-integrated, SDA optical, Red Hat",
-     "Weakness vs the Entrant": "general PED, not EO-specific"
+     "Edge": "relay-integrated, SDA optical, Red Hat; node-to-node link and post-quantum crypto pitch (Oct 2026, 2026-10-06-axiomspace-arc-orbital-compute-pqc-update)",
+     "Weakness vs the Entrant": "general PED and secure sovereign processing, not EO-specific; no workload metrics published"
     },
     {
      "": "Planetek AI-eXpress (IT)",
@@ -3552,6 +3661,13 @@
      "Source": "2026-09-16-exterra-orbital-reflex-aerospace-german-bus"
     },
     {
+     "Player": "Space.IDC (CN; STAR.VISION + Dongfang Xinglian)",
+     "Plan": "> 1,080 laser-linked sats (> 360 compute tier, SSO); G1 11.5 kW / G2 48 kW / G3 140 kW; full build 2035",
+     "Funding / scale": "CNY 10B (~$1.49B) state-bank credit, ≥ CNY 1B phase one",
+     "First hardware": "none; first sat Q4 2027",
+     "Source": "2026-10-01-mediasat-china-space-idc-computing-constellation"
+    },
+    {
      "Player": "Thales Alenia ASCEND (EU, Horizon Europe)",
      "Plan": "10 MW modules, 35,000 m² PV each; 1 GW before 2050; needs 10× cleaner launcher, in-orbit robotic assembly",
      "Funding / scale": "undisclosed study budget",
@@ -3573,10 +3689,10 @@
    "rows": [
     {
      "Player": "Axiom Space + Kepler",
-     "Offer": "2 ODC nodes on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud",
-     "Status": "operational since 2026-01-11 — the only commercial ODC flying",
+     "Offer": "2 ODC nodes, now \"ARC 1/2\", on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud; post-quantum crypto pitch (ground demo done, on-orbit next)",
+     "Status": "operational since 2026-01-11 — the only commercial ODC flying; ARC-to-ARC and ARC-to-ground links confirmed 2026-10-06; still no workload metrics",
      "Funding": "corporate",
-     "Source": "2025-04-07-axiomspace-odc-nodes-press-release, 2026-01-11-kepler-first-tranche-optical-relay-satellites"
+     "Source": "2025-04-07-axiomspace-odc-nodes-press-release, 2026-01-11-kepler-first-tranche-optical-relay-satellites, 2026-10-06-axiomspace-arc-orbital-compute-pqc-update"
     },
     {
      "Player": "Satlyt",
@@ -3767,9 +3883,21 @@
    "first_captured": "2026-10-05",
    "last_captured": "2026-10-05",
    "cumulative": 117
+  },
+  {
+   "week": "2026-W42",
+   "added": 4,
+   "by_theme": {
+    "market/europe": 1,
+    "market/incumbents": 1,
+    "space/optical-isl": 2
+   },
+   "first_captured": "2026-10-12",
+   "last_captured": "2026-10-12",
+   "cumulative": 121
   }
  ],
- "latest_sweep": "2026-W41",
+ "latest_sweep": "2026-W42",
  "indicators": [
   {
    "id": "eo-insight-latency-published",

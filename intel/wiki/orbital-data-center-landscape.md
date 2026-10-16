@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [sdc, intel/wiki, space/orbital-compute, market/competitors, market/funding, market/europe]
-updated: 2026-10-05
+updated: 2026-10-12
 sources: startup, incumbent and Europe lanes, 2026-10-04 — see [[intel/raw/_index]]
 ---
 # Orbital data-centre landscape
@@ -23,6 +23,7 @@ layers (relay, bus, chips, programmes). Economics in
 | **Blue Origin "Project Sunrise"** | FCC 51,600 sats, 500–1,800 km SSO; TeraWave backhaul; no per-sat power disclosed (ambition indeterminate ~20×) | corporate | 0 flown; New Glenn pad out > 1 yr | [[intel/raw/2026-03-20-newspaceeconomy-blue-origin-project-sunrise-fcc]] |
 | **Google Suncatcher** | 81-sat formation, TPUs, dawn-dusk SSO; R&D "moonshot" | corporate; Planet builds | MVP flown 2026-10-01 (4 Trillium TPUs, ~1 kW, 15-min bursts); 2-sat laser demo 2027 | [[intel/raw/2026-10-01-google-blog-suncatcher-prototype-in-orbit]], [[intel/raw/2025-11-04-planet-build-operate-suncatcher-platform]] |
 | **Orbital (LA) + Reflex Aerospace (Munich)** | up to 100,000 sats × ~250 kW; Reflex exclusive bus | $5M pre-seed; Reflex €59M | none | [[intel/raw/2026-09-16-exterra-orbital-reflex-aerospace-german-bus]] |
+| **Space.IDC** (CN; STAR.VISION + Dongfang Xinglian) | > 1,080 laser-linked sats (> 360 compute tier, SSO); G1 11.5 kW / G2 48 kW / G3 140 kW; full build 2035 | CNY 10B (~$1.49B) state-bank **credit**, ≥ CNY 1B phase one | none; first sat Q4 2027 | [[intel/raw/2026-10-01-mediasat-china-space-idc-computing-constellation]] |
 | **Thales Alenia ASCEND** (EU, Horizon Europe) | 10 MW modules, 35,000 m² PV each; **1 GW before 2050**; needs 10× cleaner launcher, in-orbit robotic assembly | undisclosed study budget | PoC architecture 2031 | [[intel/raw/2024-06-27-thales-alenia-ascend-feasibility-results]] |
 
 Demand signals: Anthropic–SpaceX "multiple GW orbital" agreement
@@ -35,12 +36,17 @@ Regulatory queue: the FCC has accepted **four** data-centre constellations for r
 large-constellation standards yet; the US Office of Space Commerce opened a certification
 pilot that names orbital data centres
 ([[intel/raw/2026-10-01-wilmerhale-orbital-data-centers-legal-reality]]).
+China has a second, flying programme — Three-Body (ADA Space + Zhejiang Lab, ~12 computing sats
+in orbit, reported) — and Space.IDC is financed by bank credit, not venture equity
+([[intel/raw/2026-10-01-mediasat-china-space-idc-computing-constellation]]). Of the 1,239,600
+satellites in the four accepted FCC applications, 81% are in the largest one
+(1,000,000 ÷ 1,239,600, derived).
 
 ## B · kW-class edge and space-native processing — the tier with revenue
 
 | Player | Offer | Status | Funding | Source |
 |---|---|---|---|---|
-| **Axiom Space + Kepler** | 2 ODC nodes on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud | **operational since 2026-01-11** — the only commercial ODC flying | corporate | [[intel/raw/2025-04-07-axiomspace-odc-nodes-press-release]], [[intel/raw/2026-01-11-kepler-first-tranche-optical-relay-satellites]] |
+| **Axiom Space + Kepler** | 2 ODC nodes, now "ARC 1/2", on Kepler relay sats; 2.5 Gbps SDA optical; Red Hat Device Edge; EO/PED, sovereign cloud; **post-quantum crypto** pitch (ground demo done, on-orbit next) | **operational since 2026-01-11** — the only commercial ODC flying; ARC-to-ARC and ARC-to-ground links confirmed 2026-10-06; still no workload metrics | corporate | [[intel/raw/2025-04-07-axiomspace-odc-nodes-press-release]], [[intel/raw/2026-01-11-kepler-first-tranche-optical-relay-satellites]], [[intel/raw/2026-10-06-axiomspace-arc-orbital-compute-pqc-update]] |
 | **Satlyt** | software-only multi-tenant orbital compute; Gemma onboard cut EO downlink > 60% | 3 missions flown; NASA, SDA customers; Transporter-18 Oct 2026 | $8M seed (Oct 2026) | [[intel/raw/2026-10-01-techcrunch-satlyt-8m-seed]] |
 | **Satellogic Merlin** | vertically integrated EO: 1 m, 10-band, 170 km swath; onboard-AI alerts "within 30 min"; ISL cues 50 cm follow-up without a ground station | Merlin.01 launched 2026-10-01; FOC H2 2027 | listed (NASDAQ) | [[intel/raw/2026-10-02-globenewswire-satellogic-merlin-first-launch]] |
 | **Atomic-6** | capacity marketplace + solar/radiator modules | **$3.5M/month per 100 kW rack** — the only public price | — | [[intel/raw/2026-04-13-payload-atomic-6-odc-space-marketplace]] |
@@ -80,7 +86,10 @@ angle** and FOC is 2030 ([[intel/raw/2026-02-05-eu-space-observer-what-is-iris2]
 
 **Buses.** Muon Space ($250M C @ $1.5B; Condor compute platform; 500 sats/yr by 2027 —
 [[intel/raw/2026-08-20-viasatellite-muon-space-250m-series-c]]); Open Cosmos (€300M, Sep
-2026; built Φsat-2 and CogniSAT-6 — [[intel/raw/2026-09-14-europeanspaceflight-open-cosmos-300m]]);
+2026; built Φsat-2 and CogniSAT-6 — [[intel/raw/2026-09-14-europeanspaceflight-open-cosmos-300m]];
+missed the ITU 50% milestone on its 576-sat ConnectedCosmos filings with > 50 satellites built and
+waiting for launch, extension requested for the Nov 2026 RRB —
+[[intel/raw/2026-10-06-satnews-open-cosmos-itu-extension]]);
 Reflex Aerospace; Planet (Owl bus for Suncatcher).
 
 **Programmes (ESA / EU).**
@@ -136,3 +145,9 @@ Starcloud's.
 - [ ] 2026-10-05: corrected Kepler "33 planned" → 33 launched in total; a Kepler release of
   2026-10-05 still gives 33 (no new tranche since Feb) — not captured, every URL for it names
   an individual
+- [ ] 2026-10-12: FCC NEPA determination of 2026-09-30 on ODC filings and the Space Modernization
+  Order FCC 26-47 — cited by WilmerHale, not opened; outcome unknown
+  ([[intel/raw/2026-10-01-wilmerhale-orbital-data-centers-legal-reality]])
+- [ ] 2026-10-12: GAO-26-109012 "Data Centers in Space" (2026-04-28) — primary not yet captured
+- [ ] 2026-10-12: Chinese programmes (Three-Body, Space.IDC) — primary sources (ITHome, Zhejiang Lab)
+  not opened; FLOPS precision unknown
